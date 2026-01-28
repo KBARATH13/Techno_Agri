@@ -1,0 +1,96 @@
+.crop-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly less dark */
+    backdrop-filter: blur(5px); /* Add the blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.crop-modal-content {
+    background-color: var(--card-background); /* Use the correct theme variable */
+    color: var(--text-color);
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 5px 15px var(--card-shadow);
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--header-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.crop-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin: 20px 0;
+}
+
+.crop-info-grid p {
+    margin: 5px 0;
+}
+
+.calculator {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 2px solid var(--border-color);
+    background-color: var(--filter-background); /* Using filter background for consistency */
+    border-radius: 8px;
+}
+
+.calculator h3 {
+    margin-top: 0;
+    color: var(--primary-color); /* Apply highlight color */
+    text-align: center; /* Center the text */
+}
+
+.calculator-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calculator-inputs input,
+.calculator-inputs select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+}
+
+.calculator-results p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+.calculator-results p strong {
+    color: var(--primary-color);
+}

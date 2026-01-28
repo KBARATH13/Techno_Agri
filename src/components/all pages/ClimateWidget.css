@@ -1,0 +1,70 @@
+
+.climate-widget {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #72edf2 0%, #5151e5 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.climate-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.climate-widget-loading {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+  width: 80%;
+  max-width: 350px;
+  margin: 1rem auto;
+}
+
+.weather-icon {
+  flex-shrink: 0;
+}
+
+.weather-icon img {
+  width: 64px;
+  height: 64px;
+}
+
+.weather-info {
+  flex-grow: 1;
+  margin: 0 15px;
+  text-align: left;
+}
+
+.location {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.temperature {
+  font-size: 1.2rem;
+}
+
+.air-quality {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.weather-condition {
+  flex-shrink: 0;
+  text-align: right;
+  font-size: 1rem;
+  font-style: italic;
+}
+

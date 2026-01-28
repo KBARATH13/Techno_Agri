@@ -1,0 +1,104 @@
+
+.products-services-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-services-page h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--header-color);
+    font-size: 2.5rem;
+}
+
+.section-container {
+    margin-bottom: 60px;
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.section-container h2 {
+    text-align: center;
+    color: var(--section-header-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.offerings-grid,
+.iot-applications {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.offering-item,
+.iot-item {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.offering-logo {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+
+.offering-item:hover,
+.iot-item:hover {
+    transform: translateY(-5px);
+}
+
+.offering-item h3,
+.iot-item h3 {
+    color: var(--primary-color); /* Using primary for sub-headers */
+    margin-bottom: 15px;
+}
+
+.section-container ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.section-container ul li {
+    background-color: var(--card-background);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 4px solid var(--primary-color); /* Using primary for list border */
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+    .products-services-page {
+        padding: 15px;
+    }
+
+    .products-services-page h1 {
+        font-size: 2rem;
+    }
+
+    .section-container {
+        padding: 20px;
+    }
+
+    .section-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .offerings-grid,
+    .iot-applications {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+}

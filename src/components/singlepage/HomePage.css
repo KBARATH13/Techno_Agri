@@ -1,0 +1,156 @@
+.home-page {
+    text-align: center;
+}
+
+.hero-section {
+    position: relative; /* Needed for the overlay */
+    background-image: url('https://images.unsplash.com/photo-1586226915937-30e39a65a25b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: 100% 100%;
+    background-position: center;
+    color: var(--text-color); /* Use theme variable */
+    padding: 100px 20px;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); /* Dark overlay */
+    z-index: -1;
+}
+
+body.light .hero-section::before {
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)); /* Light overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px; /* Match professional-button */
+    font-size: 1.1rem; /* Slightly smaller for this context */
+    margin: 0 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    filter: brightness(110%);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--chatbot-header-text);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--chatbot-header-text);
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 30px; /* Add gap for spacing */
+}
+
+.feature, .step {
+    max-width: 300px;
+    background-color: var(--card-background); /* Use theme variable */
+    padding: 1.5rem; /* Match professional-card */
+    border-radius: 12px; /* Match professional-card */
+    box-shadow: var(--card-shadow); /* Use theme variable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover, .step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--crop-item-hover-shadow);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+
+.feature h2 {
+    margin-top: 20px;
+    color: var(--header-color); /* Use theme variable */
+}
+
+.how-it-works-section {
+    padding: 50px 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 30px; /* Add gap for spacing */
+}
+
+
+
+.step-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color); /* Use theme variable */
+    margin-right: 20px;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .features-section, .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%;
+        margin: 0;
+    }
+
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

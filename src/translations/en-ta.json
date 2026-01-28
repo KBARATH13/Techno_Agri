@@ -1,0 +1,606 @@
+{
+  "app_name": {
+    "en": "SmartFarm AI",
+    "ta": "ஸ்மார்ட்ஃபார்ம் AI"
+  },
+  "home": {
+    "en": "Home",
+    "ta": "முகப்பு"
+  },
+  "login": {
+    "en": "Login",
+    "ta": "உள்நுழை"
+  },
+  "register": {
+    "en": "Register",
+    "ta": "பதிவு"
+  },
+  "logout": {
+    "en": "Logout",
+    "ta": "வெளியேறு"
+  },
+  "crops": {
+    "en": "Crops",
+    "ta": "பயிர்கள்"
+  },
+  "personal_chat": {
+    "en": "Personal AI Chat",
+    "ta": "தனிப்பட்ட AI அரட்டை"
+  },
+  "products_services": {
+    "en": "Products & Services",
+    "ta": "தயாரிப்புகள் & சேவைகள்"
+  },
+  "recommendation_menu": {
+    "en": "Recommendation Menu",
+    "ta": "பரிந்துரை மெனு"
+  },
+  "crop_yield_prediction": {
+    "en": "Crop Yield Prediction",
+    "ta": "பயிர் விளைச்சல் கணிப்பு"
+  },
+  "disease_detection": {
+    "en": "Disease Detection",
+    "ta": "நோய் கண்டறிதல்"
+  },
+  "crop": {
+    "en": "Crop",
+    "ta": "பயிர்"
+  },
+  "district": {
+    "en": "District",
+    "ta": "மாவட்டம்"
+  },
+  "season": {
+    "en": "Season",
+    "ta": "பருவம்"
+  },
+  "crop_year": {
+    "en": "Crop Year",
+    "ta": "பயிர் ஆண்டு"
+  },
+  "area": {
+    "en": "Area",
+    "ta": "பரப்பளவு"
+  },
+  "annual_rainfall": {
+    "en": "Annual Rainfall",
+    "ta": "வருடாந்திர மழைப்பொழிவு"
+  },
+  "predict_yield": {
+    "en": "Predict Yield",
+    "ta": "விளைச்சலைக் கணி"
+  },
+  "predicting": {
+    "en": "Predicting...",
+    "ta": "கணித்துக்கொண்டிருக்கிறது..."
+  },
+  "predicted_yield": {
+    "en": "Predicted Yield:",
+    "ta": "கணிக்கப்பட்ட விளைச்சல்:"
+  },
+  "kg_per_acre": {
+    "en": "Kg per acre",
+    "ta": "கிலோ ஏக்கருக்கு"
+  },
+  "kg_per_hectare": {
+    "en": "Kg per hectare",
+    "ta": "கிலோ ஹெக்டேருக்கு"
+  },
+  "reset_form": {
+    "en": "Reset Form",
+    "ta": "படிவத்தை மீட்டமை"
+  },
+  "select_district_first": {
+    "en": "Select a crop first",
+    "ta": "முதலில் ஒரு பயிரைத் தேர்ந்தெடுக்கவும்"
+  },
+  "select_district": {
+    "en": "Select District",
+    "ta": "மாவட்டத்தைத் தேர்ந்தெடுக்கவும்"
+  },
+  "please_fill_all_fields": {
+    "en": "Please fill in all fields.",
+    "ta": "அனைத்து புலங்களையும் நிரப்பவும்."
+  },
+  "failed_to_load_form_data": {
+    "en": "Failed to load form data. Please try again later.",
+    "ta": "படிவத் தரவை ஏற்ற முடியவில்லை. பின்னர் மீண்டும் முயற்சிக்கவும்."
+  },
+  "Please select an image file first.": {
+    "en": "Please select an image file first.",
+    "ta": "முதலில் ஒரு பட கோப்பைத் தேர்ந்தெடுக்கவும்."
+  },
+  "image": {
+    "en": "Image",
+    "ta": "படம்"
+  },
+  "Plant Disease Detection": {
+    "en": "Plant Disease Detection",
+    "ta": "தாவர நோய் கண்டறிதல்"
+  },
+  "Image Preview": {
+    "en": "Image Preview",
+    "ta": "படம் முன்னோட்டம்"
+  },
+  "Select Image": {
+    "en": "Select Image",
+    "ta": "படத்தைத் தேர்ந்தெடுக்கவும்"
+  },
+  "Detect Disease": {
+    "en": "Detect Disease",
+    "ta": "நோயைக் கண்டறி"
+  },
+  "Detecting...": {
+    "en": "Detecting...",
+    "ta": "கண்டறிந்துகொண்டிருக்கிறது..."
+  },
+  "select_image_to_upload": {
+    "en": "Please select an image to upload.",
+    "ta": "பதிவேற்ற ஒரு படத்தைத் தேர்ந்தெடுக்கவும்."
+  },
+  "Prediction Result": {
+    "en": "Prediction Result:",
+    "ta": "கணிப்பு முடிவு:"
+  },
+  "detection_result": {
+    "en": "Detection Result:",
+    "ta": "கண்டறிதல் முடிவு:"
+  },
+  "Detected Disease": {
+    "en": "Detected Disease",
+    "ta": "கண்டறியப்பட்ட நோய்"
+  },
+  "Confidence": {
+    "en": "Confidence",
+    "ta": "நம்பிக்கை"
+  },
+  "no_specific_disease_detected": {
+    "en": "No specific disease detected or result format unexpected.",
+    "ta": "குறிப்பிட்ட நோய் கண்டறியப்படவில்லை அல்லது முடிவு வடிவம் எதிர்பாராதது."
+  },
+  "An error occurred during prediction. Please try again.": {
+    "en": "An error occurred during prediction. Please try again.",
+    "ta": "கணிப்பின் போது ஒரு பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்."
+  },
+  "Crop Recommendation": {
+    "en": "Crop Recommendation (Recommended Crop / Crop Advice)",
+    "ta": "பயிர் பரிந்துரை (பரிந்துரைக்கப்படும் பயிர் / பயிர் ஆலோசனை)"
+  },
+  "choose_recommendation_type": {
+    "en": "Choose a recommendation type",
+    "ta": "பரிந்துரை வகையைத் தேர்ந்தெடுக்கவும்"
+  },
+  "general_recommendation": {
+    "en": "General Recommendation",
+    "ta": "பொதுவான பரிந்துரை"
+  },
+  "general_recommendation_description": {
+    "en": "Suggestions based on district and soil type.",
+    "ta": "மாவட்டம் மற்றும் மண் வகையின் அடிப்படையில் பரிந்துரைகள்."
+  },
+  "soil_type": {
+    "en": "Soil Type",
+    "ta": "மண் வகை"
+  },
+  "get_recommendation": {
+    "en": "Get Recommendation",
+    "ta": "பரிந்துரையைப் பெறு"
+  },
+  "loading": {
+    "en": "Loading...",
+    "ta": "ஏற்றுகிறது..."
+  },
+  "select_district_and_soil": {
+    "en": "Please select both a district and a soil type.",
+    "ta": "மாவட்டம் மற்றும் மண் வகை இரண்டையும் தேர்ந்தெடுக்கவும்."
+  },
+  "an_error_occurred": {
+    "en": "An error occurred.",
+    "ta": "ஒரு பிழை ஏற்பட்டது."
+  },
+  "recommended_crops": {
+    "en": "Recommended Crops:",
+    "ta": "பரிந்துரைக்கப்பட்ட பயிர்கள்:"
+  },
+  "accurate_recommendation": {
+    "en": "Accurate Recommendation",
+    "ta": "துல்லியமான பரிந்துரை"
+  },
+  "accurate_recommendation_description": {
+    "en": "Precise recommendations from soil analysis data.",
+    "ta": "மண் பகுப்பாய்வு தரவுகளிலிருந்து துல்லியமான பரிந்துரைகள்."
+  },
+  "N": {
+    "en": "Nitrogen",
+    "ta": "நைட்ரஜன்"
+  },
+  "P": {
+    "en": "Phosphorus",
+    "ta": "பாஸ்பரஸ்"
+  },
+  "K": {
+    "en": "Potassium",
+    "ta": "பொட்டாசியம்"
+  },
+  "temperature": {
+    "en": "Temperature",
+    "ta": "வெப்பநிலை"
+  },
+  "humidity": {
+    "en": "Humidity",
+    "ta": "ஈரப்பதம்"
+  },
+  "ph": {
+    "en": "pH",
+    "ta": "pH"
+  },
+  "rainfall": {
+    "en": "Rainfall",
+    "ta": "மழைப்பொழிவு"
+  },
+  "get_accurate_recommendation": {
+    "en": "Get Accurate Recommendation",
+    "ta": "துல்லியமான பரிந்துரையைப் பெறு"
+  },
+  "recommended_crop": {
+    "en": "Recommended Crop:",
+    "ta": "பரிந்துரைக்கப்பட்ட பயிர்:"
+  },
+  "back_to_menu": {
+    "en": "Back to Menu",
+    "ta": "மெனுவுக்குத் திரும்பு"
+  },
+  "welcome_to_smartfarm": {
+    "en": "Welcome to SmartFarm",
+    "ta": "ஸ்மார்ட்ஃபார்முக்கு வரவேற்கிறோம்"
+  },
+  "solution_for_predictive_agriculture": {
+    "en": "Your solution for predictive agriculture with data integrity.",
+    "ta": "தரவு ஒருமைப்பாட்டுடன் முன்கணிப்பு விவசாயத்திற்கான உங்கள் தீர்வு."
+  },
+  "ai_powered_predictions": {
+    "en": "AI-Powered Predictions",
+    "ta": "AI-இயங்கும் கணிப்புகள்"
+  },
+  "ai_predictions_description": {
+    "en": "Leverage the power of AI to get accurate predictions for crop yield, disease outbreaks, and more.",
+    "ta": "பயிர் விளைச்சல், நோய் பரவல் மற்றும் பலவற்றிற்கான துல்லியமான கணிப்புகளைப் பெற AI இன் சக்தியைப் பயன்படுத்துங்கள்."
+  },
+  "iot_enabled_monitoring": {
+    "en": "IoT-Enabled Monitoring",
+    "ta": "IoT-இயக்கப்பட்ட கண்காணிப்பு"
+  },
+  "iot_monitoring_description": {
+    "en": "Use IoT sensors to monitor your farm in real-time, collecting data on soil moisture, temperature, and more.",
+    "ta": "மண் ஈரப்பதம், வெப்பநிலை மற்றும் பலவற்றின் தரவுகளைச் சேகரித்து, உங்கள் பண்ணையை நிகழ்நேரத்தில் கண்காணிக்க IoT சென்சார்களைப் பயன்படுத்தவும்."
+  },
+  "blockchain_secured_data": {
+    "en": "Blockchain-Secured Data",
+    "ta": "பிளாக்செயின் பாதுகாக்கப்பட்ட தரவு"
+  },
+  "blockchain_description": {
+    "en": "Ensure the integrity of your data with our blockchain-based solution, making your records immutable and tamper-proof.",
+    "ta": "எங்கள் பிளாக்செயின் அடிப்படையிலான தீர்வுடன் உங்கள் தரவின் ஒருமைப்பாட்டை உறுதிசெய்து, உங்கள் பதிவுகளை மாற்ற முடியாததாகவும், சேதப்படுத்த முடியாததாகவும் ஆக்குங்கள்."
+  },
+  "how_it_works": {
+    "en": "How It Works",
+    "ta": "இது எப்படி வேலை செய்கிறது"
+  },
+  "log_your_data": {
+    "en": "Log Your Data",
+    "ta": "உங்கள் தரவைப் பதிவுசெய்"
+  },
+  "log_data_description": {
+    "en": "Easily log your farm's data through our intuitive interface.",
+    "ta": "எங்கள் உள்ளுணர்வு இடைமுகம் மூலம் உங்கள் பண்ணையின் தரவை எளிதாகப் பதிவுசெய்யவும்."
+  },
+  "ai_analysis": {
+    "en": "AI Analysis",
+    "ta": "AI பகுப்பாய்வு"
+  },
+  "ai_analysis_description": {
+    "en": "Our AI models analyze your data to provide actionable insights.",
+    "ta": "எங்கள் AI மாதிரிகள் உங்கள் தரவை பகுப்பாய்வு செய்து செயல்படக்கூடிய நுண்ணறிவுகளை வழங்குகின்றன."
+  },
+  "get_predictions": {
+    "en": "Get Predictions",
+    "ta": "கணிப்புகளைப் பெறு"
+  },
+  "get_predictions_description": {
+    "en": "Receive accurate predictions to help you make informed decisions.",
+    "ta": "தகவலறிந்த முடிவுகளை எடுக்க உதவும் துல்லியமான கணிப்புகளைப் பெறுங்கள்।"
+  },
+  "crops_information": {
+    "en": "Crops Information",
+    "ta": "பயிர்கள் தகவல்"
+  },
+  "search_for_crop_placeholder": {
+    "en": "Search for a crop...",
+    "ta": "ஒரு பயிரைத் தேடுங்கள்..."
+  },
+  "crop_type": {
+    "en": "Crop Type",
+    "ta": "பயிர் வகை"
+  },
+  "Food Grains": {
+    "en": "Food Grains",
+    "ta": "உணவுக் தானியங்கள்"
+  },
+  "region": {
+    "en": "Region",
+    "ta": "பகுதி"
+  },
+  "origin": {
+    "en": "Origin",
+    "ta": "தோற்றம்"
+  },
+  "all": {
+    "en": "All",
+    "ta": "அனைத்தும்"
+  },
+  "native": {
+    "en": "Native",
+    "ta": "உள்ளூர்"
+  },
+  "non_native": {
+    "en": "Non-Native",
+    "ta": "உள்ளூர் அல்லாதது"
+  },
+  "time_to_grow": {
+    "en": "Time to Grow",
+    "ta": "வளர ஆகும் காலம்"
+  },
+  "minimum_land_size": {
+    "en": "Minimum Land Size",
+    "ta": "குறைந்தபட்ச நில அளவு"
+  },
+  "water_needed": {
+    "en": "Water Needed",
+    "ta": "தேவையான நீர்"
+  },
+  "common_diseases": {
+    "en": "Common Diseases",
+    "ta": "பொதுவான நோய்கள்"
+  },
+  "recommended_pesticides": {
+    "en": "Recommended Pesticides",
+    "ta": "பரிந்துரைக்கப்பட்ட பூச்சிக்கொல்லிகள்"
+  },
+  "recommended_fertilizers": {
+    "en": "Recommended Fertilizers",
+    "ta": "பரிந்துரைக்கப்பட்ட உரங்கள்"
+  },
+  "calculator": {
+    "en": "Calculator",
+    "ta": "கணக்கீடு"
+  },
+  "acre_s": {
+    "en": "Acre(s)",
+    "ta": "ஏக்கர்(கள்)"
+  },
+  "cent_s": {
+    "en": "Cent(s)",
+    "ta": "சென்ட்(கள்)"
+  },
+  "square_feet": {
+    "en": "Square Feet",
+    "ta": "சதுர அடி"
+  },
+  "estimated_initial_investment": {
+    "en": "Estimated Initial Investment",
+    "ta": "மதிப்பிடப்பட்ட ஆரம்ப முதலீடு"
+  },
+  "estimated_profit": {
+    "en": "Estimated Profit",
+    "ta": "மதிப்பிடப்பட்ட லாபம்"
+  },
+  "estimated_water_needed": {
+    "en": "Estimated Water Needed",
+    "ta": "மதிப்பிடப்பட்ட நீர் தேவை"
+  },
+  "cubic_meters": {
+    "en": "cubic meters",
+    "ta": "கன மீட்டர்கள்"
+  },
+  "email_address_placeholder": {
+    "en": "Email Address",
+    "ta": "மின்னஞ்சல் முகவரி"
+  },
+  "password_placeholder": {
+    "en": "Password",
+    "ta": "கடவுச்சொல்"
+  },
+  "new_to_website": {
+    "en": "New to website?",
+    "ta": "புதிய பயனரா?"
+  },
+  "username_placeholder": {
+    "en": "Username",
+    "ta": "பயனர் பெயர்"
+  },
+  "already_registered": {
+    "en": "Already registered?",
+    "ta": "ஏற்கனவே பதிவு செய்துள்ளீர்களா?"
+  },
+  "agricultural_chatbot": {
+    "en": "Agricultural Chatbot",
+    "ta": "விவசாய சாட்போட்"
+  },
+  "type_your_message": {
+    "en": "Type your message...",
+    "ta": "உங்கள் செய்தியை தட்டச்சு செய்யவும்..."
+  },
+  "send": {
+    "en": "Send",
+    "ta": "அனுப்பு"
+  },
+  "chatbot_error": {
+    "en": "Sorry, something went wrong. Please try again.",
+    "ta": "மன்னிக்கவும், ஏதோ தவறு நடந்துவிட்டது. மீண்டும் முயற்சிக்கவும்."
+  },
+  "chatbot": {
+    "en": "Chatbot",
+    "ta": "சாட்போட்"
+  },
+  "modern_agriculture_products_services": {
+    "en": "Modern Agriculture Products & Services",
+    "ta": "நவீன விவசாய தயாரிப்புகள் & சேவைகள்"
+  },
+  "our_offerings": {
+    "en": "Our Offerings",
+    "ta": "எங்கள் சலுகைகள்"
+  },
+  "smart_sensors": {
+    "en": "Smart Sensors",
+    "ta": "ஸ்மார்ட் சென்சார்கள்"
+  },
+  "smart_sensors_description": {
+    "en": "Deploy advanced sensors for real-time monitoring of soil, weather, and crop health.",
+    "ta": "மேம்பட்ட சென்சார்களைப் பயன்படுத்தி மண், வானிலை மற்றும் பயிர் ஆரோக்கியத்தை நேரடி நேரக் கண்காணிப்புக்கு உள்வாங்கவும்."
+  },
+  "automated_irrigation_systems": {
+    "en": "Automated Irrigation Systems",
+    "ta": "தானியங்கு நீர்ப்பாசன அமைப்புகள்"
+  },
+  "automated_irrigation_description": {
+    "en": "Optimize water usage with smart, automated irrigation systems tailored to crop needs.",
+    "ta": "பயிரின் தேவைகளுக்கேற்ப, ஸ்மார்ட், தானியங்கி நீர்ப்பாசன அமைப்புகள் மூலம் நீர் பயன்பாட்டை மேம்படுத்துங்கள்."
+  },
+  "drone_based_crop_monitoring": {
+    "en": "Drone-Based Crop Monitoring",
+    "ta": "ட்ரோன் அடிப்படையிலான பயிர் கண்காணிப்பு"
+  },
+  "drone_monitoring_description": {
+    "en": "Utilize drones for aerial surveillance, precise mapping, and early detection of crop issues.",
+    "ta": "பயிர் சிக்கல்களை வான்வழி கண்காணிப்பு, துல்லியமான கணிப்பு மற்றும் ஆரம்பகால கண்டறிதலுக்கு ட்ரோன்களைப் பயன்படுத்துங்கள்."
+  },
+  "ai_powered_analytics_platform": {
+    "en": "AI-Powered Analytics Platform",
+    "ta": "AI-இயங்கும் பகுப்பாய்வு தளம்"
+  },
+  "ai_analytics_description": {
+    "en": "Gain actionable insights from your farm data with our powerful AI-driven analytics platform.",
+    "ta": "உங்கள் பண்ணைத் தரவுகளிலிருந்து செயல்படக்கூடிய நுண்ணறிவுகளை, எங்கள் சக்திவாய்ந்த AI-இயக்கப்பட்ட பகுப்பாய்வு மேடையின் மூலம் பெறுங்கள்."
+  },
+  "supply_chain_solutions": {
+    "en": "Supply Chain Solutions",
+    "ta": "விநியோக சங்கிலி தீர்வுகள்"
+  },
+  "supply_chain_description": {
+    "en": "Streamline your agricultural supply chain for better efficiency and reduced waste.",
+    "ta": "மேம்பட்ட திறமை மற்றும் குறைக்கப்பட்ட கழிவுகளுக்காக உங்கள் விவசாய சப்ளை செயினைத் திறம்பட ஒழுங்கமைக்கவும்."
+  },
+  "market_linkage_platform": {
+    "en": "Market Linkage Platform",
+    "ta": "சந்தை இணைப்பு தளம்"
+  },
+  "market_linkage_description": {
+    "en": "Connect directly with buyers and markets to ensure fair prices and timely sales for your produce.",
+    "ta": "நேரடியாக வாங்குபவர்கள் மற்றும் சந்தைகளுடன் இணைக்கவும், உங்கள் உற்பத்திப் பொருட்களுக்கு நியாயமான விலை மற்றும் சரியான நேரத்தில் விற்பனையை உறுதி செய்ய."
+  },
+  "advantages_of_sensors": {
+    "en": "Advantages of Sensors",
+    "ta": "சென்சார்களின் நன்மைகள்"
+  },
+  "increased_efficiency": {
+    "en": "Increased Efficiency",
+    "ta": "அதிகரித்த செயல்திறன்"
+  },
+  "increased_efficiency_description": {
+    "en": "Automate routine tasks and optimize resource allocation to boost overall farm efficiency.",
+    "ta": "வழக்கமான பணிகளை தானியங்கமாக்கி, வள ஒதுக்கீட்டை மேம்படுத்தி, மொத்த பண்ணைத் திறனை அதிகரிக்கவும்."
+  },
+  "improved_yields": {
+    "en": "Improved Yields",
+    "ta": "மேம்படுத்தப்பட்ட விளைச்சல்"
+  },
+  "improved_yields_description": {
+    "en": "Make data-driven decisions to enhance crop growth and maximize your harvest.",
+    "ta": "தரவு-சார்ந்த முடிவுகளை எடுத்து, பயிர் வளர்ச்சியை மேம்படுத்தி உங்கள் அறுவடையை அதிகரிக்கவும்."
+  },
+  "early_problem_detection": {
+    "en": "Early Problem Detection",
+    "ta": "ஆரம்பகால சிக்கல் கண்டறிதல்"
+  },
+  "early_problem_detection_description": {
+    "en": "Identify potential issues like pests, diseases, or nutrient deficiencies before they escalate.",
+    "ta": "பூச்சிகள், நோய்கள் அல்லது ஊட்டச்சத்து குறைபாடுகள் போன்ற சாத்தியமான சிக்கல்கள் அதிகரிப்பதற்கு முன்பே அவற்றை கண்டறியவும்."
+  },
+  "reduced_labor_costs": {
+    "en": "Reduced Labor Costs",
+    "ta": "குறைக்கப்பட்ட தொழிலாளர் செலவுகள்"
+  },
+  "reduced_labor_costs_description": {
+    "en": "Minimize manual labor requirements through automation and smart farming techniques.",
+    "ta": "தானியங்கு மற்றும் ஸ்மார்ட் விவசாய நுட்பங்கள் மூலம் கைத்தொழில் உழைப்பு தேவைகளைக் குறைக்கவும்."
+  },
+  "environmental_sustainability": {
+    "en": "Environmental Sustainability",
+    "ta": "சுற்றுச்சூழல் நிலைத்தன்மை"
+  },
+  "environmental_sustainability_description": {
+    "en": "Adopt eco-friendly practices by optimizing resource use and reducing environmental impact.",
+    "ta": "வளங்களின் பயன்பாட்டை மேம்படுத்தி, சுற்றுச்சூழல் தாக்கத்தைக் குறைப்பதன் மூலம் சூழல் நட்பு நடைமுறைகளை ஏற்கவும்."
+  },
+  "future_scope": {
+    "en": "Future scope",
+    "ta": "எதிர்கால பரிமாணம்"
+  },
+  "iot_in_home_land_farming": {
+    "en": "IoT in Home Land Farming",
+    "ta": "வீட்டு நில விவசாயத்தில் IoT"
+  },
+  "Future scope": {
+    "en": "Future scope",
+    "ta": "எதிர்கால பரிமாணம்"
+  },
+  "smart_gardens_home": {
+    "en": "Smart Gardens (Home)",
+    "ta": "ஸ்மார்ட் தோட்டங்கள் (வீடு)"
+  },
+  "smart_gardens_description": {
+    "en": "Transform home gardens into smart, self-sustaining ecosystems with automated care.",
+    "ta": "தானியங்குப் பராமரிப்புடன் வீட்டுத் தோட்டங்களை ஸ்மார்ட், சுய தாங்கல் சுற்றுச்சூழல் அமைப்புகளாக மாற்றுங்கள்."
+  },
+  "livestock_monitoring": {
+    "en": "Livestock Monitoring",
+    "ta": "கால்நடை கண்காணிப்பு"
+  },
+  "livestock_monitoring_description": {
+    "en": "Keep track of livestock health, location, and behavior with intelligent monitoring systems.",
+    "ta": "அறிவார்ந்த கண்காணிப்பு அமைப்புகள் மூலம் கால்நடைகளின் ஆரோக்கியம், இருப்பிடம் மற்றும் நடத்தையைக் கண்காணிக்கவும்."
+  },
+  "greenhouse_automation": {
+    "en": "Greenhouse Automation",
+    "ta": "பசுமைக்குடில் ஆட்டோமேஷன்"
+  },
+  "greenhouse_automation_description": {
+    "en": "Automate climate control, irrigation, and lighting in greenhouses for optimal growing conditions.",
+    "ta": "பசுமை இல்லங்களில் காலநிலை கட்டுப்பாடு, நீர்ப்பாசனம் மற்றும் விளக்குகளை தானியங்கியாக்கி, உகமமான வளர்ச்சி நிலைமைகளை உருவாக்குங்கள்."
+  },
+  "pest_disease_management": {
+    "en": "Pest & Disease Management",
+    "ta": "பூச்சி மற்றும் நோய் மேலாண்மை"
+  },
+  "pest_disease_management_description": {
+    "en": "Implement proactive strategies for identifying and managing pests and diseases effectively.",
+    "ta": "பூச்சிகள் மற்றும் நோய்களைத் திறம்பட அடையாளம் காணவும் மேலாண்மை செய்யவும் முன்னெச்சரிக்கை மூலோபாயங்களை செயல்படுத்துங்கள்."
+  },
+  "weather_monitoring_prediction": {
+    "en": "Weather Monitoring & Prediction",
+    "ta": "வானிலை கண்காணிப்பு & கணிப்பு"
+  },
+  "weather_monitoring_description": {
+    "en": "Access real-time weather data and forecasts to plan farming activities and mitigate risks.",
+    "ta": "நேரடி காலநிலைத் தரவு மற்றும் வானிலை முன்னறிவிப்புகளை அணுகி, விவசாய நடவடிக்கைகளைத் திட்டமிட்டு, அபாயங்களைக் குறைக்கவும்."
+  },
+  "asset_equipment_tracking": {
+    "en": "Asset & Equipment Tracking",
+    "ta": "சொத்து மற்றும் உபகரண கண்காணிப்பு"
+  },
+  "asset_equipment_description": {
+    "en": "Monitor and track your farm assets and equipment for better utilization and security.",
+    "ta": "உங்கள் பண்ணைச் சொத்துகள் மற்றும் உபகரணங்களை சிறந்த பயன்பாடு மற்றும் பாதுகாப்பிற்காக கண்காணித்து கண்காணிக்கவும்."
+  }
+}

@@ -1,0 +1,126 @@
+.crops-page {
+    padding: 20px;
+}
+
+.crops-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--header-color);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--filter-background);
+    border-radius: 8px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-size: 1em;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow groups to grow */
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.filters select {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    width: 100%; /* Make selects take full width of their container */
+    font-size: 1em;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+}
+
+/* Dark Mode fix for dropdown options */
+.dark .filters select option {
+  background: #3a3a3a;
+  color: #f1f1f1;
+}
+
+.crops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.crop-item {
+    cursor: pointer;
+    text-align: center;
+    background-color: var(--crop-item-background);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--crop-item-hover-shadow);
+}
+
+.crop-item h4 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.crop-image-container {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.crop-image-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+    .crops-page {
+        padding: 15px;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .search-bar {
+        grid-column: 1 / -1; /* Make search bar span both columns */
+    }
+
+    .crops-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .crops-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for very small screens */
+        gap: 15px;
+    }
+}

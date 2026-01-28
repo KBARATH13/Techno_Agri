@@ -1,0 +1,256 @@
+
+nav {
+  background: var(--navbar-background);
+  padding: 0 2rem;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start; /* Align brand to start */
+  gap: 2rem; /* Space between sections */
+}
+
+.navbar-brand {
+  color: var(--navbar-link-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; /* In case it's a link */
+}
+
+.nav-links-center {
+  display: flex;
+  flex-grow: 1; /* Allow it to take up available space */
+  justify-content: center; /* Center its content */
+  margin: 0 auto; /* Push it to the center */
+}
+
+
+
+
+
+.nav-links-center .nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 1rem; /* Add spacing between nav items */
+}
+
+.nav-links-center .nav-menu li {
+  margin: 0;
+}
+
+.nav-links-center .nav-menu li a {
+  color: var(--navbar-link-color);
+  text-decoration: none;
+  font-size: 0.9rem; /* Smaller text */
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  min-width: 80px; /* Give some space for the items */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links-center .nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 5px; /* Adjust position of the underline */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-out;
+  transform: translateX(-50%);
+}
+
+.nav-links-center .nav-menu li a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links-center .nav-menu li a:hover::after {
+  width: 50%; /* Underline width on hover */
+}
+
+.nav-links-center .nav-menu li a.active {
+  color: var(--primary-color);
+}
+
+.nav-links-center .nav-menu li a.active::after {
+  width: 50%;
+}
+
+.nav-links-center .nav-menu li a i {
+  font-size: 1.8rem; /* Larger icons */
+  margin-bottom: 5px; /* Space between icon and text */
+  transition: transform 0.3s ease; /* Animate the bounce */
+}
+
+.nav-links-center .nav-menu li a:hover i {
+  transform: translateY(-3px);
+}
+
+.nav-utility-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.nav-utility-menu li {
+  margin: 0;
+}
+
+/* Styles for utility menu buttons (which is now just the theme toggle) */
+.nav-utility-menu li button {
+  color: var(--navbar-link-color);
+  text-decoration: none;
+  font-size: 0.9rem; /* Smaller text */
+  padding: 10px;
+  border-radius: 5px;
+  transition: none; /* Remove transition from the button container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  min-width: 80px; /* Give some space for the items */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: red; /* Change to red on hover */
+  color: white; /* Ensure text is visible */
+}
+
+.nav-utility-menu li button:hover i {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px var(--primary-color));
+}
+
+.nav-utility-menu li button i {
+  font-size: 1.8rem; /* Larger icons */
+  margin-bottom: 5px; /* Space between icon and text */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Animate the bounce and glow */
+}
+
+.nav-utility-menu .theme-icon {
+  background: none;
+  border: none;
+  color: var(--navbar-link-color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-utility-menu .theme-icon:hover {
+  background-color: var(--navbar-link-hover-bg);
+}
+
+.nav-utility-menu .theme-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--navbar-link-color);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--navbar-link-color);
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+  .navbar-container {
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+
+  .nav-links-center {
+    display: none; /* Hidden by default */
+    width: 100%;
+    order: 3; /* Appear below brand and menu icon */
+  }
+
+  .nav-links-center .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    background: var(--mobile-menu-background);
+  }
+
+  .nav-links-center .nav-menu.active {
+    display: flex; /* Show when active */
+  }
+
+  .nav-links-center .nav-menu li {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .nav-links-center .nav-menu li a {
+    font-size: 1.2rem;
+  }
+
+  .nav-utility-menu {
+    display: none; /* Hidden by default */
+    width: 100%;
+    order: 4; /* Appear below nav-links-center */
+  }
+
+  .nav-utility-menu.active {
+    display: flex; /* Show when active */
+    flex-direction: column;
+    width: 100%;
+    background: var(--mobile-menu-background);
+    padding-bottom: 1rem;
+  }
+
+  .nav-utility-menu li {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .nav-utility-menu li button {
+    width: auto;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+  }
+
+  .menu-icon {
+    display: block;
+    order: 2; /* Position after brand */
+  }
+
+  .navbar-brand {
+    order: 1; /* Keep brand first */
+  }
+}
+
+
+
