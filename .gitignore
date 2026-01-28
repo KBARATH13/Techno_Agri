@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Lock file
+package-lock.json
+
+# Temporary files
+temp_uploads/
+
+# Log files
+*.log
