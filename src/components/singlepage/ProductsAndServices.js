@@ -14,31 +14,31 @@ const ProductsAndServices = () => {
       <section className="section-container">
         <h2>{translate('our_offerings')}</h2>
         <div className="offerings-grid">
-          <div className="offering-item">
+          <div className="offering-item modern-card">
             <FaMicrochip className="offering-logo" />
             <h3>{translate('smart_sensors')}</h3>
             <p>{translate('smart_sensors_description')}</p>
           </div>
-          <div className="offering-item">
+          <div className="offering-item modern-card">
             <GiWateringCan className="offering-logo" />
             <h3>{translate('automated_irrigation_systems')}</h3>
             <p>{translate('automated_irrigation_description')}</p>
           </div>
-          {/* <div className="offering-item">
+          {/* <div className="offering-item modern-card">
             <h3>{translate('drone_based_crop_monitoring')}</h3>
             <p>{translate('drone_monitoring_description')}</p>
           </div> */}
-          <div className="offering-item">
+          <div className="offering-item modern-card">
             <FaBrain className="offering-logo" />
             <h3>{translate('ai_powered_analytics_platform')}</h3>
             <p>{translate('ai_analytics_description')}</p>
           </div>
-          <div className="offering-item">
+          <div className="offering-item modern-card">
             <FaShippingFast className="offering-logo" />
             <h3>{translate('supply_chain_solutions')}</h3>
             <p>{translate('supply_chain_description')}</p>
           </div>
-          <div className="offering-item">
+          <div className="offering-item modern-card">
             <FaHandshake className="offering-logo" />
             <h3>{translate('market_linkage_platform')}</h3>
             <p>{translate('market_linkage_description')}</p>
@@ -61,32 +61,32 @@ const ProductsAndServices = () => {
         <h2>{translate('Future scope')}</h2>
         <h2>{translate('iot_in_home_land_farming')}</h2>
         <div className="iot-applications">
-          <div className="iot-item">
+          <div className="iot-item modern-card">
             <FaSeedling className="offering-logo" />
             <h3>{translate('smart_gardens_home')}</h3>
             <p>{translate('smart_gardens_description')}</p>
           </div>
-          <div className="iot-item">
+          <div className="iot-item modern-card">
             <FaPaw className="offering-logo" />
             <h3>{translate('livestock_monitoring')}</h3>
             <p>{translate('livestock_monitoring_description')}</p>
           </div>
-          <div className="iot-item">
+          <div className="iot-item modern-card">
             <GiGreenhouse className="offering-logo" />
             <h3>{translate('greenhouse_automation')}</h3>
             <p>{translate('greenhouse_automation_description')}</p>
           </div>
-          <div className="iot-item">
+          <div className="iot-item modern-card">
             <FaBug className="offering-logo" />
             <h3>{translate('pest_disease_management')}</h3>
             <p>{translate('pest_disease_management_description')}</p>
           </div>
-          <div className="iot-item">
+          <div className="iot-item modern-card">
             <FaCloudSun className="offering-logo" />
             <h3>{translate('weather_monitoring_prediction')}</h3>
             <p>{translate('weather_monitoring_description')}</p>
           </div>
-          <div className="iot-item">
+          <div className="iot-item modern-card">
             <FaMapMarkerAlt className="offering-logo" />
             <h3>{translate('asset_equipment_tracking')}</h3>
             <p>{translate('asset_equipment_description')}</p>

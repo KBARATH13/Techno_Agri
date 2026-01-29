@@ -3,12 +3,12 @@
 }
 
 .hero-section {
-    position: relative; /* Needed for the overlay */
+    position: relative;
     background-image: url('https://images.unsplash.com/photo-1586226915937-30e39a65a25b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: 100% 100%;
+    background-size: cover; /* Changed to cover for better responsiveness */
     background-position: center;
-    color: var(--text-color); /* Use theme variable */
-    padding: 100px 20px;
+    color: white; /* Ensure text is white on dark overlay */
+    padding: 120px 20px; /* Adjusted padding */
     z-index: 1;
 }
 
@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); /* Dark overlay */
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)); /* Slightly darker overlay */
     z-index: -1;
 }
 
@@ -30,107 +30,144 @@ body.light .hero-section::before {
 .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 800px; /* Constrain hero content width */
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Larger heading */
+    margin-bottom: 1rem;
+    color: white; /* Ensure heading is white */
+}
+
+.hero-content p {
+    font-size: 1.4rem; /* Larger paragraph */
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
+    gap: 20px; /* Space between buttons */
 }
 
 .btn-primary, .btn-secondary {
-    padding: 10px 20px;
+    padding: 12px 25px; /* Adjusted padding */
     text-decoration: none;
-    border-radius: 8px; /* Match professional-button */
-    font-size: 1.1rem; /* Slightly smaller for this context */
-    margin: 0 10px;
-    font-weight: 500;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600; /* Bolder text */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover, .btn-secondary:hover {
-    transform: translateY(-2px);
-    filter: brightness(110%);
+    transform: translateY(-3px); /* More pronounced lift */
+    filter: brightness(105%); /* Subtle brightness change */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: var(--chatbot-header-text);
+    color: white; /* Ensure text is white */
 }
 
 .btn-secondary {
     background-color: var(--secondary-color);
-    color: var(--chatbot-header-text);
+    color: white; /* Ensure text is white */
 }
 
 .features-section {
     display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 30px; /* Add gap for spacing */
+    justify-content: center; /* Center content */
+    padding: 80px 20px; /* Adjusted padding */
+    flex-wrap: wrap;
+    gap: 40px; /* Increased gap */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the section */
 }
 
 .feature, .step {
     max-width: 300px;
-    background-color: var(--card-background); /* Use theme variable */
-    padding: 1.5rem; /* Match professional-card */
-    border-radius: 12px; /* Match professional-card */
-    box-shadow: var(--card-shadow); /* Use theme variable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature:hover, .step:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--crop-item-hover-shadow);
+    text-align: center; /* Center text within cards */
 }
 
 .feature-icon {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger icon */
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* More space below icon */
 }
 
 
 .feature h2 {
-    margin-top: 20px;
-    color: var(--header-color); /* Use theme variable */
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 1rem; /* Add consistent margin */
+    color: var(--header-color);
+    font-size: 1.8rem; /* Larger heading */
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.6; /* Better readability */
+    color: var(--text-color);
 }
 
 .how-it-works-section {
-    padding: 50px 20px;
+    padding: 80px 20px; /* Adjusted padding */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the section */
+}
+
+.how-it-works-section h2 {
+    font-size: 2.5rem; /* Larger heading */
+    margin-bottom: 3rem; /* More space below heading */
+    color: var(--header-color);
+    text-align: center;
 }
 
 .steps {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center content */
     margin-top: 30px;
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 30px; /* Add gap for spacing */
+    flex-wrap: wrap;
+    gap: 40px; /* Increased gap */
 }
 
 
 
 .step-number {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger number */
     font-weight: bold;
-    color: var(--primary-color); /* Use theme variable */
+    color: var(--primary-color);
     margin-right: 20px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--header-color);
+}
+
+.step-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 /* --- Mobile Responsive Styles --- */
 @media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 20px;
+    }
+
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .features-section, .steps {
-        flex-direction: column;
-        align-items: center;
+        font-size: 1.1rem;
     }
 
     .hero-buttons {
@@ -141,7 +178,26 @@ body.light .hero-section::before {
 
     .btn-primary, .btn-secondary {
         width: 80%;
+        max-width: 300px; /* Constrain button width */
         margin: 0;
+    }
+
+    .features-section, .how-it-works-section {
+        padding: 60px 20px;
+    }
+
+    .features-section, .steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .feature, .step {
+        max-width: 100%; /* Allow cards to take full width */
+    }
+
+    .how-it-works-section h2 {
+        font-size: 2rem;
     }
 
     .step {
@@ -152,5 +208,20 @@ body.light .hero-section::before {
     .step-number {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }

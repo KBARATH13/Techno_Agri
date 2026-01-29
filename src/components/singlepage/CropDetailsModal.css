@@ -4,26 +4,40 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly less dark */
-    backdrop-filter: blur(5px); /* Add the blur effect */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for better contrast with blur */
+    backdrop-filter: blur(8px); /* More pronounced blur */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    opacity: 0; /* Start hidden for fade-in */
+    transition: opacity 0.3s ease;
+}
+
+.crop-modal-overlay.visible {
+    opacity: 1; /* Fade in */
 }
 
 .crop-modal-content {
-    background-color: var(--card-background); /* Use the correct theme variable */
+    background-color: var(--card-background);
     color: var(--text-color);
-    padding: 25px;
-    border-radius: 10px;
-    max-width: 600px;
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Softer corners */
+    max-width: 650px; /* Slightly wider */
     width: 90%;
     position: relative;
-    box-shadow: 0 5px 15px var(--card-shadow);
+    box-shadow: var(--card-shadow); /* Use new card shadow variable */
     max-height: 90vh;
     overflow-y: auto;
     border: 1px solid var(--border-color);
+    transform: translateY(-20px); /* Start slightly above for slide-in */
+    opacity: 0; /* Start hidden for fade-in */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.crop-modal-overlay.visible .crop-modal-content {
+    transform: translateY(0); /* Slide into place */
+    opacity: 1; /* Fade in */
 }
 
 .close-button {
@@ -32,63 +46,84 @@
     right: 15px;
     background: none;
     border: none;
-    font-size: 1.8em;
+    font-size: 2em;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--secondary-color); /* Use secondary color for a softer look */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-button:hover {
+    color: var(--primary-color); /* Highlight on hover */
+    transform: rotate(90deg); /* Subtle rotation */
 }
 
 .modal-content h2 {
     margin-top: 0;
     color: var(--header-color);
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--primary-color); /* Use primary color for accent */
     padding-bottom: 10px;
+    margin-bottom: 20px; /* More space below header */
 }
 
 .crop-info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More flexible grid */
+    gap: 15px 25px; /* Increased gap */
     margin: 20px 0;
 }
 
 .crop-info-grid p {
     margin: 5px 0;
+    line-height: 1.6; /* Better readability */
 }
 
 .calculator {
-    margin-top: 20px;
-    padding: 15px;
-    border-top: 2px solid var(--border-color);
-    background-color: var(--filter-background); /* Using filter background for consistency */
-    border-radius: 8px;
+    margin-top: 30px; /* More space above calculator */
+    padding: 20px; /* Increased padding */
+    border-top: 1px solid var(--border-color); /* Lighter border */
+    background-color: var(--background-color); /* Use background color for calculator section */
+    border-radius: 10px; /* Consistent radius */
 }
 
 .calculator h3 {
     margin-top: 0;
-    color: var(--primary-color); /* Apply highlight color */
-    text-align: center; /* Center the text */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px; /* More space below header */
 }
 
 .calculator-inputs {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Increased gap */
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .calculator-inputs input,
 .calculator-inputs select {
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    flex: 1; /* Allow inputs to grow */
+    min-width: 120px; /* Minimum width for inputs */
+    padding: 10px 12px; /* Consistent padding */
+    border: 1px solid var(--form-input-border);
+    border-radius: 8px; /* Consistent border-radius */
     font-size: 1em;
-    background-color: var(--input-background);
-    color: var(--input-text-color);
+    background-color: var(--card-background); /* Use card background for inputs */
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-inputs input:focus,
+.calculator-inputs select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
 }
 
 .calculator-results p {
-    margin: 8px 0;
+    margin: 10px 0; /* More spacing */
     font-size: 1.1em;
+    line-height: 1.5;
 }
 
 .calculator-results p strong {

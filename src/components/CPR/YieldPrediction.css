@@ -78,23 +78,50 @@
 
 .yield-form label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
+    margin-bottom: 0.5rem; /* Increased margin for better spacing */
+    font-weight: 600;
+    font-size: 1rem; /* Slightly larger font size */
+    color: var(--text-color); /* Ensure label color is themed */
 }
 
-.yield-form .year-input {
+.yield-form .year-input,
+.yield-form .form-group select,
+.yield-form .unit-select {
     width: 100%;
-    padding: 10px;
+    padding: 10px 12px; /* Consistent padding */
     border: 1px solid var(--form-input-border);
-    border-radius: 5px;
+    border-radius: 8px; /* Consistent border-radius */
     box-sizing: border-box;
-    background-color: var(--background-color);
+    background-color: var(--card-background); /* Use card background for inputs */
     color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for focus */
+}
+
+.yield-form .year-input:focus,
+.yield-form .form-group select:focus,
+.yield-form .unit-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Subtle glow */
 }
 
 .yield-form button {
-    padding: 12px;
-    font-size: 16px;
+    padding: 14px; /* Consistent padding */
+    font-size: 1.1em;
+    font-weight: 600; /* Make it bolder */
+    border-radius: 8px; /* Consistent border-radius */
+    background-color: var(--primary-color);
+    color: #fff; /* Ensure text is white */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.yield-form button:hover {
+    background-color: var(--button-hover-bg); /* Use themed hover background */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .prediction-result {
@@ -202,19 +229,12 @@
 /* --- Styles for native select dropdowns --- */
 .yield-form .form-group select,
 .yield-form .unit-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--form-input-border);
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-color: var(--background-color);
-    color: var(--text-color);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 0.7rem center;
+    background-position: right 12px center; /* Adjust position for padding */
     background-size: 16px 12px;
 }
 

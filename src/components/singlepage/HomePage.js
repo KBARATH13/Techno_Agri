@@ -29,17 +29,17 @@ const HomePage = () => {
       </header>
 
       <section className="features-section">
-        <div className="feature">
+        <div className="feature modern-card">
           <FontAwesomeIcon icon={faRobot} className="feature-icon" />
           <h2>{translate('ai_powered_predictions')}</h2>
           <p>{translate('ai_predictions_description')}</p>
         </div>
-        <div className="feature">
+        <div className="feature modern-card">
           <FontAwesomeIcon icon={faSatelliteDish} className="feature-icon" />
           <h2>{translate('iot_enabled_monitoring')}</h2>
           <p>{translate('iot_monitoring_description')}</p>
         </div>
-        <div className="feature">
+        <div className="feature modern-card">
           <FontAwesomeIcon icon={faCubes} className="feature-icon" />
           <h2>{translate('blockchain_secured_data')}</h2>
           <p>{translate('blockchain_description')}</p>
@@ -49,21 +49,21 @@ const HomePage = () => {
       <section className="how-it-works-section">
         <h2>{translate('how_it_works')}</h2>
         <div className="steps">
-          <div className="step">
+          <div className="step modern-card">
             <div className="step-number">1</div>
             <div className="step-content">
               <h3>{translate('log_your_data')}</h3>
               <p>{translate('log_data_description')}</p>
             </div>
           </div>
-          <div className="step">
+          <div className="step modern-card">
             <div className="step-number">2</div>
             <div className="step-content">
               <h3>{translate('ai_analysis')}</h3>
               <p>{translate('ai_analysis_description')}</p>
             </div>
           </div>
-          <div className="step">
+          <div className="step modern-card">
             <div className="step-number">3</div>
             <div className="step-content">
               <h3>{translate('get_predictions')}</h3>

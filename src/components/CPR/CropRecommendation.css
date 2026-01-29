@@ -116,38 +116,40 @@
 }
 
 .form-group label {
-    margin-bottom: 0.25rem; /* Reduced margin */
+    margin-bottom: 0.5rem; /* Increased margin for better spacing */
     font-weight: 600;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 1rem; /* Slightly larger font size */
+    color: var(--text-color); /* Ensure label color is themed */
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     width: 100%;
-    padding: 0.7rem; /* Reduced padding */
-    border-radius: 8px;
+    padding: 10px 12px; /* Consistent padding */
+    border-radius: 8px; /* Consistent border-radius */
     border: 1px solid var(--border-color);
-    background-color: var(--input-bg-color);
+    background-color: var(--card-background); /* Use card background for inputs */
     color: var(--text-color);
     font-size: 1rem;
     box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for focus */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Subtle glow */
 }
 
 /* Styling for native select dropdowns */
 .form-group select {
-    width: 100%;
-    padding: 0.7rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
-    font-size: 1rem;
-    box-sizing: border-box;
     -webkit-appearance: none; /* For Safari/Chrome */
     -moz-appearance: none; /* For Firefox */
     appearance: none; /* Standard */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 0.7rem center;
+    background-position: right 12px center; /* Adjust position for padding */
     background-size: 16px 12px;
 }
 
@@ -180,16 +182,16 @@ body.dark .form-group select option {
 
 form button[type="submit"] {
     grid-column: 1 / -1;
-    padding: 0.8rem; /* Reduced padding */
-    margin-top: 0.5rem; /* Added margin */
+    padding: 14px; /* Consistent padding */
+    margin-top: 1rem; /* Increased margin */
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; /* Consistent border-radius */
     background-color: var(--primary-color);
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 form button[type="submit"]:disabled {
@@ -198,7 +200,9 @@ form button[type="submit"]:disabled {
 }
 
 form button[type="submit"]:hover:not(:disabled) {
-    background-color: var(--primary-hover-color);
+    background-color: var(--button-hover-bg); /* Use themed hover background */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .error-message {
@@ -209,32 +213,52 @@ form button[type="submit"]:hover:not(:disabled) {
 }
 
 .recommendation-results {
-    margin-top: 1.5rem; /* Reduced margin */
-    padding: 1.5rem;
-    border: 1px solid var(--primary-color);
-    border-left-width: 5px;
-    border-radius: 8px;
-    background-color: var(--input-bg-color);
-    grid-column: 1 / -1;
+  margin-top: 30px;
+  text-align: left;
+  background-color: var(--card-background); /* Use card background */
+  padding: 20px;
+  border-radius: 10px; /* Consistent rounded corners */
+  box-shadow: var(--card-shadow); /* Use modern card shadow */
+  border: none; /* Remove default border if card shadow is used */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition for hover */
+  grid-column: 1 / -1;
+}
+
+.recommendation-results:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
 .recommendation-results h3 {
-    margin-top: 0;
-    color: var(--primary-color);
+  margin-top: 0;
+  color: var(--header-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .recommendation-results ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .recommendation-results li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-color);
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Added transform for hover effect */
 }
 
 .recommendation-results li:last-child {
-    border-bottom: none;
+  border-bottom: none;
+}
+
+.recommendation-results li:hover {
+  background-color: var(--background-color);
+  transform: translateX(5px); /* Subtle slide effect on hover */
+}
+
+body.dark .recommendation-results li:hover {
+    background-color: #3a3a3a; /* A slightly lighter dark shade for hover */
 }
 
 .accurate-result {

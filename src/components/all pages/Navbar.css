@@ -1,8 +1,7 @@
-
 nav {
   background: var(--navbar-background);
   padding: 0 2rem;
-  height: 90px;
+  height: 70px; /* Adjusted height */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +9,7 @@ nav {
   top: 0;
   z-index: 1001;
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color); /* Themed border */
   transition: background-color 0.3s ease;
 }
 
@@ -23,13 +22,19 @@ nav {
 }
 
 .navbar-brand {
-  color: var(--navbar-link-color);
+  color: var(--text-color); /* Using themed text color */
   font-size: 1.8rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none; /* In case it's a link */
+  transition: transform 0.2s ease, color 0.2s ease; /* Added transition */
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px); /* Subtle lift on hover */
+  color: var(--primary-color); /* Change color on hover */
 }
 
 .nav-links-center {
@@ -57,7 +62,7 @@ nav {
 }
 
 .nav-links-center .nav-menu li a {
-  color: var(--navbar-link-color);
+  color: var(--text-color); /* Using themed text color */
   text-decoration: none;
   font-size: 0.9rem; /* Smaller text */
   padding: 10px;
@@ -66,7 +71,7 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 5px; /* Space between icon and text */
-  min-width: 80px; /* Give some space for the items */
+  /* min-width: 80px; Removed */
   position: relative;
   transition: color 0.3s ease;
 }
@@ -124,7 +129,7 @@ nav {
 
 /* Styles for utility menu buttons (which is now just the theme toggle) */
 .nav-utility-menu li button {
-  color: var(--navbar-link-color);
+  color: var(--text-color); /* Using themed text color */
   text-decoration: none;
   font-size: 0.9rem; /* Smaller text */
   padding: 10px;
@@ -134,15 +139,39 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 5px; /* Space between icon and text */
-  min-width: 80px; /* Give some space for the items */
+  /* min-width: 80px; Removed */
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
+/* Custom Logout Button Style */
+.btn-logout {
+  background-color: var(--secondary-color);      /* Use secondary color for consistency */
+  color: #fff;
+  border: 1px solid var(--secondary-color);        /* Explicit border for clarity */
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s; /* Smooth hover */
+}
+
+/* RED on hover */
 .btn-logout:hover {
-  background-color: red; /* Change to red on hover */
-  color: white; /* Ensure text is visible */
+  background-color: #dc3545;     /* Bootstrap danger red */
+  color: #ffffff;
+  border-color: #c82333;
+}
+
+/* Dark theme – base styles */
+body.dark .btn-logout {
+  background-color: var(--secondary-color);
+  color: #eee;
+  border-color: var(--secondary-color);
+}
+
+/* Dark theme – RED on hover (takes precedence) */
+body.dark .btn-logout:hover {
+  background-color: #dc3545;     /* Same red so it’s consistent across themes */
+  color: #ffffff;
+  border-color: #c82333;
 }
 
 .nav-utility-menu li button:hover i {
@@ -159,7 +188,7 @@ nav {
 .nav-utility-menu .theme-icon {
   background: none;
   border: none;
-  color: var(--navbar-link-color);
+  color: var(--text-color); /* Using themed text color */
   cursor: pointer;
   font-size: 1.5rem;
   padding: 5px;
@@ -174,14 +203,14 @@ nav {
 .nav-utility-menu .theme-icon svg {
   width: 24px;
   height: 24px;
-  color: var(--navbar-link-color);
+  color: var(--text-color); /* Using themed text color */
 }
 
 .menu-icon {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
-  color: var(--navbar-link-color);
+  color: var(--text-color); /* Using themed text color */
 }
 
 /* --- Mobile Responsive Styles --- */
@@ -252,5 +281,30 @@ nav {
   }
 }
 
+.language-selector-container {
+    margin-left: 15px; /* Adjust as needed for spacing */
+}
 
+.language-select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1em;
+    cursor: pointer;
+    appearance: none; /* Remove default browser styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C114.7L159.7%2C242c-3.9%2C3.9-9%2C5.8-14.1%2C5.8s-10.2-1.9-14.1-5.8L5.4%2C114.7c-7.8-7.8-7.8-20.5%2C0-28.3c7.8-7.8%2C20.5-7.8%2C28.3%2C0L145.6%2C188.5c3.9%2C3.9%2C10.2%2C3.9%2C14.1%2C0L258.7%2C86.4c7.8-7.8%2C20.5-7.8%2C28.3%2C0C294.8%2C94.2%2C294.8%2C106.9%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+    padding-right: 30px; /* Make space for the arrow */
+}
 
+.language-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}

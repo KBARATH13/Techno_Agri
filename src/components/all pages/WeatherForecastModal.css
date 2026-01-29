@@ -5,41 +5,65 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px); /* More pronounced blur */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    opacity: 0; /* Start hidden for fade-in */
+    transition: opacity 0.3s ease;
+}
+
+.weather-modal-backdrop.visible {
+    opacity: 1; /* Fade in */
 }
 
 .weather-modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: var(--card-background); /* Use theme variable */
+    color: var(--text-color); /* Use theme variable */
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Softer corners */
     width: 90%;
     max-width: 800px;
     max-height: 80vh;
     overflow-y: auto;
     position: relative;
-    color: #333;
+    box-shadow: var(--card-shadow); /* Use theme variable */
+    border: 1px solid var(--border-color); /* Use theme variable */
+    transform: translateY(-20px); /* Start slightly above for slide-in */
+    opacity: 0; /* Start hidden for fade-in */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.weather-modal-backdrop.visible .weather-modal-content {
+    transform: translateY(0); /* Slide into place */
+    opacity: 1; /* Fade in */
 }
 
 .modal-close-btn {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 2em;
     cursor: pointer;
-    color: #888;
+    color: var(--secondary-color); /* Use secondary color for a softer look */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--primary-color); /* Highlight on hover */
+    transform: rotate(90deg); /* Subtle rotation */
 }
 
 .modal-content h2 {
     margin-top: 0;
-    color: #0056b3;
+    color: var(--header-color); /* Use theme variable */
     text-align: center;
     margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color); /* Accent border */
+    padding-bottom: 10px;
 }
 
 .forecast-container {
@@ -49,30 +73,38 @@
 }
 
 .forecast-day {
-    background: #f0f8ff;
-    border: 1px solid #ddd;
+    background-color: var(--background-color); /* Use theme variable */
+    border: 1px solid var(--border-color); /* Use theme variable */
     border-radius: 8px;
     padding: 10px;
     text-align: center;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
 }
 
 .forecast-day:hover {
-    background-color: #e0f0ff;
-    transform: translateY(-2px);
+    background-color: var(--card-background); /* Slightly different background on hover */
+    transform: translateY(-3px);
+    border-color: var(--primary-color); /* Highlight border on hover */
 }
 
 .forecast-day.active {
-    background-color: #cce7ff;
-    border-color: #0056b3;
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+    background-color: var(--primary-color); /* Primary color for active state */
+    color: white; /* White text for active state */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(var(--primary-color-rgb), 0.5); /* Subtle glow */
+}
+
+.forecast-day.active .forecast-date,
+.forecast-day.active .forecast-temp,
+.forecast-day.active .forecast-condition {
+    color: white; /* Ensure text is white in active state */
 }
 
 .forecast-date {
     font-weight: bold;
-    color: #333;
+    color: var(--text-color); /* Use theme variable */
     margin-bottom: 5px;
 }
 
@@ -84,25 +116,25 @@
 .forecast-temp {
     font-size: 1rem;
     font-weight: bold;
-    color: #d9534f;
+    color: var(--accent-color); /* Use accent color for temperature */
     margin: 5px 0;
 }
 
 .forecast-condition {
     font-size: 0.8rem;
-    color: #555;
+    color: var(--text-color); /* Use theme variable */
 }
 
 /* Hourly Forecast Styles */
 .hourly-forecast-section {
     margin-top: 25px;
     padding-top: 15px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color); /* Use theme variable */
 }
 
 .hourly-forecast-section h3 {
     text-align: center;
-    color: #333;
+    color: var(--header-color); /* Use theme variable */
     margin-bottom: 15px;
 }
 
@@ -113,20 +145,21 @@
 }
 
 .hourly-item {
-    flex: 0 0 80px; /* Do not grow, do not shrink, base width 80px */
+    flex: 0 0 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    background: #f9f9f9;
+    background-color: var(--background-color); /* Use theme variable */
     border-radius: 8px;
     margin-right: 10px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color); /* Use theme variable */
 }
 
 .hourly-time {
     font-weight: bold;
     font-size: 0.9rem;
+    color: var(--text-color); /* Use theme variable */
 }
 
 .hourly-icon img {
@@ -136,4 +169,5 @@
 
 .hourly-temp {
     font-weight: bold;
+    color: var(--accent-color); /* Use accent color */
 }

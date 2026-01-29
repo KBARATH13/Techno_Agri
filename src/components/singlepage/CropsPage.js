@@ -325,6 +325,10 @@ const CropsPage = () => {
   const [selectedCrop, setSelectedCrop] = useState(null);
   const { translate } = useLanguage();
 
+  const openModal = (crop) => {
+    setSelectedCrop(crop);
+  };
+
   const cropTypes = ['All', ...new Set(allCrops.map(crop => crop.type))];
   const soilTypes = ['All', ...new Set(allCrops.map(crop => crop.soilType))];
   const regions = ['All', ...new Set(allCrops.map(crop => crop.region))];
@@ -360,19 +364,19 @@ const CropsPage = () => {
         <div className="filter-group">
           <label>{translate('crop_type')}</label>
           <select value={cropTypeFilter} onChange={e => setCropTypeFilter(e.target.value)} onMouseDown={handleDropdownClick}>
-            {cropTypes.map(type => <option key={type} value={type}>{type === 'All' ? translate('all') : type}</option>)}
+            {cropTypes.map(type => <option key={type} value={type}>{type === 'All' ? translate('all') : translate(type)}</option>)}
           </select>
         </div>
         <div className="filter-group">
           <label>{translate('soil_type')}</label>
           <select value={soilTypeFilter} onChange={e => setSoilTypeFilter(e.target.value)} onMouseDown={handleDropdownClick}>
-            {soilTypes.map(type => <option key={type} value={type}>{type === 'All' ? translate('all') : type}</option>)}
+            {soilTypes.map(type => <option key={type} value={type}>{type === 'All' ? translate('all') : translate(type)}</option>)}
           </select>
         </div>
         <div className="filter-group">
           <label>{translate('region')}</label>
           <select value={regionFilter} onChange={e => setRegionFilter(e.target.value)} onMouseDown={handleDropdownClick}>
-            {regions.map(type => <option key={type} value={type}>{type === 'All' ? translate('all') : type}</option>)}
+            {regions.map(type => <option key={type} value={type}>{type === 'All' ? translate('all') : translate(type)}</option>)}
           </select>
         </div>
         <div className="filter-group">
@@ -386,8 +390,8 @@ const CropsPage = () => {
       </div>
       <div className="crops-grid">
         {filteredCrops.map(crop => (
-          <div key={crop.name} className="crop-item" onClick={() => setSelectedCrop(crop)}>
-            <h4>{crop.name}</h4>
+          <div className="crop-item modern-card" onClick={() => openModal(crop)}>
+            <h4>{translate(crop.name)}</h4>
             <div className="crop-image-container">
               <img src={crop.imageUrl} alt={crop.name} />
             </div>

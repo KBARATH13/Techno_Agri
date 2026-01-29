@@ -1,10 +1,9 @@
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { ThemeContext } from '../../App'; // Import ThemeContext
 import { BsFillSunFill } from 'react-icons/bs'; // Import BsFillSunFill
-import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faHome, faStore, faLeaf, faStethoscope, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +12,7 @@ const Navbar = ({ token, onLogout }) => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const { translate } = useLanguage();
+  const { language, setLanguage, translate } = useLanguage(); // Destructure setLanguage
 
   const handleLogout = () => {
     onLogout();
@@ -25,10 +24,19 @@ const Navbar = ({ token, onLogout }) => {
     setMobileMenuOpen(false);
   };
 
+  const handleLanguageChange = useCallback((event) => { // Renamed and memoized
+    setLanguage(event.target.value);
+  }, [setLanguage]);
+
   const getNavItems = () => {
     const mainNavItems = [];
     const utilityNavItems = [
-      <li key="language-selector"><LanguageSelector /></li>,
+      <li key="language-selector" className="language-selector-container">
+        <select value={language} onChange={handleLanguageChange} className="language-select">
+          <option value="en">English</option>
+          <option value="ta">தமிழ்</option>
+        </select>
+      </li>,
       <li key="theme-toggle"><button onClick={toggleTheme} className="theme-icon">{theme === 'light' ? <FontAwesomeIcon icon={faMoon} /> : <BsFillSunFill />}</button></li>
     ];
 

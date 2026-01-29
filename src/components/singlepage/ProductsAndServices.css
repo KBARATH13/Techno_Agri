@@ -1,104 +1,138 @@
 
 .products-services-page {
-    padding: 20px;
+    padding: 40px 20px; /* Adjusted padding */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .products-services-page h1 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px; /* Increased margin */
     color: var(--header-color);
-    font-size: 2.5rem;
+    font-size: 2.8rem; /* Larger heading */
 }
 
 .section-container {
     margin-bottom: 60px;
     background-color: var(--card-background);
-    padding: 30px;
-    border-radius: 10px;
+    padding: 40px; /* Increased padding */
+    border-radius: 12px; /* Consistent border-radius */
+    box-shadow: var(--card-shadow); /* Add card shadow */
+    border: 1px solid var(--border-color); /* Subtle border */
 }
 
 .section-container h2 {
     text-align: center;
-    color: var(--section-header-color);
+    color: var(--header-color); /* Use theme variable */
     margin-bottom: 30px;
-    font-size: 2rem;
+    font-size: 2.2rem; /* Larger heading */
 }
 
 .offerings-grid,
 .iot-applications {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+    gap: 30px; /* Increased gap */
+    margin-top: 30px; /* Increased margin */
 }
 
 .offering-item,
 .iot-item {
-    background-color: var(--card-background);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--card-shadow);
-    transition: transform 0.3s ease-in-out;
     text-align: center;
 }
 
 .offering-logo {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger logo */
     color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-
-.offering-item:hover,
-.iot-item:hover {
-    transform: translateY(-5px);
+    margin-bottom: 1.5rem; /* More space below logo */
 }
 
 .offering-item h3,
 .iot-item h3 {
-    color: var(--primary-color); /* Using primary for sub-headers */
+    color: var(--header-color); /* Use header color for sub-headers */
     margin-bottom: 15px;
+    font-size: 1.4rem; /* Larger heading */
+}
+
+.offering-item p,
+.iot-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 .section-container ul {
     list-style: none;
     padding: 0;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 30px auto; /* Adjusted margin */
     text-align: left;
 }
 
 .section-container ul li {
-    background-color: var(--card-background);
-    margin-bottom: 10px;
-    padding: 15px;
-    border-left: 4px solid var(--primary-color); /* Using primary for list border */
-    border-radius: 4px;
+    background-color: var(--background-color); /* Use background color for list items */
+    margin-bottom: 12px; /* Adjusted margin */
+    padding: 18px; /* Adjusted padding */
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px; /* Consistent border-radius */
     font-size: 1.1em;
+    color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+}
+
+.section-container ul li strong {
+    color: var(--header-color); /* Ensure strong text is themed */
 }
 
 /* --- Mobile Responsive Styles --- */
 @media (max-width: 768px) {
     .products-services-page {
-        padding: 15px;
+        padding: 25px 15px; /* Adjusted padding */
     }
 
     .products-services-page h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 30px;
     }
 
     .section-container {
-        padding: 20px;
+        padding: 25px;
+        margin-bottom: 40px;
     }
 
     .section-container h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
     }
 
     .offerings-grid,
     .iot-applications {
         grid-template-columns: 1fr; /* Stack items in a single column */
+        gap: 25px;
     }
+
+    .section-container ul {
+        margin: 25px auto;
+    }
+
+    .section-container ul li {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
+
+/* Modern Card Style */
+.modern-card {
+  background-color: var(--card-background);
+  border-radius: 12px; /* Slightly larger radius for softer look */
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out; /* Add border to transition */
+  padding: 25px; /* Slightly more internal spacing */
+  border: 1px solid var(--border-color); /* Subtle border for definition */
+}
+
+.modern-card:hover {
+  transform: translateY(-5px) scale(1.02); /* More pronounced lift and slight scale */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  border: 1px solid var(--primary-color); /* Highlight with primary color border */
 }

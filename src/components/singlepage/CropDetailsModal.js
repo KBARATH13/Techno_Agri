@@ -24,7 +24,7 @@ const CropDetailsModal = ({ crop, onClose }) => {
   };
 
   return (
-    <div className="crop-modal-overlay" onClick={onClose}>
+    <div className={`crop-modal-overlay ${crop ? 'visible' : ''}`} onClick={onClose}>
       <div className="crop-modal-content" onClick={e => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>X</button>
         <h2>{translate(crop.name)}</h2>

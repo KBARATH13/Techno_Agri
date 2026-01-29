@@ -602,5 +602,789 @@
   "asset_equipment_description": {
     "en": "Monitor and track your farm assets and equipment for better utilization and security.",
     "ta": "உங்கள் பண்ணைச் சொத்துகள் மற்றும் உபகரணங்களை சிறந்த பயன்பாடு மற்றும் பாதுகாப்பிற்காக கண்காணித்து கண்காணிக்கவும்."
+  },
+  "Paddy": {
+    "en": "Paddy",
+    "ta": "நெல்"
+  },
+  "Millet": {
+    "en": "Millet",
+    "ta": "தினை"
+  },
+  "Maize": {
+    "en": "Maize",
+    "ta": "மக்காச்சோளம்"
+  },
+  "Ragi": {
+    "en": "Ragi",
+    "ta": "கேழ்வரகு"
+  },
+  "Sorghum": {
+    "en": "Sorghum",
+    "ta": "சோளம்"
+  },
+  "Sugarcane": {
+    "en": "Sugarcane",
+    "ta": "கரும்பு"
+  },
+  "Cotton": {
+    "en": "Cotton",
+    "ta": "பருத்தி"
+  },
+  "Coffee": {
+    "en": "Coffee",
+    "ta": "காபி"
+  },
+  "Tea": {
+    "en": "Tea",
+    "ta": "தேயிலை"
+  },
+  "Mango": {
+    "en": "Mango",
+    "ta": "மாம்பழம்"
+  },
+  "Banana": {
+    "en": "Banana",
+    "ta": "வாழைப்பழம்"
+  },
+  "Plantain": {
+    "en": "Plantain",
+    "ta": "வாழை"
+  },
+  "Cashew": {
+    "en": "Cashew",
+    "ta": "முந்திரி"
+  },
+  "Casuarina": {
+    "en": "Casuarina",
+    "ta": "சவுக்கு"
+  },
+  "Cardamom": {
+    "en": "Cardamom",
+    "ta": "ஏலக்காய்"
+  },
+  "Pepper": {
+    "en": "Pepper",
+    "ta": "மிளகு"
+  },
+  "Turmeric": {
+    "en": "Turmeric",
+    "ta": "மஞ்சள்"
+  },
+  "Coriander": {
+    "en": "Coriander",
+    "ta": "கொத்தமல்லி"
+  },
+  "Brinjal": {
+    "en": "Brinjal",
+    "ta": "கத்திரிக்காய்"
+  },
+  "Tomato": {
+    "en": "Tomato",
+    "ta": "தக்காளி"
+  },
+  "Black Gram": {
+    "en": "Black Gram",
+    "ta": "உளுந்து"
+  },
+  "Green Gram": {
+    "en": "Green Gram",
+    "ta": "பச்சைப்பயறு"
+  },
+  "Groundnut": {
+    "en": "Groundnut",
+    "ta": "நிலக்கடலை"
+  },
+  "Sunflower": {
+    "en": "Sunflower",
+    "ta": "சூரியகாந்தி"
+  },
+  "Wheat": {
+    "en": "Wheat",
+    "ta": "கோதுமை"
+  },
+  "Tobacco": {
+    "en": "Tobacco",
+    "ta": "புகையிலை"
+  },
+  "Rubber": {
+    "en": "Rubber",
+    "ta": "ரப்பர்"
+  },
+  "Apple": {
+    "en": "Apple",
+    "ta": "ஆப்பிள்"
+  },
+  "Orange": {
+    "en": "Orange",
+    "ta": "ஆரஞ்சு"
+  },
+  "Clove": {
+    "en": "Clove",
+    "ta": "கிராம்பு"
+  },
+  "Broccoli": {
+    "en": "Broccoli",
+    "ta": "ப்ரோக்கோலி"
+  },
+  "Celery": {
+    "en": "Celery",
+    "ta": "செலரி"
+  },
+  "Barley": {
+    "en": "Barley",
+    "ta": "பார்லி"
+  },
+  "Castor": {
+    "en": "Castor",
+    "ta": "ஆமணக்கு"
+  },
+  "Chickpea": {
+    "en": "Chickpea",
+    "ta": "கொண்டைக்கடலை"
+  },
+  "Fodder": {
+    "en": "Fodder",
+    "ta": "தீவனம்"
+  },
+  "Linseed": {
+    "en": "Linseed",
+    "ta": "ஆளிவிதை"
+  },
+  "Onion": {
+    "en": "Onion",
+    "ta": "வெங்காயம்"
+  },
+  "Pigeonpea": {
+    "en": "Pigeonpea",
+    "ta": "துவரை"
+  },
+  "Potatoe": {
+    "en": "Potatoe",
+    "ta": "உருளைக்கிழங்கு"
+  },
+  "Rice": {
+    "en": "Rice",
+    "ta": "அரிசி"
+  },
+  "Safflower": {
+    "en": "Safflower",
+    "ta": "குங்குமப்பூ"
+  },
+  "Sesame": {
+    "en": "Sesame",
+    "ta": "எள்"
+  },
+  "Soyabean": {
+    "en": "Soyabean",
+    "ta": "சோயாபீன்ஸ்"
+  },
+  "Commercial Crops": {
+    "en": "Commercial Crops",
+    "ta": "வர்த்தக பயிர்கள்"
+  },
+  "Plantation Crops": {
+    "en": "Plantation Crops",
+    "ta": "தோட்டப் பயிர்கள்"
+  },
+  "Horticulture Crops": {
+    "en": "Horticulture Crops",
+    "ta": "தோட்டக்கலை பயிர்கள்"
+  },
+  "Coastal Crops": {
+    "en": "Coastal Crops",
+    "ta": "கடலோர பயிர்கள்"
+  },
+  "Spices": {
+    "en": "Spices",
+    "ta": "மசாலாப் பொருட்கள்"
+  },
+  "Vegetables": {
+    "en": "Vegetables",
+    "ta": "காய்கறிகள்"
+  },
+  "Pulses": {
+    "en": "Pulses",
+    "ta": "பருப்பு வகைகள்"
+  },
+  "Oilseeds": {
+    "en": "Oilseeds",
+    "ta": "எண்ணெய் வித்துக்கள்"
+  },
+  "Fodder Crops": {
+    "en": "Fodder Crops",
+    "ta": "தீவனப் பயிர்கள்"
+  },
+  "Clayey Loam": {
+    "en": "Clayey Loam",
+    "ta": "களிமண் கலந்த வண்டல் மண்"
+  },
+  "Sandy Loam": {
+    "en": "Sandy Loam",
+    "ta": "மணல் கலந்த வண்டல் மண்"
+  },
+  "Alluvial": {
+    "en": "Alluvial",
+    "ta": "வண்டல் மண்"
+  },
+  "Red Soil": {
+    "en": "Red Soil",
+    "ta": "செம்மண்"
+  },
+  "Black Soil": {
+    "en": "Black Soil",
+    "ta": "கரிசல் மண்"
+  },
+  "Black Cotton Soil": {
+    "en": "Black Cotton Soil",
+    "ta": "கரிசல் பருத்தி மண்"
+  },
+  "Laterite": {
+    "en": "Laterite",
+    "ta": "சரளை மண்"
+  },
+  "Sandy": {
+    "en": "Sandy",
+    "ta": "மணல்"
+  },
+  "Saline Soil": {
+    "en": "Saline Soil",
+    "ta": "உவர் மண்"
+  },
+  "Loamy": {
+    "en": "Loamy",
+    "ta": "வண்டல் மண்"
+  },
+  "Various": {
+    "en": "Various",
+    "ta": "பல்வேறு"
+  },
+  "Cauvery Delta": {
+    "en": "Cauvery Delta",
+    "ta": "காவிரி டெல்டா"
+  },
+  "Drylands": {
+    "en": "Drylands",
+    "ta": "வறண்ட நிலங்கள்"
+  },
+  "Across Tamil Nadu": {
+    "en": "Across Tamil Nadu",
+    "ta": "தமிழ்நாடு முழுவதும்"
+  },
+  "Coimbatore, Madurai": {
+    "en": "Coimbatore, Madurai",
+    "ta": "கோயம்புத்தூர், மதுரை"
+  },
+  "All Districts": {
+    "en": "All Districts",
+    "ta": "அனைத்து மாவட்டங்கள்"
+  },
+  "Madurai, Salem": {
+    "en": "Madurai, Salem",
+    "ta": "மதுரை, சேலம்"
+  },
+  "Nilgiris, Kodaikanal": {
+    "en": "Nilgiris, Kodaikanal",
+    "ta": "நீலகிரி, கொடைக்கானல்"
+  },
+  "Nilgiris": {
+    "en": "Nilgiris",
+    "ta": "நீலகிரி"
+  },
+  "Krishnagiri, Dindigul": {
+    "en": "Krishnagiri, Dindigul",
+    "ta": "கிருஷ்ணகிரி, திண்டுக்கல்"
+  },
+  "Trichy, Coimbatore": {
+    "en": "Trichy, Coimbatore",
+    "ta": "திருச்சி, கோயம்புத்தூர்"
+  },
+  "River Valleys": {
+    "en": "River Valleys",
+    "ta": "ஆற்றுப் பள்ளத்தாக்குகள்"
+  },
+  "Cuddalore": {
+    "en": "Cuddalore",
+    "ta": "கடலூர்"
+  },
+  "Coastal Areas": {
+    "en": "Coastal Areas",
+    "ta": "கடலோரப் பகுதிகள்"
+  },
+  "Western Ghats": {
+    "en": "Western Ghats",
+    "ta": "மேற்குத் தொடர்ச்சி மலைகள்"
+  },
+  "Limited Areas": {
+    "en": "Limited Areas",
+    "ta": "வரையறுக்கப்பட்ட பகுதிகள்"
+  },
+  "Dindigul, Vellore": {
+    "en": "Dindigul, Vellore",
+    "ta": "திண்டுக்கல், வேலூர்"
+  },
+  "Kanyakumari": {
+    "en": "Kanyakumari",
+    "ta": "கன்னியாகுமரி"
+  },
+  "Kodaikanal (High Altitude)": {
+    "en": "Kodaikanal (High Altitude)",
+    "ta": "கொடைக்கானல் (உயரமான பகுதி)"
+  },
+  "Nilgiris, Kanyakumari": {
+    "en": "Nilgiris, Kanyakumari",
+    "ta": "Nilgiris, Kanyakumari"
+  },
+  "Ooty, Kodaikanal": {
+    "en": "Ooty, Kodaikanal",
+    "ta": "ஊட்டி, கொடைக்கானல்"
+  },
+  "120-150 days": {
+    "en": "120-150 days",
+    "ta": "120-150 நாட்கள்"
+  },
+  "90-100 days": {
+    "en": "90-100 days",
+    "ta": "90-100 நாட்கள்"
+  },
+  "90-110 days": {
+    "en": "90-110 days",
+    "ta": "90-110 நாட்கள்"
+  },
+  "100-120 days": {
+    "en": "100-120 days",
+    "ta": "100-120 நாட்கள்"
+  },
+  "100-110 days": {
+    "en": "100-110 days",
+    "ta": "100-110 நாட்கள்"
+  },
+  "10-12 months": {
+    "en": "10-12 months",
+    "ta": "10-12 மாதங்கள்"
+  },
+  "150-180 days": {
+    "en": "150-180 days",
+    "ta": "150-180 நாட்கள்"
+  },
+  "3-4 years": {
+    "en": "3-4 years",
+    "ta": "3-4 வருடங்கள்"
+  },
+  "3-5 years": {
+    "en": "3-5 years",
+    "ta": "3-5 வருடங்கள்"
+  },
+  "9-12 months": {
+    "en": "9-12 months",
+    "ta": "9-12 மாதங்கள்"
+  },
+  "10-14 months": {
+    "en": "10-14 months",
+    "ta": "10-14 மாதங்கள்"
+  },
+  "4-5 years": {
+    "en": "4-5 years",
+    "ta": "4-5 வருடங்கள்"
+  },
+  "2-3 years": {
+    "en": "2-3 years",
+    "ta": "2-3 வருடங்கள்"
+  },
+  "7-9 months": {
+    "en": "7-9 months",
+    "ta": "7-9 மாதங்கள்"
+  },
+  "40-45 days": {
+    "en": "40-45 days",
+    "ta": "40-45 நாட்கள்"
+  },
+  "100-140 days": {
+    "en": "100-140 days",
+    "ta": "100-140 நாட்கள்"
+  },
+  "90-120 days": {
+    "en": "90-120 days",
+    "ta": "90-120 நாட்கள்"
+  },
+  "80-90 days": {
+    "en": "80-90 days",
+    "ta": "80-90 நாட்கள்"
+  },
+  "70-80 days": {
+    "en": "70-80 days",
+    "ta": "70-80 நாட்கள்"
+  },
+  "100-130 days": {
+    "en": "100-130 days",
+    "ta": "100-130 நாட்கள்"
+  },
+  "120-140 days": {
+    "en": "120-140 days",
+    "ta": "120-140 நாட்கள்"
+  },
+  "7 years": {
+    "en": "7 years",
+    "ta": "7 வருடங்கள்"
+  },
+  "70-100 days": {
+    "en": "70-100 days",
+    "ta": "70-100 நாட்கள்"
+  },
+  "85-120 days": {
+    "en": "85-120 days",
+    "ta": "85-120 நாட்கள்"
+  },
+  "60-90 days": {
+    "en": "60-90 days",
+    "ta": "60-90 நாட்கள்"
+  },
+  "1 acre": {
+    "en": "1 acre",
+    "ta": "1 ஏக்கர்"
+  },
+  "0.5 acre": {
+    "en": "0.5 acre",
+    "ta": "0.5 ஏக்கர்"
+  },
+  "High": {
+    "en": "High",
+    "ta": "அதிகம்"
+  },
+  "Low": {
+    "en": "Low",
+    "ta": "குறைந்த"
+  },
+  "Medium": {
+    "en": "Medium",
+    "ta": "நடுத்தர"
+  },
+  "Blast, Sheath Blight": {
+    "en": "Blast, Sheath Blight",
+    "ta": "வெடிப்பு, உறை அழுகல்"
+  },
+  "Downy Mildew, Smut": {
+    "en": "Downy Mildew, Smut",
+    "ta": "சாம்பல் நோய், கரிப்பூட்டை"
+  },
+  "Leaf Blight, Stalk Rot": {
+    "en": "Leaf Blight, Stalk Rot",
+    "ta": "இலை கருகல், தண்டு அழுகல்"
+  },
+  "Blast, Foot Rot": {
+    "en": "Blast, Foot Rot",
+    "ta": "வெடிப்பு, கால் அழுகல்"
+  },
+  "Grain Mold, Downy Mildew": {
+    "en": "Grain Mold, Downy Mildew",
+    "ta": "தானிய பூஞ்சணம், சாம்பல் நோய்"
+  },
+  "Red Rot, Smut": {
+    "en": "Red Rot, Smut",
+    "ta": "சிவப்பு அழுகல், கரிப்பூட்டை"
+  },
+  "Bollworm, Whitefly": {
+    "en": "Bollworm, Whitefly",
+    "ta": "காய்ப்புழு, வெள்ளை ஈ"
+  },
+  "Leaf Rust, White Stem Borer": {
+    "en": "Leaf Rust, White Stem Borer",
+    "ta": "இலை துரு, வெள்ளை தண்டு துளைப்பான்"
+  },
+  "Blister Blight, Red Spider Mite": {
+    "en": "Blister Blight, Red Spider Mite",
+    "ta": "கொப்புள நோய், சிவப்பு சிலந்தி பூச்சி"
+  },
+  "Anthracnose, Powdery Mildew": {
+    "en": "Anthracnose, Powdery Mildew",
+    "ta": "சாம்பல் நோய், சாம்பல் நோய்"
+  },
+  "Panama Wilt, Sigatoka Leaf Spot": {
+    "en": "Panama Wilt, Sigatoka Leaf Spot",
+    "ta": "பனாமா வாடல், சிகடோகா இலை புள்ளி"
+  },
+  "Tea Mosquito Bug, Anthracnose": {
+    "en": "Tea Mosquito Bug, Anthracnose",
+    "ta": "தேயிலை கொசு பூச்சி, சாம்பல் நோய்"
+  },
+  "Wilt, Blister Bark": {
+    "en": "Wilt, Blister Bark",
+    "ta": "வாடல், கொப்புளப் பட்டை"
+  },
+  "Azhukal Disease, Capsule Rot": {
+    "en": "Azhukal Disease, Capsule Rot",
+    "ta": "அழுகல் நோய், காய் அழுகல்"
+  },
+  "Quick Wilt, Anthracnose": {
+    "en": "Quick Wilt, Anthracnose",
+    "ta": "விரைவு வாடல், சாம்பல் நோய்"
+  },
+  "Leaf Blotch, Rhizome Rot": {
+    "en": "Leaf Blotch, Rhizome Rot",
+    "ta": "இலை புள்ளி, கிழங்கு அழுகல்"
+  },
+  "Powdery Mildew, Wilt": {
+    "en": "Powdery Mildew, Wilt",
+    "ta": "சாம்பல் நோய், வாடல்"
+  },
+  "Fruit and Shoot Borer, Little Leaf": {
+    "en": "Fruit and Shoot Borer, Little Leaf",
+    "ta": "பழம் மற்றும் தண்டு துளைப்பான், சிறு இலை"
+  },
+  "Early Blight, Late Blight": {
+    "en": "Early Blight, Late Blight",
+    "ta": "முன் கருகல், பின் கருகல்"
+  },
+  "Yellow Mosaic Virus, Powdery Mildew": {
+    "en": "Yellow Mosaic Virus, Powdery Mildew",
+    "ta": "மஞ்சள் தேமல் நோய், சாம்பல் நோய்"
+  },
+  "Tikka Leaf Spot, Rust": {
+    "en": "Tikka Leaf Spot, Rust",
+    "ta": "டிக்கா இலை புள்ளி, துரு"
+  },
+  "Downy Mildew, Rust": {
+    "en": "Downy Mildew, Rust",
+    "ta": "சாம்பல் நோய், துரு"
+  },
+  "Rust, Powdery Mildew": {
+    "en": "Rust, Powdery Mildew",
+    "ta": "துரு, சாம்பல் நோய்"
+  },
+  "Mosaic Virus, Black Shank": {
+    "en": "Mosaic Virus, Black Shank",
+    "ta": "தேமல் நோய், கருங்கால்"
+  },
+  "Abnormal Leaf Fall, Powdery Mildew": {
+    "en": "Abnormal Leaf Fall, Powdery Mildew",
+    "ta": "அசாதாரண இலை உதிர்தல், சாம்பல் நோய்"
+  },
+  "Scab, Powdery Mildew": {
+    "en": "Scab, Powdery Mildew",
+    "ta": "சொறி, சாம்பல் நோய்"
+  },
+  "Citrus Canker, Greening": {
+    "en": "Citrus Canker, Greening",
+    "ta": "சிட்ரஸ் கேன்கர், பசுமையாக்குதல்"
+  },
+  "Leaf Spot, Stem Borer": {
+    "en": "Leaf Spot, Stem Borer",
+    "ta": "இலை புள்ளி, தண்டு துளைப்பான்"
+  },
+  "Downy Mildew, Black Rot": {
+    "en": "Downy Mildew, Black Rot",
+    "ta": "சாம்பல் நோய், கருப்பு அழுகல்"
+  },
+  "Late Blight, Celery Mosaic Virus": {
+    "en": "Late Blight, Celery Mosaic Virus",
+    "ta": "பின் கருகல், செலரி தேமல் நோய்"
+  },
+  "Capsule Borer, Wilt": {
+    "en": "Capsule Borer, Wilt",
+    "ta": "காய் துளைப்பான், வாடல்"
+  },
+  "Wilt, Pod Borer": {
+    "en": "Wilt, Pod Borer",
+    "ta": "வாடல், காய் துளைப்பான்"
+  },
+  "-": {
+    "en": "-",
+    "ta": "-"
+  },
+  "Downy Mildew, Purple Blotch": {
+    "en": "Downy Mildew, Purple Blotch",
+    "ta": "சாம்பல் நோய், ஊதா புள்ளி"
+  },
+  "Phyllody, Leaf Spot": {
+    "en": "Phyllody, Leaf Spot",
+    "ta": "பைலோடி, இலை புள்ளி"
+  },
+  "Rust, Yellow Mosaic Virus": {
+    "en": "Rust, Yellow Mosaic Virus",
+    "ta": "துரு, மஞ்சள் தேமல் நோய்"
+  },
+  "Tricyclazole, Propiconazole": {
+    "en": "Tricyclazole, Propiconazole",
+    "ta": "டிரைசைக்ளசோல், புரோபிகோனசோல்"
+  },
+  "Mancozeb, Metalaxyl": {
+    "en": "Mancozeb, Metalaxyl",
+    "ta": "மேன்கோசெப், மெட்டாலாக்சில்"
+  },
+  "Carbendazim, Mancozeb": {
+    "en": "Carbendazim, Mancozeb",
+    "ta": "கார்பென்டாசிம், மேன்கோசெப்"
+  },
+  "Carbendazim, Tricyclazole": {
+    "en": "Carbendazim, Tricyclazole",
+    "ta": "கார்பென்டாசிம், டிரைசைக்ளசோல்"
+  },
+  "Carbendazim, Triadimefon": {
+    "en": "Carbendazim, Triadimefon",
+    "ta": "Carbendazim, Triadimefon"
+  },
+  "Imidacloprid, Acetamiprid": {
+    "en": "Imidacloprid, Acetamiprid",
+    "ta": "இமிடாகுளோபிரிட், அசிடமிபிரிட்"
+  },
+  "Propiconazole, Chlorpyrifos": {
+    "en": "Propiconazole, Chlorpyrifos",
+    "ta": "புரோபிகோனசோல், குளோர்பைரிபாஸ்"
+  },
+  "Hexaconazole, Propargite": {
+    "en": "Hexaconazole, Propargite",
+    "ta": "ஹெக்ஸாகோனசோல், புரோபார்கைட்"
+  },
+  "Carbendazim, Sulphur": {
+    "en": "Carbendazim, Sulphur",
+    "ta": "கார்பென்டாசிம், சல்பர்"
+  },
+  "Propiconazole, Carbendazim": {
+    "en": "Propiconazole, Carbendazim",
+    "ta": "புரோபிகோனசோல், கார்பென்டாசிம்"
+  },
+  "Lambda-Cyhalothrin, Carbendazim": {
+    "en": "Lambda-Cyhalothrin, Carbendazim",
+    "ta": "லாம்டா-சைஹலோத்ரின், கார்பென்டாசிம்"
+  },
+  "Mancozeb, Copper Oxychloride": {
+    "en": "Mancozeb, Copper Oxychloride",
+    "ta": "மேன்கோசெப், காப்பர் ஆக்ஸிகுளோரைடு"
+  },
+  "Metalaxyl, Mancozeb": {
+    "en": "Metalaxyl, Mancozeb",
+    "ta": "மெட்டாலாக்சில், மேன்கோசெப்"
+  },
+  "Sulphur, Carbendazim": {
+    "en": "Sulphur, Carbendazim",
+    "ta": "சல்பர், கார்பென்டாசிம்"
+  },
+  "Emamectin Benzoate, Imidacloprid": {
+    "en": "Emamectin Benzoate, Imidacloprid",
+    "ta": "எமாமெக்டின் பென்சோயேட், இமிடாகுளோபிரிட்"
+  },
+  "Mancozeb, Chlorothalonil": {
+    "en": "Mancozeb, Chlorothalonil",
+    "ta": "மேன்கோசெப், குளோரோதலோனில்"
+  },
+  "Imidacloprid, Sulphur": {
+    "en": "Imidacloprid, Sulphur",
+    "ta": "இமிடாகுளோபிரிட், சல்பர்"
+  },
+  "Mancozeb, Hexaconazole": {
+    "en": "Mancozeb, Hexaconazole",
+    "ta": "மேன்கோசெப், ஹெக்ஸாகோனசோல்"
+  },
+  "Propiconazole, Tebuconazole": {
+    "en": "Propiconazole, Tebuconazole",
+    "ta": "புரோபிகோனசோல், டெபுகோனசோல்"
+  },
+  "Imidacloprid, Metalaxyl": {
+    "en": "Imidacloprid, Metalaxyl",
+    "ta": "இமிடாகுளோபிரிட், மெட்டாலாக்சில்"
+  },
+  "Mancozeb, Sulphur": {
+    "en": "Mancozeb, Sulphur",
+    "ta": "மேன்கோசெப், சல்பர்"
+  },
+  "Copper Oxychloride, Imidacloprid": {
+    "en": "Copper Oxychloride, Imidacloprid",
+    "ta": "காப்பர் ஆக்ஸிகுளோரைடு, இமிடாகுளோபிரிட்"
+  },
+  "Carbendazim, Chlorpyrifos": {
+    "en": "Carbendazim, Chlorpyrifos",
+    "ta": "கார்பென்டாசிம், குளோர்பைரிபாஸ்"
+  },
+  "Mancozeb, Copper Hydroxide": {
+    "en": "Mancozeb, Copper Hydroxide",
+    "ta": "மேன்கோசெப், காப்பர் ஹைட்ராக்சைடு"
+  },
+  "Mancozeb, Imidacloprid": {
+    "en": "Mancozeb, Imidacloprid",
+    "ta": "மேன்கோசெப், இமிடாகுளோபிரிட்"
+  },
+  "Chlorpyrifos, Carbendazim": {
+    "en": "Chlorpyrifos, Carbendazim",
+    "ta": "குளோர்பைரிபாஸ், கார்பென்டாசிம்"
+  },
+  "Imidacloprid, Carbendazim": {
+    "en": "Imidacloprid, Carbendazim",
+    "ta": "இமிடாகுளோபிரிட், கார்பென்டாசிம்"
+  },
+  "Imidacloprid, Mancozeb": {
+    "en": "Imidacloprid, Mancozeb",
+    "ta": "Imidacloprid, Mancozeb"
+  },
+  "NPK, Urea": {
+    "en": "NPK, Urea",
+    "ta": "NPK, யூரியா"
+  },
+  "FYM, NPK": {
+    "en": "FYM, NPK",
+    "ta": "FYM, NPK"
+  },
+  "NPK, Zinc Sulphate": {
+    "en": "NPK, Zinc Sulphate",
+    "ta": "NPK, ஜிங்க் சல்பேட்"
+  },
+  "NPK, Iron Sulphate": {
+    "en": "NPK, Iron Sulphate",
+    "ta": "NPK, இரும்பு சல்பேட்"
+  },
+  "NPK, Potash": {
+    "en": "NPK, Potash",
+    "ta": "NPK, பொட்டாஷ்"
+  },
+  "NPK, Magnesium Sulphate": {
+    "en": "NPK, Magnesium Sulphate",
+    "ta": "NPK, மெக்னீசியம் சல்பேட்"
+  },
+  "NPK, Lime": {
+    "en": "NPK, Lime",
+    "ta": "NPK, சுண்ணாம்பு"
+  },
+  "NPK, Sulphur": {
+    "en": "NPK, Sulphur",
+    "ta": "NPK, சல்பர்"
+  },
+  "NPK, Zinc": {
+    "en": "NPK, Zinc",
+    "ta": "NPK, ஜிங்க்"
+  },
+  "NPK, Boron": {
+    "en": "NPK, Boron",
+    "ta": "NPK, போரான்"
+  },
+  "NPK, Organic Manure": {
+    "en": "NPK, Organic Manure",
+    "ta": "NPK, கரிம உரம்"
+  },
+  "NPK, FYM": {
+    "en": "NPK, FYM",
+    "ta": "NPK, FYM"
+  },
+  "NPK, Calcium Nitrate": {
+    "en": "NPK, Calcium Nitrate",
+    "ta": "NPK, கால்சியம் நைட்ரேட்"
+  },
+  "NPK, Rhizobium": {
+    "en": "NPK, Rhizobium",
+    "ta": "NPK, ரைசோபியம்"
+  },
+  "NPK, Gypsum": {
+    "en": "NPK, Gypsum",
+    "ta": "NPK, ஜிப்சம்"
+  },
+  "NPK, Magnesium": {
+    "en": "NPK, Magnesium",
+    "ta": "NPK, மெக்னீசியம்"
+  },
+  "NPK, Calcium": {
+    "en": "NPK, Calcium",
+    "ta": "NPK, கால்சியம்"
+  },
+  "FYM, Urea": {
+    "en": "FYM, Urea",
+    "ta": "FYM, Urea"
   }
 }
