@@ -14,12 +14,6 @@ app.use(express.json());
 const connectDB = require('./db');
 connectDB();
 
-// --- Crop Recommendation Logic ---
-
-
-
-const cropRecommendationRouter = require('./routes/cropRecommendation');
-app.use('/api', cropRecommendationRouter);
 
 // --- Accurate Recommendation Logic ---
 
@@ -46,8 +40,13 @@ app.use('/api/weather', weatherRouter);
 // --- Disease Detection Logic ---
 
 // --- Disease Detection Logic ---
+// --- Disease Detection Logic ---
 const diseaseDetectionRouter = require('./routes/diseaseDetection');
 app.use('/api/predict/disease', diseaseDetectionRouter);
+
+// --- IoT Proxy ---
+const iotRouter = require('./routes/iot');
+app.use('/api/iot', iotRouter);
 
 const chatbotRouter = require('./routes/chatbot');
 app.use('/api/chatbot', chatbotRouter);
