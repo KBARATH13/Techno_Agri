@@ -20,7 +20,7 @@ const WeatherForecastModal = ({ weatherData, onClose }) => {
     };
 
     return (
-        <div className="weather-modal-backdrop" onClick={onClose}>
+        <div className="weather-modal-backdrop visible" onClick={onClose}>
             <div className="weather-modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>14-Day Forecast for {weatherData.location.name}</h2>
                 <button className="modal-close-btn" onClick={onClose}>×</button>

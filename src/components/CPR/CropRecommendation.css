@@ -32,7 +32,7 @@
 }
 
 .menu-option {
-    background-color: var(--card-bg-color);
+    background-color: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem; /* Reduced padding */
@@ -46,6 +46,7 @@
 .menu-option.expanded {
     flex-basis: 70%;
     cursor: default;
+    
 }
 
 .menu-option.contracted {
@@ -69,7 +70,7 @@
     gap: 1.5rem;
 }
 
-.option-icon i {
+.option-icon .svg-inline--fa {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-top: 5px;
@@ -122,6 +123,13 @@
     color: var(--text-color); /* Ensure label color is themed */
 }
 
+.form-group .input-icon {
+    font-size: 1.5em; /* Adjust size as needed */
+    color: var(--form-input-icon-color);
+    margin-bottom: 5px; /* Space between icon and input field */
+    align-self: flex-start; /* Align icon to the left within the flex column */
+}
+
 .form-group input,
 .form-group select {
     width: 100%;
@@ -142,6 +150,31 @@
     box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Subtle glow */
 }
 
+.input-group {
+    display: flex; /* Keep flex for overall layout */
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-background);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Essential for absolute positioning of child icon */
+    overflow: hidden;
+}
+
+.input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.input-group select {
+    border: none !important;
+    box-shadow: none !important;
+    flex-grow: 1;
+    background-color: transparent;
+    padding: 10px 12px; /* Revert to original padding */
+}
+
+
 /* Styling for native select dropdowns */
 .form-group select {
     -webkit-appearance: none; /* For Safari/Chrome */
@@ -152,9 +185,9 @@
     background-position: right 12px center; /* Adjust position for padding */
     background-size: 16px 12px;
 }
-
-body.dark .form-group select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+.form-group select option {
+    background-color: var(--card-background);
+    color: var(--text-color);
 }
 
 /* Dark Mode fix for dropdown options */
@@ -168,7 +201,7 @@ body.dark .form-group select option {
     position: relative;
 }
 
-.input-with-icon i {
+.input-with-icon .svg-inline--fa {
     position: absolute;
     left: 12px;
     top: 50%;

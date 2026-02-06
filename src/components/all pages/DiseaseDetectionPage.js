@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { useLanguage } from '../../contexts/LanguageContext';
+import './DiseaseDetectionPage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpload, faImage, faBrain } from '@fortawesome/free-solid-svg-icons';
 
 const DiseaseDetectionPage = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -9,6 +12,28 @@ const DiseaseDetectionPage = () => {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const { translate } = useLanguage();
+    const imagePreviewRef = useRef(null); // Ref for the image preview section
+    const predictionResultRef = useRef(null); // Ref for the prediction result section
+
+    // Effect to scroll to the preview image when it appears
+    useEffect(() => {
+        if (preview && imagePreviewRef.current) {
+            imagePreviewRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            });
+        }
+    }, [preview]); // Dependency array ensures this runs only when 'preview' changes
+
+    // Effect to scroll to the prediction result when it appears
+    useEffect(() => {
+        if (prediction && predictionResultRef.current) {
+            predictionResultRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            });
+        }
+    }, [prediction]); // Dependency array ensures this runs only when 'prediction' changes
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -49,51 +74,60 @@ const DiseaseDetectionPage = () => {
     };
 
     return (
-        <div className="container mx-auto p-4 max-w-2xl">
-            <h1 className="text-3xl font-bold mb-6 text-center">{translate('Plant Disease Detection')}</h1>
-            
-            <div className="card bg-base-100 shadow-xl p-6">
-                <div className="flex flex-col items-center space-y-4">
-                    <input 
-                        type="file" 
-                        accept="image/*" 
-                        onChange={handleFileChange} 
-                        className="file-input file-input-bordered w-full" 
-                    />
+        <div className="disease-detection-page">
+            <h1>{translate('Plant Disease Detection')}</h1>
+            <div className="detection-card">
+                <div className="upload-section">
+                    <FontAwesomeIcon icon={faUpload} className="upload-icon" />
+                    <label htmlFor="file-upload" className="file-input-label">
+                        {translate('Choose Image')}
+                    </label>
+                    <input id="file-upload" type="file" accept="image/*" onChange={handleFileChange} />
+                    <p>{selectedFile ? selectedFile.name : translate('No file chosen')}</p>
+                </div>
 
-                    {preview && (
-                        <div className="mt-4">
-                            <h3 className="text-lg font-semibold mb-2">{translate('Image Preview')}</h3>
-                            <img src={preview} alt="Selected" className="rounded-lg shadow-md max-w-xs h-auto" />
+                {preview && (
+                    <div className="image-preview-section" ref={imagePreviewRef}>
+                        <h3>{translate('Image Preview')}</h3>
+                        <img src={preview} alt="Selected" className="image-preview" />
+                    </div>
+                )}
+
+                <button 
+                    onClick={handlePredict} 
+                    className="predict-button"
+                    disabled={loading || !selectedFile}
+                >
+                    <FontAwesomeIcon icon={faBrain} />
+                    <span>{loading ? translate('Detecting...') : translate('Detect Disease')}</span>
+                </button>
+
+                {loading && <div className="loading-spinner"></div>}
+
+                {error && <p className="error-message">{error}</p>}
+
+                {prediction && (
+                    <div className="prediction-result-card" ref={predictionResultRef}>
+                        <h3>{translate('Prediction Result')}</h3>
+                        <div className="result-item">
+                            <span className="label">{translate('Detected Disease')}:</span>
+                            <span className="value">
+                                {prediction.disease === 'healthy' ? translate('No disease detected') : prediction.disease}
+                            </span>
                         </div>
-                    )}
-
-                    <button 
-                        onClick={handlePredict} 
-                        className={`btn btn-primary w-full ${loading ? 'loading' : ''}`}
-                        disabled={loading || !selectedFile}
-                    >
-                        {loading ? translate('Detecting...') : translate('Detect Disease')}
-                    </button>
-
-                    {error && <p className="text-red-500 mt-4">{error}</p>}
-
-                    {prediction && (
-                        <div className="mt-6 p-4 bg-base-200 rounded-lg w-full">
-                            <h3 className="text-xl font-bold text-center mb-2">{translate('Prediction Result')}</h3>
-                            <div className="text-center">
-                                <p className="text-lg">
-                                    {translate('Detected Disease')}: 
-                                    <span className="font-semibold text-primary ml-2">{prediction.disease}</span>
-                                </p>
-                                <p className="text-md">
-                                    {translate('Confidence')}: 
-                                    <span className="font-semibold ml-2">{(prediction.confidence * 100).toFixed(2)}%</span>
-                                </p>
+                        <div className="result-item">
+                            <span className="label">{translate('Confidence')}:</span>
+                            <span className="value">{(prediction.confidence * 100).toFixed(2)}%</span>
+                        </div>
+                        <div className="confidence-bar-container">
+                            <div 
+                                className="confidence-bar" 
+                                style={{ width: `${(prediction.confidence * 100).toFixed(2)}%` }}
+                            >
                             </div>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         </div>
     );

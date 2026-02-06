@@ -1,0 +1,70 @@
+.notification-container {
+    position: fixed;
+    top: 80px; /* Position below the navbar (navbar height is 70px) */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%) translateY(-20px); /* Center and start slightly above */
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 2000; /* Ensure it's on top of other elements */
+    opacity: 0;
+    animation: slideInCenter 0.3s forwards, fadeOutCenter 0.3s 2.7s forwards; /* Adjusted animation duration */
+}
+
+.notification-container.error {
+    background-color: #dc3545; /* Red for errors */
+}
+
+.notification-container.success {
+    background-color: #28a745; /* Green for success */
+}
+
+.notification-container.info {
+    background-color: #17a2b8; /* Blue for info */
+}
+
+.notification-icon {
+    font-size: 1.5em;
+}
+
+.notification-container p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.notification-container .close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+    line-height: 1;
+}
+
+@keyframes slideInCenter {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeOutCenter {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}

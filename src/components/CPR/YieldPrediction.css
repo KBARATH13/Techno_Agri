@@ -20,7 +20,6 @@
     border-bottom: 2px solid var(--border-color);
     margin-top: 20px;
 }
-
 .tab {
     padding: 10px 20px;
     cursor: pointer;
@@ -78,41 +77,73 @@
 
 .yield-form label {
     display: block;
-    margin-bottom: 0.5rem; /* Increased margin for better spacing */
+    margin-bottom: 0.5rem;
     font-weight: 600;
-    font-size: 1rem; /* Slightly larger font size */
-    color: var(--text-color); /* Ensure label color is themed */
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
-.yield-form .year-input,
-.yield-form .form-group select,
-.yield-form .unit-select {
-    width: 100%;
-    padding: 10px 12px; /* Consistent padding */
+.input-group {
+    display: flex;
+    align-items: center;
     border: 1px solid var(--form-input-border);
-    border-radius: 8px; /* Consistent border-radius */
-    box-sizing: border-box;
-    background-color: var(--card-background); /* Use card background for inputs */
+    border-radius: 8px;
+    background-color: var(--card-background);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.input-group .svg-inline--fa {
+    padding: 0 12px;
+    color: var(--form-input-icon-color);
+    font-size: 1.1em;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
     color: var(--text-color);
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for focus */
+    flex-grow: 1;
 }
 
-.yield-form .year-input:focus,
-.yield-form .form-group select:focus,
-.yield-form .unit-select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Subtle glow */
+.input-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 12px;
+    padding-right: 40px; /* Make space for arrow */
+}
+
+body.dark .input-group select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.unit-input-group .unit-select {
+    flex-grow: 0;
+    width: auto;
+    border-left: 1px solid var(--form-input-border);
+    border-radius: 0 8px 8px 0;
 }
 
 .yield-form button {
-    padding: 14px; /* Consistent padding */
+    padding: 14px;
     font-size: 1.1em;
-    font-weight: 600; /* Make it bolder */
-    border-radius: 8px; /* Consistent border-radius */
+    font-weight: 600;
+    border-radius: 8px;
     background-color: var(--primary-color);
-    color: #fff; /* Ensure text is white */
+    color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -232,16 +263,12 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 12px center; /* Adjust position for padding */
     background-size: 16px 12px;
 }
 
-body.dark .yield-form .form-group select,
-body.dark .yield-form .unit-select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-}
+
 
 /* Dark Mode fix for dropdown options */
 body.dark .yield-form select option {

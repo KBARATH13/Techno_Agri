@@ -6,6 +6,7 @@ import './Registration.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import Notification from '../all pages/Notification'; // Import Notification component
 
 const Registration = () => {
     const { translate } = useLanguage();
@@ -14,6 +15,7 @@ const Registration = () => {
         email: '',
         password: ''
     });
+    const [notification, setNotification] = useState(null); // State for notification
 
     const { username, email, password } = formData;
     const navigate = useNavigate();
@@ -24,19 +26,34 @@ const Registration = () => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:5000/users/register', formData);
-            navigate('/login');
+            setNotification({ message: 'Registration successful! Please log in.', type: 'success' });
+            setTimeout(() => {
+                navigate('/login');
+            }, 3000); // Redirect after 3 seconds
         } catch (err) {
             console.error(err.response.data);
+            setNotification({ message: err.response.data.msg || 'Registration failed', type: 'error' });
         }
+    };
+
+    const handleCloseNotification = () => {
+        setNotification(null);
     };
 
     return (
         <div className="registration-container">
+            {notification && (
+                <Notification
+                    message={notification.message}
+                    type={notification.type}
+                    onClose={handleCloseNotification}
+                />
+            )}
             <div className="registration-form">
                 <h1>{translate('register')}</h1>
                 <form onSubmit={onSubmit}>
-                    <div className="input-group">
-                        <FontAwesomeIcon icon={faUser} />
+                    <div className="input-wrapper">
+                        <FontAwesomeIcon icon={faUser} className="input-icon" />
                         <input
                             type="text"
                             placeholder={translate('username_placeholder')}
@@ -46,8 +63,8 @@ const Registration = () => {
                             required
                         />
                     </div>
-                    <div className="input-group">
-                        <FontAwesomeIcon icon={faEnvelope} />
+                    <div className="input-wrapper">
+                        <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
                         <input
                             type="email"
                             placeholder={translate('email_address_placeholder')}
@@ -57,8 +74,8 @@ const Registration = () => {
                             required
                         />
                     </div>
-                    <div className="input-group">
-                        <FontAwesomeIcon icon={faLock} />
+                    <div className="input-wrapper">
+                        <FontAwesomeIcon icon={faLock} className="input-icon" />
                         <input
                             type="password"
                             placeholder={translate('password_placeholder')}

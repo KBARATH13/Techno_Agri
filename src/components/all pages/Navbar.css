@@ -64,7 +64,7 @@ nav {
 .nav-links-center .nav-menu li a {
   color: var(--text-color); /* Using themed text color */
   text-decoration: none;
-  font-size: 0.9rem; /* Smaller text */
+  font-size: 5mm; /* Smaller text */
   padding: 10px;
   border-radius: 5px;
   display: flex;
@@ -83,13 +83,13 @@ nav {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: var(--icon-select-color);
   transition: all 0.3s ease-out;
   transform: translateX(-50%);
 }
 
 .nav-links-center .nav-menu li a:hover {
-  color: var(--primary-color);
+  color: var(--icon-select-color);
 }
 
 .nav-links-center .nav-menu li a:hover::after {
@@ -97,7 +97,7 @@ nav {
 }
 
 .nav-links-center .nav-menu li a.active {
-  color: var(--primary-color);
+  color: var(--icon-select-color);
 }
 
 .nav-links-center .nav-menu li a.active::after {
@@ -140,7 +140,7 @@ nav {
   align-items: center;
   gap: 5px; /* Space between icon and text */
   /* min-width: 80px; Removed */
-  background-color: transparent;
+  background-color:#acc5c4 ;
   border: none;
   cursor: pointer;
 }

@@ -6,6 +6,7 @@ import './Login.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import Notification from '../all pages/Notification'; // Import Notification component
 
 const Login = ({ onLogin }) => {
     const { translate } = useLanguage();
@@ -13,6 +14,7 @@ const Login = ({ onLogin }) => {
         email: '',
         password: ''
     });
+    const [notification, setNotification] = useState(null); // State for notification
 
     const { email, password } = formData;
     const navigate = useNavigate();
@@ -27,16 +29,28 @@ const Login = ({ onLogin }) => {
             navigate('/');
         } catch (err) {
             console.error(err.response.data);
+            setNotification({ message: err.response.data.msg || 'Login failed', type: 'error' });
         }
+    };
+
+    const handleCloseNotification = () => {
+        setNotification(null);
     };
 
     return (
         <div className="login-container">
+            {notification && (
+                <Notification
+                    message={notification.message}
+                    type={notification.type}
+                    onClose={handleCloseNotification}
+                />
+            )}
             <div className="login-form">
                 <h1>{translate('login')}</h1>
                 <form onSubmit={onSubmit}>
-                    <div className="input-group">
-                        <FontAwesomeIcon icon={faEnvelope} />
+                    <div className="input-wrapper">
+                        <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
                         <input
                             type="email"
                             placeholder={translate('email_address_placeholder')}
@@ -46,8 +60,8 @@ const Login = ({ onLogin }) => {
                             required
                         />
                     </div>
-                    <div className="input-group">
-                        <FontAwesomeIcon icon={faLock} />
+                    <div className="input-wrapper">
+                        <FontAwesomeIcon icon={faLock} className="input-icon" />
                         <input
                             type="password"
                             placeholder={translate('password_placeholder')}

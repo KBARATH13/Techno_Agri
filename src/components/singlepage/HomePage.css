@@ -37,13 +37,13 @@ body.light .hero-section::before {
 .hero-content h1 {
     font-size: 3.5rem; /* Larger heading */
     margin-bottom: 1rem;
-    color: white; /* Ensure heading is white */
+    color: var(--p-text-color); /* Ensure heading is white */
 }
 
 .hero-content p {
     font-size: 1.4rem; /* Larger paragraph */
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    color: var(--p-text-color); /* Slightly transparent white */
 }
 
 .hero-buttons {
@@ -103,14 +103,14 @@ body.light .hero-section::before {
 .feature h2 {
     margin-top: 0; /* Remove default margin */
     margin-bottom: 1rem; /* Add consistent margin */
-    color: var(--header-color);
+    color: white;
     font-size: 1.8rem; /* Larger heading */
 }
 
 .feature p {
     font-size: 1rem;
     line-height: 1.6; /* Better readability */
-    color: var(--text-color);
+    color: white;
 }
 
 .how-it-works-section {
@@ -147,13 +147,13 @@ body.light .hero-section::before {
 .step-content h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: var(--header-color);
+    color: white;
 }
 
 .step-content p {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-color);
+    color:white;
 }
 
 /* --- Mobile Responsive Styles --- */

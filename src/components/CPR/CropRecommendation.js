@@ -5,8 +5,9 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faMapMarkedAlt, faSyncAlt, faVial, faSeedling, faFlask, faAtom, 
-    faThermometerHalf, faTint, faCloudShowersHeavy 
+    faThermometerHalf, faTint, faCloudShowersHeavy, faMountain
 } from '@fortawesome/free-solid-svg-icons';
+import recommendationsData from '../../translations/recommendations.json';
 
 // Icon mapping for the accurate form
 const accurateFormIcons = {
@@ -22,7 +23,10 @@ const accurateFormIcons = {
 
 const CropRecommendation = () => {
     const { language, translate } = useLanguage();
-    const [expanded, setExpanded] = useState(null); // 'general', 'accurate', or null
+    const [expanded, setExpanded] = useState(null);
+
+    // 1. Add a ref for the main container
+    const menuContainerRef = useRef(null);
 
     // --- State for General Recommendation ---
     const [districtOptions, setDistrictOptions] = useState([]);
@@ -43,39 +47,28 @@ const CropRecommendation = () => {
     const [accurateError, setAccurateError] = useState('');
     const accurateResultRef = useRef(null);
 
-    // --- Effects for fetching data ---
+    // --- Effect for General Recommendation Data Population ---
     useEffect(() => {
-        if (expanded === 'general') {
-            const fetchDistricts = async () => {
-                try {
-                    const response = await axios.get(`http://localhost:5000/api/districts`);
-                    const newOptions = response.data.map(d => ({
-                        value: d.en,
-                        label: d[language]
-                    }));
-                    setDistrictOptions(newOptions);
-                } catch (err) { console.error("Failed to fetch districts:", err); }
-            };
-            fetchDistricts();
-        }
-    }, [expanded, language]);
+        // Populate districts when the component loads or language changes
+        const districts = Object.keys(recommendationsData).map(districtEn => ({
+            value: districtEn,
+            label: language === 'ta' ? recommendationsData[districtEn].ta : districtEn
+        }));
+        setDistrictOptions(districts);
 
-    useEffect(() => {
-        if (expanded === 'general' && selectedDistrict) {
-            const fetchSoils = async () => {
-                try {
-                    const response = await axios.get(`http://localhost:5000/api/soils?district=${selectedDistrict}`);
-                    const newOptions = response.data.map(s => ({
-                        value: s.en,
-                        label: s[language]
-                    }));
-                    setSoilOptions(newOptions);
-                } catch (err) { console.error("Failed to fetch soils:", err); }
-            };
-            fetchSoils();
+        // If a district is already selected, update its soil options
+        if (selectedDistrict) {
+            const soils = recommendationsData[selectedDistrict]?.soils;
+            if (soils) {
+                const soilOpts = Object.keys(soils).map(soilEn => ({
+                    value: soilEn,
+                    label: language === 'ta' ? soils[soilEn].ta : soilEn
+                }));
+                setSoilOptions(soilOpts);
+            }
         }
-    }, [expanded, selectedDistrict, language]);
-
+    }, [language, selectedDistrict]);
+    
     // --- Effects for scrolling to results ---
     useEffect(() => {
         if (generalRecommendation.length > 0 && generalResultRef.current) {
@@ -89,40 +82,53 @@ const CropRecommendation = () => {
         }
     }, [accurateRecommendation]);
 
+    // Effect for handling clicks outside the menu container
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuContainerRef.current && !menuContainerRef.current.contains(event.target)) {
+                // Clicked outside the menu container, so close any expanded panel
+                setExpanded(null);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuContainerRef, setExpanded]); // Dependencies: menuContainerRef and setExpanded
+
     // --- Handlers ---
     const handlePanelClick = (panel) => {
-        if (expanded === panel) {
-            setExpanded(null);
-        } else {
-            setExpanded(panel);
-        }
+        setExpanded(prev => prev === panel ? null : panel);
     };
 
     // --- Handlers for General Recommendation ---
     const handleDistrictChange = (districtValue) => {
         setSelectedDistrict(districtValue);
         setSelectedSoil('');
-        setSoilOptions([]);
         setGeneralRecommendation([]);
+        setSoilOptions([]); // Clear previous soil options
+
+        const soils = recommendationsData[districtValue]?.soils;
+        if (soils) {
+            const soilOpts = Object.keys(soils).map(soilEn => ({
+                value: soilEn,
+                label: language === 'ta' ? soils[soilEn].ta : soilEn
+            }));
+            setSoilOptions(soilOpts);
+        }
     };
 
-    const handleGeneralSubmit = async (e) => {
+    const handleGeneralSubmit = (e) => {
         e.preventDefault();
         if (!selectedDistrict || !selectedSoil) {
             setGeneralError(translate('select_district_and_soil'));
             return;
         }
-        setGeneralLoading(true);
         setGeneralError('');
-        setGeneralRecommendation([]);
-        try {
-            const response = await axios.get(`http://localhost:5000/api/appropriate?district=${selectedDistrict}&soil_type=${selectedSoil}`);
-            setGeneralRecommendation(response.data.recommendations);
-        } catch (err) {
-            setGeneralError(err.response?.data?.error || translate('an_error_occurred'));
-        } finally {
-            setGeneralLoading(false);
-        }
+        
+        const crops = recommendationsData[selectedDistrict]?.soils[selectedSoil]?.crops || [];
+        setGeneralRecommendation(crops);
     };
 
     const clearGeneralForm = () => {
@@ -130,6 +136,7 @@ const CropRecommendation = () => {
         setSelectedSoil('');
         setGeneralRecommendation([]);
         setGeneralError('');
+        setSoilOptions([]);
     };
 
     // --- Handlers for Accurate Recommendation ---
@@ -169,7 +176,7 @@ const CropRecommendation = () => {
 
     return (
         <div className="crop-recommendation-page">
-            <div className="recommendation-menu-container">
+            <div className="recommendation-menu-container" ref={menuContainerRef}>
                 <h1>{translate('Crop Recommendation')}</h1>
                 <p>{translate('choose_recommendation_type')}</p>
                 <div className="menu-options">
@@ -187,26 +194,34 @@ const CropRecommendation = () => {
                                 </button>
                             )}
                         </div>
+
+
                         {expanded === 'general' && (
                             <div className="option-content" onClick={(e) => e.stopPropagation()}>
                                 <form onSubmit={handleGeneralSubmit}>
                                     <div className="form-group">
                                         <label>{translate('district')}</label>
-                                        <select required value={selectedDistrict} onChange={(e) => handleDistrictChange(e.target.value)}>
-                                            <option value="" disabled>{translate('select_district')}</option>
-                                            {districtOptions.map(option => (
-                                                <option key={option.value} value={option.value}>{option.label}</option>
-                                            ))}
-                                        </select>
+                                                    
+                                        <div  className="input-group">
+                                            
+                                            <select required value={selectedDistrict} onChange={(e) => handleDistrictChange(e.target.value)}>
+                                                <option value="" disabled>{translate('select_district')}</option>
+                                                {districtOptions.map(option => (
+                                                    <option key={option.value} value={option.value}>{option.label}</option>
+                                                ))}
+                                            </select>
+                                        </div>
                                     </div>
                                     <div className="form-group">
                                         <label>{translate('soil_type')}</label>
-                                        <select required value={selectedSoil} onChange={(e) => setSelectedSoil(e.target.value)} disabled={!selectedDistrict}>
-                                            <option value="" disabled>{translate('select_soil_type')}</option>
-                                            {soilOptions.map(option => (
-                                                <option key={option.value} value={option.value}>{option.label}</option>
-                                            ))}
-                                        </select>
+                                        <div className="input-group">
+                                            <select required value={selectedSoil} onChange={(e) => setSelectedSoil(e.target.value)} disabled={!selectedDistrict}>
+                                                <option value="" disabled>{translate('select_soil_type')}</option>
+                                                {soilOptions.map(option => (
+                                                    <option key={option.value} value={option.value}>{option.label}</option>
+                                                ))}
+                                            </select>
+                                        </div>
                                     </div>
                                     <button type="submit" disabled={isGeneralLoading}>{isGeneralLoading ? translate('loading') : translate('get_recommendation')}</button>
                                 </form>

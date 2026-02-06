@@ -1,16 +1,16 @@
 /* Theme Variables */
 :root {
-  --primary-color: #389f56; /* A slightly darker, more grounded green for better contrast */
+  --primary-color: #389f70; /* A slightly darker, more grounded green for better contrast */
   --primary-color-rgb: 46, 125, 50; /* RGB values for primary-color */
   --secondary-color: #6D4C41; /* A warm, earthy brown, complementing green */
   --secondary-color-hover: #5D4037; /* Darker shade of the new secondary brown */
   --accent-color: #FFB300; /* A vibrant, warm amber/orange for a pop of color */
-  --background-color: #5de190b8; /* A very subtle, clean off-white */
-  --text-color: #3E2723; /* A very dark, rich brown for primary text */
-  --header-color: #212121; /* A strong, neutral dark gray for headers */
-  --navbar-background: #5de190b8; /* Keep as is, user updated */
-  --card-background: #acc5c4; /* Pure white for cards, clean */
-  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Softer, more elegant shadow */
+  --background-color: #b1d6bad4; /* A very subtle, clean off-white */
+  --text-color: #ffffff; /* A very dark, rich brown for primary text */
+  --header-color: #033f0f; /* A strong, neutral dark gray for headers */
+  --navbar-background: #35804ed4; /* Keep as is, user updated */
+  --card-background: #15391ed4; /* Pure white for cards, clean */
+  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.92); /* Softer, more elegant shadow */
   --form-background: #FFFFFF;
   --form-input-border: #8D6E63; /* A subtle, earthy brown for input borders */
   --form-input-icon-color: #5D4037; /* A darker brown for icons */
@@ -18,6 +18,8 @@
   --climate-widget-bg: rgba(255, 255, 255, 0.9); /* Slightly more transparent white for climate widget */
   --climate-widget-border: #B0BEC5; /* A softer gray border */
   --border-color: #D7CCC8; /* A light, warm gray for general borders */
+  --p-text-color:black;
+  --icon-select-color:#000000ba;
 }
 
 body.dark {
@@ -39,6 +41,8 @@ body.dark {
   --climate-widget-bg: rgba(26, 26, 26, 0.95);
   --climate-widget-border: #455A64;
   --border-color: #455A64; /* General dark border */
+  --p-text-color:white;
+  --icon-select-color:#389f70;
 }
 
 body {
@@ -66,9 +70,9 @@ body {
 }
 
 .App {
-  text-align: center;
-  flex-grow: 1;
+     text-align: center;                                                                                                                                                                                                                   
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--header-color);

@@ -19,7 +19,7 @@
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",
-    "axios": "^1.13.2",
+    "axios": "^1.13.4",
     "customize-cra": "^1.0.0",
     "file-loader": "^6.2.0",
     "postcss-normalize": "^13.0.1",

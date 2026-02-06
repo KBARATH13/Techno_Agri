@@ -7,6 +7,7 @@ import { BsFillSunFill } from 'react-icons/bs'; // Import BsFillSunFill
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faHome, faStore, faLeaf, faStethoscope, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import MoistureDisplay from './MoistureDisplay';
 
 const Navbar = ({ token, onLogout }) => {
   const navigate = useNavigate();
@@ -45,7 +46,8 @@ const Navbar = ({ token, onLogout }) => {
         <li key="home"><NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faHome} /> {translate('home')}</NavLink></li>,
         <li key="products"><NavLink to="/products-services" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faStore} /> {translate('products_services')}</NavLink></li>,
         <li key="crops"><NavLink to="/crops" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faLeaf} /> {translate('crops')}</NavLink></li>,
-        <li key="disease-detection"><NavLink to="/disease-detection" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faStethoscope} /> {translate('disease_detection')}</NavLink></li>
+        <li key="disease-detection"><NavLink to="/disease-detection" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faStethoscope} /> {translate('disease_detection')}</NavLink></li>,
+        <li key="moisture-display"><MoistureDisplay /></li>
       );
       utilityNavItems.push(
         <li key="logout"><button onClick={handleLogout} className="btn btn-logout">{translate('logout')}</button></li>

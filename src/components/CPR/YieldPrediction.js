@@ -5,6 +5,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 
+
 const CropYieldPredictionForm = () => {
     const [districts, setDistricts] = useState([]);
     const [crops, setCrops] = useState([]);
@@ -90,6 +91,9 @@ const CropYieldPredictionForm = () => {
         setIsLoading(false);
     };
 
+
+// ... (inside component)
+
     return (
         <div className="ai-tool-container">
             <div className="form-header">
@@ -101,45 +105,58 @@ const CropYieldPredictionForm = () => {
             <form onSubmit={handleSubmit} className="yield-form">
                 <div className="form-group">
                     <label>{translate('crop')}</label>
-                    <select required value={selectedCrop} onChange={(e) => setSelectedCrop(e.target.value)}>
-                        <option value="" disabled>{translate('select_crop')}</option>
-                        {crops.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
-                    </select>
+                    <div className="input-group">
+                        <select required value={selectedCrop} onChange={(e) => setSelectedCrop(e.target.value)}>
+                            <option value="" disabled>{translate('select_crop')}</option>
+                            {crops.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
+                        </select>
+                    </div>
                 </div>
                 <div className="form-group">
                     <label>{translate('district')}</label>
-                    <select required value={selectedDistrict} onChange={(e) => setSelectedDistrict(e.target.value)} disabled={!selectedCrop}>
-                        <option value="" disabled>{selectedCrop ? translate('select_district') : translate('select_crop_first')}</option>
-                        {districts.map(d => <option key={d.value} value={d.value}>{d.label}</option>)}
-                    </select>
+                    <div className="input-group">
+                        <select required value={selectedDistrict} onChange={(e) => setSelectedDistrict(e.target.value)} disabled={!selectedCrop}>
+                            <option value="" disabled>{selectedCrop ? translate('select_district') : translate('select_crop_first')}</option>
+                            {districts.map(d => <option key={d.value} value={d.value}>{d.label}</option>)}
+                        </select>
+                    </div>
                     {!selectedCrop && (
                         <p className="validation-message">{translate('select_crop_first')}</p>
                     )}
                 </div>
                 <div className="form-group">
                     <label>{translate('season')}</label>
-                    <select required value={selectedSeason} onChange={(e) => setSelectedSeason(e.target.value)}>
-                        <option value="" disabled>{translate('select_season')}</option>
-                        {seasons.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
-                    </select>
+                    <div className="input-group">
+                        <select required value={selectedSeason} onChange={(e) => setSelectedSeason(e.target.value)}>
+                            <option value="" disabled>{translate('select_season')}</option>
+                            {seasons.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+                        </select>
+                    </div>
                 </div>
                 <div className="form-group">
                     <label>{translate('crop_year')}</label>
-                    <input type="number" value={cropYear} onChange={(e) => setCropYear(e.target.value)} className="year-input" required />
+                    <div className="input-group">
+                        <input type="number" value={cropYear} onChange={(e) => setCropYear(e.target.value)} required />
+                    </div>
                 </div>
-                <div className="form-group unit-input-group">
+                <div className="form-group">
                     <label>{translate('area')}</label>
-                    <input type="number" value={area} onChange={(e) => setArea(e.target.value)} className="area-input" step="0.01" required />
-                    <select value={areaUnit} onChange={(e) => setAreaUnit(e.target.value)} className="unit-select">
-                        {areaUnits.map(unit => <option key={unit.value} value={unit.value}>{unit.label}</option>)}
-                    </select>
+                    <div className="input-group unit-input-group">
+                        <input type="number" value={area} onChange={(e) => setArea(e.target.value)} step="0.01" required />
+                        <select value={areaUnit} onChange={(e) => setAreaUnit(e.target.value)} className="unit-select">
+                            {areaUnits.map(unit => <option key={unit.value} value={unit.value}>{unit.label}</option>)}
+                        </select>
+                     </div>
                 </div>
-                <div className="form-group unit-input-group">
+                <div className="form-group">
                     <label>{translate('annual_rainfall')}</label>
-                    <input type="number" value={annualRainfall} onChange={(e) => setAnnualRainfall(e.target.value)} className="rainfall-input" step="0.01" required />
-                    <select value={rainfallUnit} onChange={(e) => setRainfallUnit(e.target.value)} className="unit-select">
-                        {rainfallUnits.map(unit => <option key={unit.value} value={unit.value}>{unit.label}</option>)}
-                    </select>
+                    <div className="input-group unit-input-group">
+                          
+                        <input type="number" value={annualRainfall} onChange={(e) => setAnnualRainfall(e.target.value)} step="0.01" required />
+                        <select value={rainfallUnit} onChange={(e) => setRainfallUnit(e.target.value)} className="unit-select">
+                            {rainfallUnits.map(unit => <option key={unit.value} value={unit.value}>{unit.label}</option>)}
+                        </select>
+                        </div> 
                 </div>
                 <button type="submit" disabled={isLoading}>{isLoading ? translate('predicting') : translate('predict_yield')}</button>
             </form>
