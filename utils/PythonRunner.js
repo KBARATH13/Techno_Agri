@@ -3,7 +3,9 @@ const { spawn } = require('child_process');
 // Helper function to run Python scripts with JSON input/output
 function runPythonScript(scriptPath, data) {
     return new Promise((resolve, reject) => {
-        const pythonProcess = spawn('python', [scriptPath]);
+        // Use the absolute path to the correct Python executable
+        const pythonExecutable = 'C:/Python313/python.exe';
+        const pythonProcess = spawn(pythonExecutable, [scriptPath]);
 
         let result = '';
         let error = '';
