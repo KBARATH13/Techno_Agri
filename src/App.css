@@ -7,7 +7,7 @@
   --accent-color: #FFB300; /* A vibrant, warm amber/orange for a pop of color */
   --background-color: #b1d6bad4; /* A very subtle, clean off-white */
   --text-color: #ffffff; /* A very dark, rich brown for primary text */
-  --header-color: #033f0f; /* A strong, neutral dark gray for headers */
+  --header-color: #ffffff; /* A strong, neutral dark gray for headers */
   --navbar-background: #35804ed4; /* Keep as is, user updated */
   --card-background: #15391ed4; /* Pure white for cards, clean */
   --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.92); /* Softer, more elegant shadow */
@@ -20,6 +20,12 @@
   --border-color: #D7CCC8; /* A light, warm gray for general borders */
   --p-text-color:black;
   --icon-select-color:#000000ba;
+  --strong:black;
+  --widget-bg-color:rgba(255,255,255,0.2);
+  --chat--bg-color:#9bbba3d4;
+  --chatbot-shadow: 0 6px 20px rgba(0, 0, 0, 0.92);
+  
+  
 }
 
 body.dark {
@@ -43,6 +49,11 @@ body.dark {
   --border-color: #455A64; /* General dark border */
   --p-text-color:white;
   --icon-select-color:#389f70;
+  --strong:white;
+  --widget-bg-color:rgba(0, 0, 0, 0.4);
+  --chat--bg-color:#161817d4;
+  --chatbot-shadow: 0 6px 20px rgba(203, 203, 203, 0.92);
+
 }
 
 body {
@@ -71,11 +82,6 @@ body {
 
 .App {
      text-align: center;                                                                                                                                                                                                                   
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--header-color);
 }
 
 a {

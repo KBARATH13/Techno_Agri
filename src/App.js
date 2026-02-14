@@ -13,6 +13,7 @@ import CropRecommendation from './components/CPR/CropRecommendation';
 import YieldPrediction from './components/CPR/YieldPrediction';
 import DiseaseDetectionPage from './components/all pages/DiseaseDetectionPage';
 import FloatingActionButtons from './components/all pages/FloatingActionButtons';
+import ChatbotModal from './components/all pages/ChatbotModal'; // Import ChatbotModal
 import setAuthToken from './utils/setAuthToken';
 import ThemeManager from './utils/ThemeManager';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
@@ -26,6 +27,7 @@ const AppContent = ({ token, onLogin, onLogout }) => {
   const navigate = useNavigate();
   const location = useLocation(); // Get current location
   const { translate } = useLanguage();
+  const [isChatbotOpen, setChatbotOpen] = useState(false); // State for chatbot modal
 
   // Add Axios interceptor for 401 responses
   useEffect(() => {
@@ -61,7 +63,8 @@ const AppContent = ({ token, onLogin, onLogout }) => {
         <Route path="/yield-prediction" element={<ProtectedRoute><YieldPrediction /></ProtectedRoute>} />
         <Route path="/disease-detection" element={<ProtectedRoute><DiseaseDetectionPage /></ProtectedRoute>} />
       </Routes>
-      {token && <FloatingActionButtons />}
+      {token && <FloatingActionButtons onOpenChatbot={() => setChatbotOpen(true)} />}
+      <ChatbotModal isOpen={isChatbotOpen} onClose={() => setChatbotOpen(false)} />
     </div>
   );
 };

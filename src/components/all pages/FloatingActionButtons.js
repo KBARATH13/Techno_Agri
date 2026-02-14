@@ -4,13 +4,20 @@ import './FloatingActionButtons.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { BsChatDots } from 'react-icons/bs'; // Import chat icon
 
-const FloatingActionButtons = () => {
+const FloatingActionButtons = ({ onOpenChatbot }) => { // Receive onOpenChatbot as a prop
     const { translate } = useLanguage();
     const location = useLocation();
 
     return (
         <div className="fab-container">
+            {/* Chatbot Button */}
+            {/* Chatbot Button */}
+            <button onClick={onOpenChatbot} className="fab-item" title="TechGri Chatbot">
+                <BsChatDots size={20} />
+            </button>
+
             {location.pathname !== '/crop-recommendation' && (
                 <Link to="/crop-recommendation" className="fab-item" title={translate('crop_recommendation')}>
                     <FontAwesomeIcon icon={faLeaf} />

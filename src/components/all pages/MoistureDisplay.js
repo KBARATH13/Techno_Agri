@@ -7,7 +7,7 @@ const MoistureDisplay = () => {
   const [error, setError] = useState(null);
 
   // User needs to provide the actual ESP32 IP address
-  const esp32IpAddress = '10.76.33.217';
+  const esp32IpAddress = '10.94.239.217';
 
   useEffect(() => {
     const fetchData = async () => {

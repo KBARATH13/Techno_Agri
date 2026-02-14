@@ -16,7 +16,7 @@ const HomePage = () => {
 
       <header className="hero-section">
         <div className="hero-content">
-          <h1>{translate('welcome_to_smartfarm')}</h1>
+          <h1>{translate('welcome_to_smartAgri')}</h1>
           <p>{translate('solution_for_predictive_agriculture')}</p>
           {!token && (
             <div className="hero-buttons">

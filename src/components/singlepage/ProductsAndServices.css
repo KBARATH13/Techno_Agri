@@ -81,7 +81,7 @@
 }
 
 .section-container ul li strong {
-    color: var(--header-color); /* Ensure strong text is themed */
+    color: var(--strong); /* Ensure strong text is themed */
 }
 
 /* --- Mobile Responsive Styles --- */
