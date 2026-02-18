@@ -58,8 +58,7 @@ const ProductsAndServices = () => {
       </section>
 
       <section className="section-container">
-        <h2>{translate('Future scope')}</h2>
-        <h2>{translate('iot_in_home_land_farming')}</h2>
+        <h2>{translate('future_scope_iot_farming')}</h2>
         <div className="iot-applications">
           <div className="iot-item modern-card">
             <FaSeedling className="offering-logo" />

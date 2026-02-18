@@ -1,142 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
+
 /* Theme Variables */
 :root {
-  --primary-color: #389f70; /* A slightly darker, more grounded green for better contrast */
-  --primary-color-rgb: 46, 125, 50; /* RGB values for primary-color */
-  --secondary-color: #6D4C41; /* A warm, earthy brown, complementing green */
-  --secondary-color-hover: #5D4037; /* Darker shade of the new secondary brown */
-  --accent-color: #FFB300; /* A vibrant, warm amber/orange for a pop of color */
-  --background-color: #b1d6bad4; /* A very subtle, clean off-white */
-  --text-color: #ffffff; /* A very dark, rich brown for primary text */
-  --header-color: #ffffff; /* A strong, neutral dark gray for headers */
-  --navbar-background: #35804ed4; /* Keep as is, user updated */
-  --card-background: #15391ed4; /* Pure white for cards, clean */
-  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.92); /* Softer, more elegant shadow */
+  /* Colors - Refined for vibrancy */
+  --primary-color: #2e7d32;
+  --primary-gradient: linear-gradient(135deg, #389f70 0%, #2e7d32 100%);
+  --primary-glow: rgba(56, 159, 112, 0.4);
+
+  --secondary-color: #6D4C41;
+  --secondary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
+
+  --accent-color: #FFB300;
+  --accent-gradient: linear-gradient(135deg, #FFCA28 0%, #FFB300 100%);
+
+  --background-color: #b1d6bad4;
+  /* Maintained as requested */
+  --text-color: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --header-color: #15391e;
+
+  --navbar-background: rgba(53, 128, 78, 0.85);
+  /* Glassmorphism base */
+  --card-background: rgba(255, 255, 255, 0.9);
+  --weather-card-background: rgba(114, 197, 159, 0.936);
+  --border-color: rgba(0, 0, 0, 0.1);
+
   --form-background: #FFFFFF;
-  --form-input-border: #8D6E63; /* A subtle, earthy brown for input borders */
-  --form-input-icon-color: #5D4037; /* A darker brown for icons */
-  --button-hover-bg: #1B5E20; /* A deeper green for primary button hover */
-  --climate-widget-bg: rgba(255, 255, 255, 0.9); /* Slightly more transparent white for climate widget */
-  --climate-widget-border: #B0BEC5; /* A softer gray border */
-  --border-color: #D7CCC8; /* A light, warm gray for general borders */
-  --p-text-color:black;
-  --icon-select-color:#000000ba;
-  --strong:black;
-  --widget-bg-color:rgba(255,255,255,0.2);
-  --chat--bg-color:#9bbba3d4;
-  --chatbot-shadow: 0 6px 20px rgba(0, 0, 0, 0.92);
-  
-  
+  --form-input-border: rgba(109, 76, 65, 0.3);
+  --form-input-icon-color: #4a4a4a;
+
+  /* Modern Layered Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+  --card-shadow: var(--shadow-lg);
+
+  /* Animation / Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Utils */
+  --glass-effect: blur(12px) saturate(180%);
 }
 
 body.dark {
-  --primary-color: #389f56; /* A more muted, earthy green for dark mode */
-  --primary-color-rgb: 104, 159, 56; /* RGB values for primary-color */
-  --secondary-color: #78909C; /* A slightly darker, more harmonious blue-gray */
-  --secondary-color-hover: #607D8B; /* Darker shade of secondary-color */
-  --accent-color: #42A5F5; /* A slightly more vibrant, but still professional blue */
-  --background-color: #1A1A1A; /* A standard dark mode background */
-  --text-color: #CFD8DC; /* A soft, light blue-gray for primary text */
-  --header-color: #ECEFF1; /* A very light, almost white, blue-gray for headers */
-  --navbar-background: rgba(26, 26, 26, 0.95); /* Matches new background */
-  --card-background: #263238; /* A dark blue-gray, more integrated with the theme */
-  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* More subtle, but still visible shadow */
-  --form-background: #263238;
-  --form-input-border: #455A64; /* A darker blue-gray for input borders */
-  --form-input-icon-color: #B0B0B0;
-  --button-hover-bg: #558B2F; /* A darker shade of the new primary green */
-  --climate-widget-bg: rgba(26, 26, 26, 0.95);
-  --climate-widget-border: #455A64;
-  --border-color: #455A64; /* General dark border */
-  --p-text-color:white;
-  --icon-select-color:#389f70;
-  --strong:white;
-  --widget-bg-color:rgba(0, 0, 0, 0.4);
-  --chat--bg-color:#161817d4;
-  --chatbot-shadow: 0 6px 20px rgba(203, 203, 203, 0.92);
+  --primary-color: #4caf50;
+  --primary-gradient: linear-gradient(135deg, #81c784 0%, #388e3c 100%);
+  --primary-glow: rgba(129, 199, 132, 0.3);
 
+  --secondary-color: #78909C;
+  --secondary-gradient: linear-gradient(135deg, #90a4ae 0%, #607d8b 100%);
+
+  --accent-color: #4fc3f7;
+  --accent-gradient: linear-gradient(135deg, #81d4fa 0%, #039be5 100%);
+
+  --background-color: #1A1A1A;
+  /* Maintained as requested */
+  --text-color: #e0e0e0;
+  --text-secondary: #b0bec5;
+  --header-color: #f5f5f5;
+
+  --navbar-background: rgba(26, 26, 26, 0.85);
+  --card-background: rgba(38, 50, 56, 0.95);
+  --weather-card-background: rgba(38, 50, 56, 0.95);
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  --form-background: #263238;
+  --form-input-border: rgba(255, 255, 255, 0.15);
+  --form-input-icon-color: #cfd8dc;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --card-shadow: var(--shadow-lg);
+
+  --p-text-color: #cfd8dc;
+  --strong: #ffffff;
+  --widget-bg-color: rgba(0, 0, 0, 0.3);
+  --chat--bg-color: #1a1a1a;
+}
+
+/* Global Scrollbar Refinement */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: var(--header-color);
+  letter-spacing: -0.02em;
 }
 
 .fa-solid,
 .fa-regular,
-.fa-light,
-.fa-thin,
-.fa-duotone,
-.fa-sharp-solid,
-.fa-sharp-regular,
-.fa-sharp-light,
-.fa-sharp-thin,
-.fa-brands {
-  color: var(--text-color);
+.svg-inline--fa {
+  color: inherit;
+  /* Let parent control icon color */
 }
 
 .App {
-     text-align: center;                                                                                                                                                                                                                   
+  text-align: center;
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--primary-color);
   text-decoration: none;
+  transition: color var(--transition-fast);
+  font-weight: 500;
 }
 
 a:hover {
-  text-decoration: underline;
+  filter: brightness(1.2);
 }
 
+/* Updated Button Styles */
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px; /* Consistent border-radius */
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all var(--transition-normal);
   border: 1px solid transparent;
-}
-
-.btn:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.3); /* More prominent focus */
-}
-
-.btn:active {
-  transform: translateY(1px); /* Subtle press effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Reduced shadow on press */
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  color: #fff;
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 15px var(--primary-glow);
 }
 
 .btn-primary:hover {
-  background-color: var(--button-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px var(--primary-glow);
+  filter: brightness(1.1);
 }
 
 .btn-secondary {
-  background-color: var(--secondary-color);
-  color: #fff;
+  background: var(--secondary-gradient);
+  color: white;
 }
 
 .btn-secondary:hover {
-  background-color: var(--secondary-color-hover); /* Use themed hover background */
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
 }
 
+.btn:active {
+  transform: scale(0.98);
+}
 
+/* Modern Card Style (Global) */
+.modern-card {
+  background-color: var(--card-background);
+  backdrop-filter: var(--glass-effect);
+  -webkit-backdrop-filter: var(--glass-effect);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+  padding: 30px;
+  border: 1px solid var(--border-color);
+}
 
+.modern-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), 0 10px 40px rgba(46, 125, 50, 0.15);
+  border-color: var(--primary-color);
+}
 
+/* Auth Styles (Login/Registration) refined */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  /* Adjust for Navbar height */
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.auth-form {
+  background-color: var(--card-background);
+  backdrop-filter: var(--glass-effect);
+  -webkit-backdrop-filter: var(--glass-effect);
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 440px;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  animation: fadeInScale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin: 0 auto;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

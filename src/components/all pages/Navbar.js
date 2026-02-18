@@ -17,7 +17,6 @@ const Navbar = ({ token, onLogout }) => {
 
   const handleLogout = () => {
     onLogout();
-    setMobileMenuOpen(false);
     navigate('/');
   };
 
@@ -46,7 +45,6 @@ const Navbar = ({ token, onLogout }) => {
         <li key="home"><NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faHome} /> {translate('home')}</NavLink></li>,
         <li key="products"><NavLink to="/products-services" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faStore} /> {translate('products_services')}</NavLink></li>,
         <li key="crops"><NavLink to="/crops" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faLeaf} /> {translate('crops')}</NavLink></li>,
-        <li key="disease-detection"><NavLink to="/disease-detection" onClick={closeMobileMenu} className={({ isActive }) => (isActive ? 'active' : '')}><FontAwesomeIcon icon={faStethoscope} /> {translate('disease_detection')}</NavLink></li>,
         <li key="moisture-display"><MoistureDisplay /></li>
       );
       utilityNavItems.push(
@@ -55,17 +53,19 @@ const Navbar = ({ token, onLogout }) => {
     } else {
       // Login and Register buttons removed as per instructions.
     }
-    
+
     return { mainNavItems, utilityNavItems };
   };
 
   const { mainNavItems, utilityNavItems } = getNavItems();
 
   return (
-    <nav>
+    <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
-          TechnoAgri
+          <NavLink to="/">
+            TechnoAgri
+          </NavLink>
         </div>
         <div className="nav-links-center">
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>

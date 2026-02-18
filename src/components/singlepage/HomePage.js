@@ -5,8 +5,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot, faSatelliteDish, faCubes } from '@fortawesome/free-solid-svg-icons';
 
-const HomePage = () => {
-  const token = localStorage.getItem('token');
+const HomePage = ({ token }) => {
   const { translate } = useLanguage();
 
 
@@ -24,25 +23,27 @@ const HomePage = () => {
               <Link to="/register" className="btn btn-secondary">{translate('register')}</Link>
             </div>
           )}
-          
+
         </div>
       </header>
 
       <section className="features-section">
-        <div className="feature modern-card">
-          <FontAwesomeIcon icon={faRobot} className="feature-icon" />
-          <h2>{translate('ai_powered_predictions')}</h2>
-          <p>{translate('ai_predictions_description')}</p>
-        </div>
-        <div className="feature modern-card">
-          <FontAwesomeIcon icon={faSatelliteDish} className="feature-icon" />
-          <h2>{translate('iot_enabled_monitoring')}</h2>
-          <p>{translate('iot_monitoring_description')}</p>
-        </div>
-        <div className="feature modern-card">
-          <FontAwesomeIcon icon={faCubes} className="feature-icon" />
-          <h2>{translate('blockchain_secured_data')}</h2>
-          <p>{translate('blockchain_description')}</p>
+        <div className="features-grid">
+          <div className="feature modern-card">
+            <FontAwesomeIcon icon={faRobot} className="feature-icon" />
+            <h2>{translate('ai_powered_predictions')}</h2>
+            <p>{translate('ai_predictions_description')}</p>
+          </div>
+          <div className="feature modern-card">
+            <FontAwesomeIcon icon={faSatelliteDish} className="feature-icon" />
+            <h2>{translate('iot_enabled_monitoring')}</h2>
+            <p>{translate('iot_monitoring_description')}</p>
+          </div>
+          <div className="feature modern-card">
+            <FontAwesomeIcon icon={faCubes} className="feature-icon" />
+            <h2>{translate('blockchain_secured_data')}</h2>
+            <p>{translate('blockchain_description')}</p>
+          </div>
         </div>
       </section>
 

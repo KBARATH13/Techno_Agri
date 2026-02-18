@@ -41,7 +41,7 @@ const Registration = () => {
     };
 
     return (
-        <div className="registration-container">
+        <div className="auth-container">
             {notification && (
                 <Notification
                     message={notification.message}
@@ -49,7 +49,7 @@ const Registration = () => {
                     onClose={handleCloseNotification}
                 />
             )}
-            <div className="registration-form">
+            <div className="auth-form">
                 <h1>{translate('register')}</h1>
                 <form onSubmit={onSubmit}>
                     <div className="input-wrapper">

@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './WeatherForecastModal.css';
 
 const WeatherForecastModal = ({ weatherData, onClose }) => {
     const [selectedDay, setSelectedDay] = useState(null);
+    const hourlyRef = useRef(null);
+
+    useEffect(() => {
+        if (selectedDay && hourlyRef.current) {
+            hourlyRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [selectedDay]);
 
     if (!weatherData || !weatherData.forecast) {
         return null;
@@ -26,8 +33,8 @@ const WeatherForecastModal = ({ weatherData, onClose }) => {
                 <button className="modal-close-btn" onClick={onClose}>×</button>
                 <div className="forecast-container">
                     {forecast.forecastday.map((day) => (
-                        <div 
-                            key={day.date_epoch} 
+                        <div
+                            key={day.date_epoch}
                             className={`forecast-day ${selectedDay && selectedDay.date === day.date ? 'active' : ''}`}
                             onClick={() => handleDayClick(day)}
                         >
@@ -44,7 +51,7 @@ const WeatherForecastModal = ({ weatherData, onClose }) => {
                 </div>
 
                 {selectedDay && (
-                    <div className="hourly-forecast-section">
+                    <div ref={hourlyRef} className="hourly-forecast-section">
                         <h3>Hourly Forecast for {selectedDay.date}</h3>
                         <div className="hourly-forecast-container">
                             {selectedDay.hour.map((hour, index) => (

@@ -54,7 +54,7 @@ const AppContent = ({ token, onLogin, onLogout }) => {
       <Navbar token={token} onLogout={onLogout} />
       {token && <ClimateWidget />}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage token={token} />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/crops" element={<ProtectedRoute><CropsPage /></ProtectedRoute>} />
@@ -94,8 +94,25 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     setToken(null);
-    // No need to navigate here, interceptor or ProtectedRoute will handle it
   };
+
+  // Proactively verify user existence on mount/token change
+  useEffect(() => {
+    const verifyUser = async () => {
+      if (token) {
+        try {
+          await axios.get('http://localhost:5000/users/');
+        } catch (err) {
+          console.warn("User verification failed, logging out.");
+          // Interceptor will handle the 401 and call onLogout but we can be safe
+          if (err.response && err.response.status === 401) {
+            handleLogout();
+          }
+        }
+      }
+    };
+    verifyUser();
+  }, [token]);
 
   const handleLogin = (newToken) => {
     localStorage.setItem('token', newToken);

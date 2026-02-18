@@ -92,7 +92,7 @@ const CropYieldPredictionForm = () => {
     };
 
 
-// ... (inside component)
+    // ... (inside component)
 
     return (
         <div className="ai-tool-container">
@@ -141,22 +141,25 @@ const CropYieldPredictionForm = () => {
                 </div>
                 <div className="form-group">
                     <label>{translate('area')}</label>
-                    <div className="input-group unit-input-group">
-                        <input type="number" value={area} onChange={(e) => setArea(e.target.value)} step="0.01" required />
+                    <div className="unit-input-group">
+                        <div className="input-group">
+                            <input type="number" value={area} onChange={(e) => setArea(e.target.value)} step="0.01" required />
+                        </div>
                         <select value={areaUnit} onChange={(e) => setAreaUnit(e.target.value)} className="unit-select">
                             {areaUnits.map(unit => <option key={unit.value} value={unit.value}>{unit.label}</option>)}
                         </select>
-                     </div>
+                    </div>
                 </div>
                 <div className="form-group">
                     <label>{translate('annual_rainfall')}</label>
-                    <div className="input-group unit-input-group">
-                          
-                        <input type="number" value={annualRainfall} onChange={(e) => setAnnualRainfall(e.target.value)} step="0.01" required />
+                    <div className="unit-input-group">
+                        <div className="input-group">
+                            <input type="number" value={annualRainfall} onChange={(e) => setAnnualRainfall(e.target.value)} step="0.01" required />
+                        </div>
                         <select value={rainfallUnit} onChange={(e) => setRainfallUnit(e.target.value)} className="unit-select">
                             {rainfallUnits.map(unit => <option key={unit.value} value={unit.value}>{unit.label}</option>)}
                         </select>
-                        </div> 
+                    </div>
                 </div>
                 <button type="submit" disabled={isLoading}>{isLoading ? translate('predicting') : translate('predict_yield')}</button>
             </form>

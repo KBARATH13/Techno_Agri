@@ -1,62 +1,72 @@
-/* Main container for the entire page */
+/* CropRecommendation Modern Upgrade */
 .crop-recommendation-page {
-    padding: 2rem;
+    padding: 40px 5%;
     background-color: var(--background-color);
     color: var(--text-color);
     min-height: 100vh;
+    animation: fadeIn 0.8s ease-out;
 }
 
-/* Menu container */
 .recommendation-menu-container {
-    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .recommendation-menu-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .recommendation-menu-container p {
-    font-size: 1.1rem;
-    color: var(--text-secondary-color);
-    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu-options {
     display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    transition: all 0.5s ease-in-out;
+    gap: 30px;
+    align-items: stretch;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-option {
-    background-color: var(--card-background);
+    background: var(--card-background);
+    backdrop-filter: var(--glass-effect);
+    -webkit-backdrop-filter: var(--glass-effect);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem; /* Reduced padding */
+    border-radius: 32px;
+    padding: 40px;
     text-align: left;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    flex-basis: 50%;
-    flex-shrink: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
 }
 
 .menu-option.expanded {
-    flex-basis: 70%;
+    flex: 2.5;
     cursor: default;
-    
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
 .menu-option.contracted {
-    flex-basis: 30%;
-    opacity: 0.7;
-    transform: scale(0.95);
-}
-
-.menu-option.contracted .option-header {
-    cursor: pointer;
+    flex: 0.8;
+    opacity: 0.6;
+    transform: scale(0.96);
 }
 
 .menu-option.contracted:hover {
@@ -66,282 +76,222 @@
 
 .option-header {
     display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 24px;
+}
+
+.option-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--primary-gradient);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px var(--primary-glow);
+    flex-shrink: 0;
 }
 
 .option-icon .svg-inline--fa {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-top: 5px;
+    font-size: 2.2rem;
+    color: white;
 }
 
 .option-text h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--header-color);
 }
 
 .option-text p {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--text-secondary-color);
-    line-height: 1.5;
+    margin: 4px 0 0 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
 }
 
 .option-content {
-    margin-top: 1.5rem; /* Reduced margin */
+    margin-top: 40px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
 }
 
 .menu-option.expanded .option-content {
-    max-height: 1500px; /* Adjust if content is larger */
+    max-height: 2000px;
     opacity: 1;
 }
 
-.option-content form {
-    display: grid;
-    gap: 1rem; /* Reduced gap */
-}
-
 .accurate-form {
-    grid-template-columns: 1fr 1fr;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
 }
 
 .form-group label {
-    margin-bottom: 0.5rem; /* Increased margin for better spacing */
     font-weight: 600;
-    font-size: 1rem; /* Slightly larger font size */
-    color: var(--text-color); /* Ensure label color is themed */
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    margin-left: 4px;
 }
-
-.form-group .input-icon {
-    font-size: 1.5em; /* Adjust size as needed */
-    color: var(--form-input-icon-color);
-    margin-bottom: 5px; /* Space between icon and input field */
-    align-self: flex-start; /* Align icon to the left within the flex column */
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px 12px; /* Consistent padding */
-    border-radius: 8px; /* Consistent border-radius */
-    border: 1px solid var(--border-color);
-    background-color: var(--card-background); /* Use card background for inputs */
-    color: var(--text-color);
-    font-size: 1rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for focus */
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Subtle glow */
-}
-
-.input-group {
-    display: flex; /* Keep flex for overall layout */
-    align-items: center;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--card-background);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Essential for absolute positioning of child icon */
-    overflow: hidden;
-}
-
-.input-group:focus-within {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
-}
-
-.input-group select {
-    border: none !important;
-    box-shadow: none !important;
-    flex-grow: 1;
-    background-color: transparent;
-    padding: 10px 12px; /* Revert to original padding */
-}
-
-
-/* Styling for native select dropdowns */
-.form-group select {
-    -webkit-appearance: none; /* For Safari/Chrome */
-    -moz-appearance: none; /* For Firefox */
-    appearance: none; /* Standard */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center; /* Adjust position for padding */
-    background-size: 16px 12px;
-}
-.form-group select option {
-    background-color: var(--card-background);
-    color: var(--text-color);
-}
-
-/* Dark Mode fix for dropdown options */
-body.dark .form-group select option {
-  background: #3a3a3a;
-  color: #f1f1f1;
-}
-
 
 .input-with-icon {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .input-with-icon .svg-inline--fa {
     position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
+    left: 16px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    opacity: 0.7;
 }
 
-.input-with-icon input {
-    padding-left: 35px;
+.input-with-icon input,
+.input-with-icon select {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid var(--form-input-border);
+    border-radius: 16px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+}
+
+.input-with-icon input:focus,
+.input-with-icon select:focus {
+    border-color: var(--primary-color);
+    background: var(--card-background);
+    box-shadow: 0 0 0 4px var(--primary-glow);
+    outline: none;
 }
 
 form button[type="submit"] {
     grid-column: 1 / -1;
-    padding: 14px; /* Consistent padding */
-    margin-top: 1rem; /* Increased margin */
-    border: none;
-    border-radius: 8px; /* Consistent border-radius */
-    background-color: var(--primary-color);
+    padding: 18px;
+    background: var(--primary-gradient);
     color: white;
+    border: none;
+    border-radius: 16px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-form button[type="submit"]:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+    margin-top: 10px;
+    transition: all var(--transition-normal);
+    box-shadow: 0 8px 20px var(--primary-glow);
 }
 
 form button[type="submit"]:hover:not(:disabled) {
-    background-color: var(--button-hover-bg); /* Use themed hover background */
-    transform: translateY(-2px); /* Subtle lift */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
-
-.error-message {
-    color: #e74c3c;
-    margin-top: 0.5rem; /* Reduced margin */
-    text-align: center;
-    grid-column: 1 / -1;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px var(--primary-glow);
+    filter: brightness(1.1);
 }
 
 .recommendation-results {
-  margin-top: 30px;
-  text-align: left;
-  background-color: var(--card-background); /* Use card background */
-  padding: 20px;
-  border-radius: 10px; /* Consistent rounded corners */
-  box-shadow: var(--card-shadow); /* Use modern card shadow */
-  border: none; /* Remove default border if card shadow is used */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition for hover */
-  grid-column: 1 / -1;
-}
-
-.recommendation-results:hover {
-  transform: translateY(-3px); /* Subtle lift on hover */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    grid-column: 1 / -1;
+    background: rgba(var(--primary-color-rgb), 0.03);
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 40px;
+    animation: slideInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .recommendation-results h3 {
-  margin-top: 0;
-  color: var(--header-color);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 10px;
-  margin-bottom: 15px;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    color: var(--header-color);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.recommendation-results h3::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border-color);
 }
 
 .recommendation-results ul {
-  list-style-type: none;
-  padding-left: 0;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
 }
 
 .recommendation-results li {
-  padding: 10px;
-  border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.2s ease, transform 0.2s ease; /* Added transform for hover effect */
-}
-
-.recommendation-results li:last-child {
-  border-bottom: none;
+    background: var(--card-background);
+    padding: 16px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    transition: all var(--transition-fast);
 }
 
 .recommendation-results li:hover {
-  background-color: var(--background-color);
-  transform: translateX(5px); /* Subtle slide effect on hover */
-}
-
-body.dark .recommendation-results li:hover {
-    background-color: #3a3a3a; /* A slightly lighter dark shade for hover */
+    transform: translateX(8px);
+    border-color: var(--primary-color);
 }
 
 .accurate-result {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Sora', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
     text-align: center;
-    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
+.refresh-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.refresh-button:hover {
+    background: rgba(46, 125, 50, 0.1);
+    transform: rotate(180deg);
+    border-color: var(--primary-color);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
     .menu-options {
         flex-direction: column;
-        gap: 1rem;
     }
 
-    .menu-option.expanded, .menu-option.contracted {
-        flex-basis: auto;
+    .menu-option {
+        flex: none !important;
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
+    .recommendation-menu-container h1 {
+        font-size: 2.2rem;
+    }
+
     .accurate-form {
         grid-template-columns: 1fr;
     }
-}
-
-.refresh-button {
-    background: transparent;
-    border: none;
-    color: var(--text-secondary-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-left: auto; /* Pushes it to the right */
-    padding: 0.5rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.refresh-button:hover {
-    background-color: var(--border-color);
-    color: var(--text-color);
-}
-
-/* --- Dark Theme Override for react-select options --- */
-body.dark div[class*="-menu-portal"] [class*="-option"] {
-    color: var(--text-color) !important;
 }

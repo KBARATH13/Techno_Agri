@@ -1,121 +1,145 @@
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh; /* Use min-height to ensure it covers the screen */
-    padding: 20px; /* Add some padding for smaller screens */
-    position: relative; /* For overlay */
-    background-image: url('https://images.unsplash.com/photo-1586226915937-30e39a65a25b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-
-.login-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)); /* Dark overlay */
-    z-index: -1;
-}
-
-body.light .login-container::before {
-    background: linear-gradient(rgba(var(--primary-color-rgb), 0.1), rgba(var(--primary-color-rgb), 0.1)); /* Subtle green tint overlay */
-}
-
-.login-form {
-    background-color: var(--form-background); /* Use theme variable */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px var(--card-shadow); /* Use card-shadow for consistency */
-    width: 100%;
-    max-width: 450px; /* Set a max-width */
-    color: var(--text-color); /* Set text color for better contrast */
-}
-
-.login-form h1 {
+/* Login Refinements */
+.auth-form h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .input-wrapper {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .input-icon {
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 18px;
     transform: translateY(-50%);
-    color: var(--form-input-icon-color);
-    font-size: 1.1em;
+    color: var(--primary-color);
+    opacity: 0.7;
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: all var(--transition-fast);
 }
 
-.login-form input[type="email"],
-.login-form input[type="password"] {
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
     width: 100%;
-    padding: 12px 15px 12px 45px; /* Add left padding for the icon */
-    border: 1px solid var(--form-input-border);
-    border-radius: 8px;
-    background-color: var(--card-background);
-    font-size: 1em;
+    padding: 14px 16px 14px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--form-input-border);
+    border-radius: 14px;
+    font-size: 1rem;
     color: var(--text-color);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* Add this line */
+    transition: all var(--transition-normal);
+    box-sizing: border-box;
 }
 
-.login-form input[type="email"]:focus,
-.login-form input[type="password"]:focus {
+.auth-form input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+    background: var(--card-background);
+    box-shadow: 0 0 0 4px var(--primary-glow);
 }
 
-.login-form input::placeholder { /* Add placeholder styles */
-    color: var(--text-color);
-    opacity: 0.7;
+.auth-form input:focus+.input-icon {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
 }
 
-.login-form input[type="submit"] {
+.auth-form input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.auth-form input[type="submit"] {
     width: 100%;
-    padding: 14px; /* Slightly more padding */
-    background-color: var(--primary-color);
-    color: #fff; /* Ensure text is white */
+    padding: 16px;
+    background: var(--primary-gradient);
+    color: #fff;
     border: none;
-    border-radius: 8px; /* Match input-group radius */
+    border-radius: 14px;
     cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 600; /* Make it bolder */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Sora', sans-serif;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transition: all var(--transition-normal);
+    margin-top: 10px;
 }
 
-.login-form input[type="submit"]:hover {
-    background-color: var(--button-hover-bg); /* Use the themed hover background */
-    transform: translateY(-2px); /* Subtle lift */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+.auth-form input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--primary-glow);
+    filter: brightness(1.1);
 }
 
-.login-form p {
+.auth-form input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.auth-form p {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 24px;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
-.login-form p a {
-    color: var(--primary-color); /* Use theme variable */
-    text-decoration: none;
+.auth-form p a {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-left: 5px;
+    transition: all var(--transition-fast);
 }
 
-/* --- Mobile Responsive Styles --- */
+.auth-form p a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
 @media (max-width: 768px) {
-    .login-form {
-        padding: 25px;
+    .auth-form {
+        padding: 32px 24px;
+    }
+}
+
+/* Loading State Styles */
+.auth-loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.auth-loading h2 {
+    margin-top: 20px;
+    font-family: 'Sora', sans-serif;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
-    .login-form h1 {
-        font-size: 1.8rem;
+    100% {
+        transform: rotate(360deg);
     }
 }
