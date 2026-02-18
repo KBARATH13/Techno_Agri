@@ -39,13 +39,13 @@ router.route('/register').post(async (req, res) => {
 // Login
 router.route('/login').post(async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    if (!email || !password) {
+    if (!username || !password) {
       return res.status(400).json({ msg: "Please enter all fields" });
     }
 
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ username: username });
     if (!user) {
       return res.status(400).json({ msg: "Invalid credentials" });
     }
