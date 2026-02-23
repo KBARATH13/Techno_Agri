@@ -23,7 +23,7 @@ import axios from 'axios'; // Import axios
 export const ThemeContext = createContext(null);
 
 // Main App content to get access to navigation hooks
-const AppContent = ({ token, onLogin, onLogout }) => {
+const AppContent = ({ token, username, onLogin, onLogout }) => {
   const navigate = useNavigate();
   const location = useLocation(); // Get current location
   const { translate } = useLanguage();
@@ -54,7 +54,7 @@ const AppContent = ({ token, onLogin, onLogout }) => {
       <Navbar token={token} onLogout={onLogout} />
       {token && <ClimateWidget />}
       <Routes>
-        <Route path="/" element={<HomePage token={token} />} />
+        <Route path="/" element={<HomePage token={token} username={username} />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/crops" element={<ProtectedRoute><CropsPage /></ProtectedRoute>} />
@@ -72,6 +72,7 @@ const AppContent = ({ token, onLogin, onLogout }) => {
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
+  const [username, setUsername] = useState(localStorage.getItem('username'));
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -93,7 +94,9 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     setToken(null);
+    setUsername(null);
   };
 
   // Proactively verify user existence on mount/token change
@@ -114,9 +117,11 @@ function App() {
     verifyUser();
   }, [token]);
 
-  const handleLogin = (newToken) => {
+  const handleLogin = (newToken, newUsername) => {
     localStorage.setItem('token', newToken);
+    localStorage.setItem('username', newUsername);
     setToken(newToken);
+    setUsername(newUsername);
   };
 
   const toggleTheme = () => {
@@ -128,7 +133,7 @@ function App() {
       <Router>
         <ThemeManager />
         <LanguageProvider>
-          <AppContent token={token} onLogin={handleLogin} onLogout={handleLogout} />
+          <AppContent token={token} username={username} onLogin={handleLogin} onLogout={handleLogout} />
         </LanguageProvider>
       </Router>
     </ThemeContext.Provider>

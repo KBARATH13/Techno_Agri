@@ -5,7 +5,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot, faSatelliteDish, faCubes } from '@fortawesome/free-solid-svg-icons';
 
-const HomePage = ({ token }) => {
+const HomePage = ({ token, username }) => {
   const { translate } = useLanguage();
 
 
@@ -16,6 +16,11 @@ const HomePage = ({ token }) => {
       <header className="hero-section">
         <div className="hero-content">
           <h1>{translate('welcome_to_smartAgri')}</h1>
+          {token && username && (
+            <h2 className="user-greeting">
+               <span className="highlight-username">{username}</span>
+            </h2>
+          )}
           <p>{translate('solution_for_predictive_agriculture')}</p>
           {!token && (
             <div className="hero-buttons">

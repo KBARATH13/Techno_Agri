@@ -58,10 +58,12 @@ const DiseaseDetectionPage = () => {
         setError('');
         setPrediction(null);
 
+        const token = localStorage.getItem('token');
         try {
             const response = await axios.post('/api/predict/disease/predict', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
+                    'x-auth-token': token
                 },
             });
             setPrediction(response.data);
@@ -93,8 +95,8 @@ const DiseaseDetectionPage = () => {
                     </div>
                 )}
 
-                <button 
-                    onClick={handlePredict} 
+                <button
+                    onClick={handlePredict}
                     className="predict-button"
                     disabled={loading || !selectedFile}
                 >
@@ -120,8 +122,8 @@ const DiseaseDetectionPage = () => {
                             <span className="value">{(prediction.confidence * 100).toFixed(2)}%</span>
                         </div>
                         <div className="confidence-bar-container">
-                            <div 
-                                className="confidence-bar" 
+                            <div
+                                className="confidence-bar"
                                 style={{ width: `${(prediction.confidence * 100).toFixed(2)}%` }}
                             >
                             </div>

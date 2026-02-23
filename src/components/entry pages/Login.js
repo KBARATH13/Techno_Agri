@@ -27,10 +27,11 @@ const Login = ({ onLogin }) => {
         setIsLoading(true);
         try {
             const res = await axios.post('http://localhost:5000/users/login', formData);
-            const token = res.data.token;
+            const { token, user } = res.data;
+            const username = user.username;
 
             // Immediate feedback and sync navigation
-            onLogin(token);
+            onLogin(token, username);
             navigate('/');
         } catch (err) {
             console.error(err.response?.data || err.message);

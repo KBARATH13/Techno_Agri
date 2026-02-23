@@ -259,6 +259,10 @@
     "en": "Your solution for predictive agriculture with data integrity.",
     "ta": "தரவு ஒருமைப்பாட்டுடன் முன்கணிப்பு விவசாயத்திற்கான உங்கள் தீர்வு."
   },
+  "welcome_back": {
+    "en": "Welcome back",
+    "ta": "மீண்டும் வருக"
+  },
   "ai_powered_predictions": {
     "en": "AI-Powered Predictions",
     "ta": "AI-இயங்கும் கணிப்புகள்"
