@@ -1,0 +1,60 @@
+# Fabric Samples (large repo, clone separately)
+fabric-samples/
+
+# Generated Crypto Configuration
+crypto-config/
+
+# Generated Channel Artifacts
+channel-artifacts/channel.tx
+channel-artifacts/genesis.block
+
+# Node Dependencies
+node_modules/
+package-lock.json
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor & IDE
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Runtime & Temporary Files
+*.pid
+*.seed
+*.pid.lock
+.tmp/
+temp/
+dist/
+build/
+
+# Test Coverage
+coverage/
+.nyc_output/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Misc
+*.pem
+*.key
+*.csr
+*.crt
