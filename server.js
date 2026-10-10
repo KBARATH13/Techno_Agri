@@ -12,7 +12,12 @@ app.use(cors());
 app.use(express.json());
 
 const connectDB = require('./db');
+const blockchainService = require('./utils/BlockchainService');
+
 connectDB();
+blockchainService.init().catch(err => {
+    console.error('Initial Blockchain connection failed, will retry on request');
+});
 
 
 // --- Accurate Recommendation Logic ---
@@ -54,6 +59,6 @@ app.use('/api/chatbot', chatbotRouter);
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on port: ${port}`);
 });

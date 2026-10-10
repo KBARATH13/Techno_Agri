@@ -1,9 +1,9 @@
-
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 let User = require('../models/user.model');
+const blockchainService = require('../utils/BlockchainService');
 
 // Register
 router.route('/register').post(async (req, res) => {
@@ -29,6 +29,19 @@ router.route('/register').post(async (req, res) => {
     });
 
     const savedUser = await newUser.save();
+
+    // Store hash on Blockchain
+    try {
+      await blockchainService.setHash(savedUser._id.toString(), {
+        username: savedUser.username,
+        email: savedUser.email,
+      }, 'USER_PROFILE');
+      console.log(`Blockchain hash stored for user: ${savedUser._id}`);
+    } catch (bcError) {
+      console.error('Blockchain storage failed but user saved to DB:', bcError.message);
+      // We still return success but log the blockchain error
+    }
+
     res.json(savedUser);
 
   } catch (err) {
@@ -71,8 +84,33 @@ router.route('/login').post(async (req, res) => {
 
 // Get User
 router.route('/').get(auth, async (req, res) => {
-  const user = await User.findById(req.user).select('-password');
-  res.json(user);
+  try {
+    const user = await User.findById(req.user).select('-password');
+    if (!user) return res.status(404).json({ msg: "User not found" });
+
+    // Verify Integrity
+    let integrity = true;
+    try {
+      const verification = await blockchainService.verifyIntegrity(user._id.toString(), {
+        username: user.username,
+        email: user.email,
+      });
+      integrity = verification.isMatch;
+      if (!integrity) {
+        console.error(`!!!! ALERT: TAMPER DETECTED FOR USER ${user._id} !!!!`);
+      }
+    } catch (err) {
+      console.warn('Could not verify blockchain integrity:', err.message);
+      // We continue but integrity remains true (or unknown)
+    }
+
+    res.json({
+      ...user.toObject(),
+      integrityStatus: integrity ? "VALID" : "TAMPERED"
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;

@@ -3,7 +3,7 @@ const axios = require('axios');
 const router = express.Router();
 
 // ESP32 IP address
-const ESP32_URL = 'http://10.76.33.217/moisture';
+const ESP32_URL = 'http://172.17.39.217/moisture';
 
 router.get('/moisture', async (req, res) => {
     try {

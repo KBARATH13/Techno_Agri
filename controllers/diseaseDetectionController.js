@@ -65,6 +65,15 @@ const predictDisease = async (req, res) => {
         try {
             const prediction = JSON.parse(result);
 
+            if (prediction.is_leaf === false) {
+                return res.json({
+                    success: false,
+                    error: prediction.message || 'The uploaded image does not appear to be a leaf.',
+                    is_leaf: false,
+                    top_predictions: prediction.top_predictions
+                });
+            }
+
             // Save to Database
             const newDetection = new DiseaseDetection({
                 userId: req.user,
@@ -73,11 +82,25 @@ const predictDisease = async (req, res) => {
                 image: base64Image
             });
 
-            await newDetection.save();
+            const savedDetection = await newDetection.save();
+
+            // Store hash on Blockchain
+            try {
+                const blockchainService = require('../utils/BlockchainService');
+                await blockchainService.setHash(savedDetection._id.toString(), {
+                    disease: savedDetection.disease,
+                    confidence: savedDetection.confidence,
+                    userId: savedDetection.userId.toString()
+                }, 'DISEASE_DETECTION');
+                console.log(`Blockchain hash stored for disease detection: ${savedDetection._id}`);
+            } catch (bcError) {
+                console.error('Blockchain storage for disease detection failed:', bcError.message);
+            }
 
             res.json({
                 ...prediction,
-                dbSaved: true
+                dbSaved: true,
+                id: savedDetection._id
             });
         } catch (e) {
             console.error('Error parsing Python script output or saving to DB:', e);

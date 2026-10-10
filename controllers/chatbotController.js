@@ -29,7 +29,21 @@ const chatWithBot = async (req, res) => {
             response: responseText,
             hash
         });
-        await newMessage.save();
+        const savedMessage = await newMessage.save();
+
+        // Store hash on Blockchain
+        try {
+            const blockchainService = require('../utils/BlockchainService');
+            await blockchainService.setHash(savedMessage._id.toString(), {
+                userId: savedMessage.userId.toString(),
+                sessionId: savedMessage.sessionId,
+                query: savedMessage.query,
+                response: savedMessage.response
+            }, 'CHAT_MESSAGE');
+            console.log(`Blockchain hash stored for chat message: ${savedMessage._id}`);
+        } catch (bcError) {
+            console.error('Blockchain storage for chat message failed:', bcError.message);
+        }
 
         res.json(result);
 
@@ -88,7 +102,29 @@ const getChatMessagesBySession = async (req, res) => {
             sessionId: sessionId === 'legacy' ? { $exists: false } : sessionId
         }).sort({ timestamp: 1 });
 
-        res.json(messages);
+        // Batch verify integrity (Parallel)
+        const blockchainService = require('../utils/BlockchainService');
+        const messagesWithIntegrity = await Promise.all(messages.map(async (msg) => {
+            let integrityStatus = "VALID";
+            try {
+                const verification = await blockchainService.verifyIntegrity(msg._id.toString(), {
+                    userId: msg.userId.toString(),
+                    sessionId: msg.sessionId,
+                    query: msg.query,
+                    response: msg.response
+                });
+                if (!verification.isMatch && verification.status !== 'NOT_ON_BLOCKCHAIN') {
+                    integrityStatus = "TAMPERED";
+                } else if (verification.status === 'NOT_ON_BLOCKCHAIN') {
+                    integrityStatus = "NOT_AUDITED";
+                }
+            } catch (err) {
+                console.warn('Blockchain check failed for message:', msg._id);
+            }
+            return { ...msg.toObject(), integrityStatus };
+        }));
+
+        res.json(messagesWithIntegrity);
     } catch (error) {
         console.error('Error fetching session messages:', error);
         res.status(500).json({ error: 'Failed to fetch session messages.', details: error.message });
