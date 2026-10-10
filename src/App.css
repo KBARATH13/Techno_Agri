@@ -230,3 +230,37 @@ a:hover {
     transform: scale(1) translateY(0);
   }
 }
+
+/* ===== Global mobile hardening ===== */
+*, *::before, *::after { box-sizing: border-box; }
+img, video, svg { max-width: 100%; }
+
+@media (max-width: 768px) {
+  input, select, textarea { font-size: 16px; }
+  .btn { min-height: 44px; }
+  .modern-card { padding: 20px; }
+  .modern-card:hover { transform: none; }
+  .auth-container { min-height: calc(100vh - 70px); padding: 24px 16px; }
+  .auth-form { padding: 28px 20px; border-radius: 18px; }
+}
+
+@media (max-width: 400px) {
+  .auth-form { padding: 24px 16px; }
+  .modern-card { padding: 16px; }
+}
+
+
+/* Prevent off-canvas elements from widening the mobile viewport */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+html { background-color: var(--background-color); }
+
+@media (max-width: 768px) {
+  html, body { overflow-x: clip; }
+  .nav-links-center .nav-menu:not(.active) { visibility: hidden; pointer-events: none; }
+  .nav-links-center .nav-menu { transition: right 0.3s ease, visibility 0.3s; }
+}

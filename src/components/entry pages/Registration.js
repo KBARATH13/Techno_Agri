@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../utils/apiConfig';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -25,7 +26,7 @@ const Registration = () => {
     const onSubmit = async e => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/users/register', formData);
+            await axios.post(`${API_URL}/users/register`, formData);
             setNotification({ message: 'Registration successful! Please log in.', type: 'success' });
             setTimeout(() => {
                 navigate('/login');

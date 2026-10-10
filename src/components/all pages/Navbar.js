@@ -1,6 +1,6 @@
-
-import React, { useState, useContext, useCallback } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+﻿
+import React, { useState, useContext, useCallback, useEffect } from 'react';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { ThemeContext } from '../../App'; // Import ThemeContext
 import { BsFillSunFill } from 'react-icons/bs'; // Import BsFillSunFill
@@ -11,6 +11,7 @@ import MoistureDisplay from './MoistureDisplay';
 
 const Navbar = ({ token, onLogout }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { language, setLanguage, translate } = useLanguage(); // Destructure setLanguage
@@ -19,6 +20,10 @@ const Navbar = ({ token, onLogout }) => {
     onLogout();
     navigate('/');
   };
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
@@ -34,7 +39,7 @@ const Navbar = ({ token, onLogout }) => {
       <li key="language-selector" className="language-selector-container">
         <select value={language} onChange={handleLanguageChange} className="language-select">
           <option value="en">English</option>
-          <option value="ta">தமிழ்</option>
+          <option value="ta">à®¤à®®à®¿à®´à¯</option>
         </select>
       </li>,
       <li key="theme-toggle"><button onClick={toggleTheme} className="theme-icon">{theme === 'light' ? <FontAwesomeIcon icon={faMoon} /> : <BsFillSunFill />}</button></li>

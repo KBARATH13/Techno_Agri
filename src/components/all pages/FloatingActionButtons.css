@@ -52,3 +52,10 @@
         border-radius: 16px;
     }
 }
+
+/* ===== Extra mobile refinements ===== */
+@media (max-width: 480px) {
+    .fab-container { bottom: 16px; right: 16px; gap: 10px; }
+    .fab-item { width: 48px; height: 48px; font-size: 1.15rem; border-radius: 14px; }
+    .fab-item:hover { transform: none; }
+}

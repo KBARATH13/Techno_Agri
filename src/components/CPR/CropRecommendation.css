@@ -338,3 +338,21 @@ form button[type="submit"]:hover:not(:disabled) {
         font-size: 1.8rem;
     }
 }
+
+/* ===== Extra mobile refinements ===== */
+.recommendation-results ul { grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.accurate-form { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+
+@media (max-width: 768px) {
+    .menu-option { padding: 20px 16px; }
+    .option-header { gap: 14px; }
+    .option-content { margin-top: 24px; }
+    .recommendation-results li { padding: 14px 16px; }
+    .recommendation-results li:hover { transform: none; }
+    form button[type="submit"] { padding: 14px; font-size: 1rem; }
+}
+
+@media (max-width: 400px) {
+    .recommendation-menu-container h1 { font-size: 1.7rem; }
+    .accurate-result { font-size: 1.5rem; padding: 12px; }
+}

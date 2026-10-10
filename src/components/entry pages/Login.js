@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../utils/apiConfig';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -26,7 +27,7 @@ const Login = ({ onLogin }) => {
         e.preventDefault();
         setIsLoading(true);
         try {
-            const res = await axios.post('http://localhost:5000/users/login', formData);
+            const res = await axios.post(`${API_URL}/users/login`, formData);
             const { token, user } = res.data;
             const username = user.username;
 

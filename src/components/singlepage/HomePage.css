@@ -17,7 +17,7 @@
 .hero-section {
     padding: 120px 20px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('D:\code\FinalYearProject\smart farm\frontend\src\TA(1).jpeg');
+        url('../../TA.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -243,4 +243,24 @@
     .steps {
         gap: 50px;
     }
+}
+
+/* ===== Extra mobile refinements ===== */
+.features-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.steps { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+
+@media (max-width: 768px) {
+    .hero-section { background-attachment: scroll; margin-bottom: 40px; }
+    .features-grid { gap: 24px; }
+    .feature { padding: 32px 20px; }
+    .feature-icon { font-size: 3rem; margin-bottom: 16px; }
+    .how-it-works-section { margin: 24px 3%; border-radius: 32px; }
+    .how-it-works-section h2 { margin-bottom: 50px; }
+    .step { padding: 44px 20px 28px; }
+}
+
+@media (max-width: 400px) {
+    .hero-section { padding: 60px 16px; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .user-greeting { font-size: 1.3rem; }
 }

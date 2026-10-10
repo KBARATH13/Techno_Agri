@@ -306,3 +306,15 @@
         height: 24px;
     }
 }
+
+/* ===== Extra mobile refinements ===== */
+@media (max-width: 768px) {
+    .upload-section:hover { transform: none; }
+    .file-input-label { padding: 12px 22px; }
+    .result-item .value { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 400px) {
+    .disease-detection-page h1 { font-size: 1.7rem; }
+    .result-item .value { font-size: 1.5rem; }
+}

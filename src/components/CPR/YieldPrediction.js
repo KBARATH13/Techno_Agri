@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../utils/apiConfig';
 import './YieldPrediction.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -37,7 +38,7 @@ const CropYieldPredictionForm = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/yield/form-data?language=${language}`);
+                const response = await axios.get(`${API_URL}/api/yield/form-data?language=${language}`);
                 setDistricts(response.data.districts.map(d => ({ value: d, label: d })));
                 setCrops(response.data.crops.map(c => ({ value: c, label: c })));
                 setSeasons(response.data.seasons.map(s => ({ value: s, label: s })));
@@ -58,7 +59,7 @@ const CropYieldPredictionForm = () => {
         setError('');
         setPrediction(null);
         try {
-            const response = await axios.post('http://localhost:5000/api/yield/predict', {
+            const response = await axios.post(`${API_URL}/api/yield/predict`, {
                 district: selectedDistrict,
                 crop: selectedCrop,
                 crop_year: parseInt(cropYear),

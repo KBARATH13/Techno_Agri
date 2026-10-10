@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../utils/apiConfig';
 import './CropRecommendation.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -152,7 +153,7 @@ const CropRecommendation = () => {
         setAccurateRecommendation('');
         try {
             const payload = { ...accurateFormData, language };
-            const response = await axios.post('http://localhost:5000/api/recommend/accurate', payload);
+            const response = await axios.post(`${API_URL}/api/recommend/accurate`, payload);
             setAccurateRecommendation(response.data.recommended_crop);
         } catch (err) {
             setAccurateError(err.response?.data?.error || translate('an_error_occurred'));

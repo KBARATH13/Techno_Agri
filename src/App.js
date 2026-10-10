@@ -18,6 +18,7 @@ import setAuthToken from './utils/setAuthToken';
 import ThemeManager from './utils/ThemeManager';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import axios from 'axios'; // Import axios
+import { API_URL } from './utils/apiConfig';
 
 // Create Theme Context
 export const ThemeContext = createContext(null);
@@ -104,7 +105,7 @@ function App() {
     const verifyUser = async () => {
       if (token) {
         try {
-          await axios.get('http://localhost:5000/users/');
+          await axios.get(`${API_URL}/users/`);
         } catch (err) {
           console.warn("User verification failed, logging out.");
           // Interceptor will handle the 401 and call onLogout but we can be safe
