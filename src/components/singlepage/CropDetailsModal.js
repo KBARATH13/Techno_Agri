@@ -12,7 +12,6 @@ const CropDetailsModal = ({ crop, onClose }) => {
   const convertToAcres = () => {
     if (unit === 'acre') return landSize;
     if (unit === 'cent') return landSize / 100;
-    if (unit === 'sqft') return landSize / 43560;
     return 0;
   };
 
@@ -43,7 +42,6 @@ const CropDetailsModal = ({ crop, onClose }) => {
             <select value={unit} onChange={e => setUnit(e.target.value)}>
               <option value="acre">{translate('acre_s')}</option>
               <option value="cent">{translate('cent_s')}</option>
-              <option value="sqft">{translate('square_feet')}</option>
             </select>
           </div>
           <div className="calculator-results">

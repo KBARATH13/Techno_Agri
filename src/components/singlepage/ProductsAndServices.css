@@ -61,9 +61,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 24px 20px;
-    width: 280px;
-    height: 280px;
+    padding: 32px 24px;
+    width: 100%;
+    /* Fluid width */
+    max-width: 320px;
+    /* Limit for larger screens */
+    min-height: 280px;
+    /* Use min-height instead of fixed height */
     flex-shrink: 0;
     border-radius: 32px;
     background: rgba(var(--primary-color-rgb), 0.03);
@@ -82,7 +86,7 @@
 
 .offering-logo {
     font-size: 3.5rem;
-    color: var(--primary-color);
+    color: var(--header-color);
     margin-bottom: 16px;
     filter: drop-shadow(0 4px 12px var(--primary-glow));
     flex-shrink: 0;
@@ -108,6 +112,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    line-clamp: 3;
 }
 
 .section-container ul {
@@ -136,7 +141,7 @@
 }
 
 .section-container ul li strong {
-    color: var(--primary-color);
+    color: var(--header-color);
     font-weight: 700;
 }
 
@@ -147,14 +152,27 @@
     }
 
     .products-services-page h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 40px;
     }
 
     .section-container {
-        padding: 32px 24px;
+        padding: 32px 20px;
+        border-radius: 30px;
     }
 
     .section-container h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+    }
+
+    .offering-item,
+    .iot-item {
+        max-width: none;
+    }
+
+    .section-container ul li {
+        padding: 16px 20px;
+        font-size: 1rem;
     }
 }

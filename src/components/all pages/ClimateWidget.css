@@ -113,3 +113,26 @@
   text-align: right;
   font-style: italic;
 }
+
+@media (max-width: 480px) {
+  .climate-widget {
+    padding: 16px 20px;
+  }
+
+  .location {
+    font-size: 1.2rem;
+  }
+
+  .temperature {
+    font-size: 1.4rem;
+  }
+
+  .weather-icon img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .weather-info {
+    margin: 0 12px;
+  }
+}

@@ -33,8 +33,7 @@
   gap: 12px;
   letter-spacing: -0.03em;
   text-decoration: none;
-  min-width: 200px;
-  /* Ensure space for brand */
+  min-width: 180px;
 }
 
 .navbar-brand i {
@@ -45,7 +44,6 @@
 
 .nav-links-center {
   flex: 1;
-  /* Take available space to help centering */
   display: flex;
   justify-content: center;
 }
@@ -54,7 +52,6 @@
   list-style: none;
   display: flex;
   gap: 8px;
-  /* Slightly tighter for better centering */
   align-items: center;
   margin: 0;
   padding: 0;
@@ -70,7 +67,6 @@
   transition: all var(--transition-fast);
   display: flex;
   flex-direction: row;
-  /* Horizontal icons and text */
   align-items: center;
   gap: 8px;
   position: relative;
@@ -100,17 +96,17 @@
 .nav-links-center .nav-menu li a:hover::after,
 .nav-links-center .nav-menu li a.active::after {
   width: 20px;
+  color:var(--primary-color);
+
 }
 
-/* Removed unused <i> selectors as React-FontAwesome uses SVGs */
 
-.nav-utility-menu {
+.nav-utility-menu.desktop-only {
   list-style: none;
   display: flex;
   gap: 12px;
   align-items: center;
   min-width: 200px;
-  /* Match brand min-width for true center */
   justify-content: flex-end;
   margin: 0;
   padding: 0;
@@ -219,10 +215,36 @@
     font-size: 1.1rem;
   }
 
-  .nav-utility-menu {
+  .nav-utility-menu.desktop-only {
     display: none;
-    /* Or move into nav-menu */
   }
+
+  .mobile-utility-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .mobile-utility-items li {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-utility-items .language-selector-container {
+    margin: 0;
+  }
+}
+
+.mobile-utility-items {
+  display: none;
+  /* Hidden on desktop */
 }
 
 .language-selector-container {

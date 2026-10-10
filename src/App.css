@@ -2,45 +2,33 @@
 
 /* Theme Variables */
 :root {
-  /* Colors - Refined for vibrancy */
-  --primary-color: #2e7d32;
+  --primary-color: #ffffff;
   --primary-gradient: linear-gradient(135deg, #389f70 0%, #2e7d32 100%);
   --primary-glow: rgba(56, 159, 112, 0.4);
-
   --secondary-color: #6D4C41;
   --secondary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
-
   --accent-color: #FFB300;
   --accent-gradient: linear-gradient(135deg, #FFCA28 0%, #FFB300 100%);
-
   --background-color: #b1d6bad4;
-  /* Maintained as requested */
   --text-color: #1a1a1a;
   --text-secondary: #4a4a4a;
-  --header-color: #15391e;
-
+  --header-color: #4caf50;
   --navbar-background: rgba(53, 128, 78, 0.85);
-  /* Glassmorphism base */
   --card-background: rgba(255, 255, 255, 0.9);
-  --weather-card-background: rgba(114, 197, 159, 0.936);
-  --border-color: rgba(0, 0, 0, 0.1);
-
+  --dot-color:black;
+  --dotted-line:#4caf50;
+  --weather-card-background: rgba(20, 65, 45, 0.936);
+  --border-color: rgba(86, 83, 83, 0.1);
   --form-background: #FFFFFF;
   --form-input-border: rgba(109, 76, 65, 0.3);
   --form-input-icon-color: #4a4a4a;
-
-  /* Modern Layered Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
   --card-shadow: var(--shadow-lg);
-
-  /* Animation / Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Utils */
   --glass-effect: blur(12px) saturate(180%);
 }
 
@@ -48,33 +36,27 @@ body.dark {
   --primary-color: #4caf50;
   --primary-gradient: linear-gradient(135deg, #81c784 0%, #388e3c 100%);
   --primary-glow: rgba(129, 199, 132, 0.3);
-
   --secondary-color: #78909C;
   --secondary-gradient: linear-gradient(135deg, #90a4ae 0%, #607d8b 100%);
-
   --accent-color: #4fc3f7;
   --accent-gradient: linear-gradient(135deg, #81d4fa 0%, #039be5 100%);
-
   --background-color: #1A1A1A;
-  /* Maintained as requested */
   --text-color: #e0e0e0;
   --text-secondary: #b0bec5;
-  --header-color: #f5f5f5;
-
+  --header-color: #4caf50;
   --navbar-background: rgba(26, 26, 26, 0.85);
   --card-background: rgba(38, 50, 56, 0.95);
+  --dot-color:rgba(38, 50, 56, 0.95);
+  --dotted-line:#4caf50;
   --weather-card-background: rgba(38, 50, 56, 0.95);
   --border-color: rgba(255, 255, 255, 0.08);
-
   --form-background: #263238;
   --form-input-border: rgba(255, 255, 255, 0.15);
   --form-input-icon-color: #cfd8dc;
-
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
   --card-shadow: var(--shadow-lg);
-
   --p-text-color: #cfd8dc;
   --strong: #ffffff;
   --widget-bg-color: rgba(0, 0, 0, 0.3);
@@ -121,7 +103,6 @@ body {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -134,7 +115,7 @@ h6 {
 .fa-solid,
 .fa-regular,
 .svg-inline--fa {
-  color: inherit;
+  color:white;
   /* Let parent control icon color */
 }
 
@@ -220,14 +201,12 @@ a:hover {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 80px);
-  /* Adjust for Navbar height */
   padding: 40px 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .auth-form {
-  background-color: var(--card-background);
   backdrop-filter: var(--glass-effect);
   -webkit-backdrop-filter: var(--glass-effect);
   padding: 48px;
@@ -235,7 +214,6 @@ a:hover {
   box-shadow: var(--shadow-lg);
   width: 100%;
   max-width: 440px;
-  color: var(--text-color);
   border: 1px solid var(--border-color);
   animation: fadeInScale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   margin: 0 auto;

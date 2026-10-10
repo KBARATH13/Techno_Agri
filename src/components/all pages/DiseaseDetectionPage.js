@@ -66,9 +66,15 @@ const DiseaseDetectionPage = () => {
                     'x-auth-token': token
                 },
             });
-            setPrediction(response.data);
+            if (response.data.success === false) {
+                setError(response.data.error);
+                setPrediction(null);
+            } else {
+                setPrediction(response.data);
+            }
         } catch (err) {
-            setError(translate('An error occurred during prediction. Please try again.'));
+            const errorMsg = err.response?.data?.error || translate('An error occurred during prediction. Please try again.');
+            setError(errorMsg);
             console.error('Prediction error:', err);
         } finally {
             setLoading(false);
@@ -126,6 +132,7 @@ const DiseaseDetectionPage = () => {
                                 className="confidence-bar"
                                 style={{ width: `${(prediction.confidence * 100).toFixed(2)}%` }}
                             >
+                                {(prediction.confidence * 100).toFixed(2)}%
                             </div>
                         </div>
                     </div>

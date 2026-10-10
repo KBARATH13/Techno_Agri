@@ -147,7 +147,7 @@
 .input-with-icon .svg-inline--fa {
     position: absolute;
     left: 16px;
-    color: var(--primary-color);
+    color: var(--primary-gradient);
     font-size: 1.1rem;
     opacity: 0.7;
 }
@@ -164,6 +164,7 @@
     font-weight: 500;
     transition: all var(--transition-normal);
 }
+
 
 .input-with-icon input:focus,
 .input-with-icon select:focus {
@@ -287,11 +288,53 @@ form button[type="submit"]:hover:not(:disabled) {
 }
 
 @media (max-width: 768px) {
+    .crop-recommendation-page {
+        padding: 24px 16px;
+    }
+
     .recommendation-menu-container h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .recommendation-menu-container p {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .menu-option {
+        padding: 24px;
+        border-radius: 24px;
+    }
+
+    .option-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .option-icon .svg-inline--fa {
+        font-size: 1.5rem;
+    }
+
+    .option-text h3 {
+        font-size: 1.3rem;
     }
 
     .accurate-form {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .recommendation-results {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .recommendation-results h3 {
+        font-size: 1.2rem;
+    }
+
+    .accurate-result {
+        font-size: 1.8rem;
     }
 }

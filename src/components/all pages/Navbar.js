@@ -70,12 +70,16 @@ const Navbar = ({ token, onLogout }) => {
         <div className="nav-links-center">
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             {mainNavItems}
+            {/* Show utility items inside mobile menu drawer */}
+            <div className="mobile-utility-items">
+              {utilityNavItems}
+            </div>
           </ul>
         </div>
         <div className="menu-icon" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
           <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />
         </div>
-        <ul className={`nav-utility-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+        <ul className="nav-utility-menu desktop-only">
           {utilityNavItems}
         </ul>
       </div>

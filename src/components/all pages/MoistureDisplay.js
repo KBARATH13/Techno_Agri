@@ -6,14 +6,12 @@ const MoistureDisplay = () => {
   const [moistureLevel, setMoistureLevel] = useState(null);
   const [error, setError] = useState(null);
 
-  // User needs to provide the actual ESP32 IP address
-  const esp32IpAddress = '10.94.239.217';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Direct fetch from ESP32
-        const response = await axios.get(`http://${esp32IpAddress}/moisture`, { timeout: 2000 });
+        // Fetch via backend proxy to handle CORS and timeouts better
+        const response = await axios.get('/api/iot/moisture', { timeout: 10000 });
 
         // Use the percentage calculated by the ESP32 (more accurate)
         // structure: { "moisture": 2500, "percentage": 45.5 }
