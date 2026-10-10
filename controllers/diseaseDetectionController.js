@@ -38,7 +38,7 @@ const predictDisease = async (req, res) => {
         console.error('Error reading file for base64 conversion:', err);
     }
 
-    const pythonProcess = spawn('python', [pythonScriptPath, imagePath]);
+    const pythonProcess = spawn('py', ['-3.13', pythonScriptPath, imagePath]);
 
     let result = '';
     let error = '';

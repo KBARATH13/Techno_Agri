@@ -2,8 +2,8 @@ const { spawn } = require('child_process');
 
 function runPythonScript(scriptPath, data) {
     return new Promise((resolve, reject) => {
-        const pythonExecutable = 'C:/Python313/python.exe';
-        const pythonProcess = spawn(pythonExecutable, [scriptPath]);
+        const pythonExecutable = 'py';
+        const pythonProcess = spawn(pythonExecutable, ['-3.13', scriptPath]);
 
         let result = '';
         let error = '';

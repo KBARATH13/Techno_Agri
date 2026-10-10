@@ -2,7 +2,7 @@ const runPythonScript = require('../utils/PythonRunner');
 
 const getYieldFormData = async (req, res) => {
     const { language } = req.query;
-    const scriptPath = 'D:/code/FinalYearProject/smart farm/AI/predict/predict_crop_yield.py';
+    const scriptPath = 'D:/code/Projects/FinalYearProject/smart farm/AI/predict/predict_crop_yield.py';
     const scriptData = {
         command: 'get_form_data',
         language: language || 'en'
@@ -23,7 +23,7 @@ const predictYield = async (req, res) => {
         return res.status(400).json({ error: 'All input fields are required.' });
     }
 
-    const scriptPath = 'D:/code/FinalYearProject/smart farm/AI/predict/predict_crop_yield.py';
+    const scriptPath = 'D:/code/Projects/FinalYearProject/smart farm/AI/predict/predict_crop_yield.py';
     const scriptData = {
         command: 'predict',
         language: language || 'en',

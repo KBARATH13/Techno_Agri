@@ -8,7 +8,7 @@ const predictAccurateRecommendation = async (req, res) => {
         return res.status(400).json({ error: 'All seven input fields are required.' });
     }
 
-    const scriptPath = 'D:/code/FinalYearProject/smart farm/AI/predict/predict_crop_recommendation.py';
+    const scriptPath = 'D:/code/Projects/FinalYearProject/smart farm/AI/predict/predict_crop_recommendation.py';
     const scriptData = {
         language: language || 'en',
         params: { N, P, K, temperature, humidity, ph, rainfall }

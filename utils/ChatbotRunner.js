@@ -5,10 +5,10 @@ function runChatbotScript(scriptPath, data) {
     return new Promise((resolve, reject) => {
         // Use the absolute path to the correct Python executable
         // Using the same environment as other models for now, but isolated in this file
-        const pythonExecutable = 'C:/Python313/python.exe';
+        const pythonExecutable = 'py';
 
         // Spawn the python process
-        const pythonProcess = spawn(pythonExecutable, [scriptPath]);
+        const pythonProcess = spawn(pythonExecutable, ['-3.13', scriptPath]);
 
         let result = '';
         let error = '';
